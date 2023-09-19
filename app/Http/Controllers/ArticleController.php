@@ -21,8 +21,10 @@ class ArticleController extends Controller
     public function destroy(Article $article){
         if ($article->delete()) {
             session()->flash('flash.banner', 'Article supprimé avec succès');
+            session()->flash('flash.bannerStyle', 'success');
         } else {
             session()->flash('flash.banner', "Une erreur s'est produite lors de la suppression");
+            session()->flash('flash.bannerStyle', 'danger');
         }
     }
 
@@ -39,7 +41,8 @@ class ArticleController extends Controller
         ])->validate();
 
         Article::create($valid_data);
-        session()->flash('flash.banner', 'Article créée avec succès');
+        session()->flash('flash.banner', 'Article créé avec succès');
+        session()->flash('flash.bannerStyle', 'success');
     }
 
     public function update(Request $request, Article $article){
@@ -57,7 +60,6 @@ class ArticleController extends Controller
         $article->update($valid_data);
 
         session()->flash('flash.banner', 'Article modifié avec succès');
+        session()->flash('flash.bannerStyle', 'success');
     }
-
-
 }
