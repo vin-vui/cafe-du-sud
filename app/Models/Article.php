@@ -12,7 +12,7 @@ class Article extends Model
         'titre',
         'contenu',
         'type',
-        'image',
+        'url',
         'date_publication',
         'date_debut',
         'date_fin',
