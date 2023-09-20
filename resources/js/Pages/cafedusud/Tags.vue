@@ -1,5 +1,6 @@
 <template>
     <AppLayout>
+        <!-- INDEX TAGS -->
         <div v-for="tag in tags" class="w-1/4 justify-evenly">
             <div class=" bg-cyan-200 text-center mx-4 my-2">
                 <p> {{ tag.nom }} </p>
