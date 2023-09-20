@@ -6,9 +6,11 @@ use Inertia\Inertia;
 
 use App\Models\Article;
 use App\Models\Tag;
+use App\Models\Commentaire;
 
 use App\Http\controllers\ArticleController;
 use App\Http\controllers\TagController;
+use App\Http\controllers\CommentaireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +44,4 @@ Route::middleware([
 
 Route::resource("articles", ArticleController::class);
 Route::resource("tags", TagController::class);
+Route::resource("commentaires", CommentaireController::class);
