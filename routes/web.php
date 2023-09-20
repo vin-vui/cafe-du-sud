@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 use App\Models\Article;
+use App\Models\Tag;
 
 use App\Http\controllers\ArticleController;
+use App\Http\controllers\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +41,4 @@ Route::middleware([
 });
 
 Route::resource("articles", ArticleController::class);
+Route::resource("tags", TagController::class);
