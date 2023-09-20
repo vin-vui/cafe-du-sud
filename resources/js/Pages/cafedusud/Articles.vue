@@ -44,16 +44,19 @@
             <div>
                 <button @click="isOpenCreate = false" class="bg-red-700 mr-auto">CLOSE</button>
                 <div>
+                    <div v-if="errors.titre" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.titre }}</div>
                     <label>Titre</label>
                     <input v-model="form_create.titre" type="text">
                 </div>
 
                 <div>
+                    <div v-if="errors.contenu" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.contenu }}</div>
                     <label>Contenu</label>
                     <input v-model="form_create.contenu" type="text">
                 </div>
 
                 <div>
+                    <div v-if="errors.type" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.type }}</div>
                     <label>Type</label>
                     <select v-model="form_create.type">
                         <option value="evenement">Évenement</option>
@@ -62,27 +65,33 @@
                 </div>
 
                 <div>
+                    <div v-if="errors.url" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.url }}</div>
                     <label>url</label>
                     <input v-model="form_create.url" type="url">
                 </div>
 
                 <div>
+                    <div v-if="errors.date_publication" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.date_publication }}</div>
                     <label>Date de publication</label>
                     <input v-model="form_create.date_publication" type="date">
                 </div>
 
                 <div>
+                    <div v-if="errors.date_debut" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.date_debut }}</div>
                     <label>Date de début</label>
                     <input v-model="form_create.date_debut" type="date">
                 </div>
 
                 <div>
+                    <div v-if="errors.date_fin" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.date_fin }}</div>
                     <label>Date de fin</label>
                     <input v-model="form_create.date_fin" type="date">
                 </div>
 
                 <div>
                     <label>Statut</label>
+                    <div v-if="errors.statut" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.statut }}</div>
+
                     <select v-model="form_create.statut">
                         <option value="en attente">En attente</option>
                         <option value="en ligne">En ligne</option>
@@ -155,7 +164,7 @@ export default {
         AppLayout,
     },
 
-    props: ["articles"],
+    props: ['articles', 'errors'],
 
     data() {
         return {
@@ -206,10 +215,11 @@ export default {
 
         create() {
             this.$inertia.post(route('articles.store'), this.form_create);
-            this.isOpenCreate = false;
+            // this.isOpenCreate = false;
         },
 
         destroy(article) {
+            // return confirm ('êtes-vous sûr de vouloir supprimer l'article ?');
             this.$inertia.delete(route('articles.destroy', article))
         },
     },
