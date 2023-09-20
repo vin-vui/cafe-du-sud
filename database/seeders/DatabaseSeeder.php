@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             ArticleSeeder::class,
+            TagSeeder::class,
+            ArticleTagSeeder::class,
         ]);
     }
 }
