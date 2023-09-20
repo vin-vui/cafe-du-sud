@@ -14,9 +14,7 @@ class ArticleSeeder extends Seeder
     {
         DB::table('articles')->insert([
             'titre' => 'Atelier theatre improvisation',
-
             'contenu' => "contenu",
-
             'type' => 'evenement',
             'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
             'date_publication' => '2023/04/09',

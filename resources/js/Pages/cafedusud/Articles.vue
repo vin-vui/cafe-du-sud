@@ -1,9 +1,9 @@
 <template>
     <AppLayout>
-        <!-- INDEX  -->
+        <!-- INDEX ARTICLES -->
         <div class="flex flex-row flex-wrap">
             <div v-for="article in articles" class="w-1/4 justify-evenly">
-                <div class=" bg-cyan-200 text-center mx-4 my-2">
+                <div class="bg-cyan-200 text-center mx-4 my-2">
                     <p> {{ article.titre }} </p>
                     <p> {{ article.contenu }} </p>
                     <p> {{ article.type }} </p>
@@ -25,7 +25,6 @@
             <div class="bg-cyan-100/50">
                 <button @click="isOpenShow = false" class="bg-red-700 mr-auto">CLOSE</button>
                 <div>
-                    <!-- <p>Titre</p> -->
                     <p> {{ selectedArticle.titre }} </p>
                     <p> {{ selectedArticle.contenu }} </p>
                     <p> {{ selectedArticle.type }} </p>
@@ -164,7 +163,7 @@ export default {
         AppLayout,
     },
 
-    props: ['articles', 'errors'],
+    props: ['articles', 'errors', 'tags'],
 
     data() {
         return {

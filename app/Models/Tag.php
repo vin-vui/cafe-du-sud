@@ -6,24 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Article extends Model
+class Tag extends Model
 {
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        'titre',
-        'contenu',
-        'type',
-        'url',
-        'date_publication',
-        'date_debut',
-        'date_fin',
+        'nom',
         'statut',
+        'description',
     ];
 
-    public function tags() : BelongsToMany
+    public function articles() : BelongsToMany
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Article::class);
     }
-
 }
