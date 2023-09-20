@@ -4,6 +4,10 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Models\Article;
+
+use App\Http\controllers\ArticleController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +37,5 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+Route::resource("articles", ArticleController::class);
