@@ -36,6 +36,10 @@
                     <p> {{ selectedArticle.date_fin }} </p>
                     <p> {{ selectedArticle.statut }} </p>
                 </div>
+
+                <div v-for="tag in article.tags">
+                <p> {{ article.tag }} </p>
+                </div>
                 <button @click="destroy(selectedArticle)" class="rounded bg-red-500 px-2 py-1">DELETE</button>
             </div>
         </div>
@@ -166,7 +170,7 @@ export default {
         AppLayout, Navbar
     },
 
-    props: ['articles', 'errors', 'tags'],
+    props: ['articles', 'errors', 'tags', 'tag'],
 
     data() {
         return {

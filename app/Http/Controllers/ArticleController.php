@@ -15,7 +15,9 @@ class ArticleController extends Controller
     }
 
     public function show(){
-        return Inertia::render('cafedusud/Article');
+        $article->load('tags', 'articles.tags');
+        $tags = Tag::all();
+        return Inertia::render('cafedusud/Article', compact('article', 'tags'));
     }
 
     public function destroy(Article $article){
