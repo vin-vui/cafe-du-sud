@@ -1,5 +1,7 @@
 <template>
     <AppLayout>
+        <Navbar/>
+
         <!-- INDEX ARTICLES -->
         <div class="flex flex-row flex-wrap">
             <div v-for="article in articles" class="w-1/4 justify-evenly">
@@ -157,10 +159,11 @@
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
+import Navbar from '@/Components/Navbar.vue'
 
 export default {
     components: {
-        AppLayout,
+        AppLayout, Navbar
     },
 
     props: ['articles', 'errors', 'tags'],
