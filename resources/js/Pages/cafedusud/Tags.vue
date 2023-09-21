@@ -1,5 +1,7 @@
 <template>
     <AppLayout>
+        <Navbar/>
+
         <!-- INDEX TAGS -->
         <div v-for="tag in tags" class="w-1/4 justify-evenly">
             <div class=" bg-cyan-200 text-center mx-4 my-2">
@@ -87,10 +89,12 @@
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
+import Navbar from '@/Components/Navbar.vue'
+
 
 export default {
     components: {
-        AppLayout,
+        AppLayout, Navbar
     },
 
     props: ['tags', 'errors',],
