@@ -4,6 +4,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 
 class Commentaire extends Model
 {
@@ -17,10 +19,8 @@ class Commentaire extends Model
     ];
 
 
-
-    // RELATION BELONG TO ONE ???
-    // public function articles() :
-    // {
-    //     return $this->(Article::class);
-    // }
+    public function articles() : BelongsTo
+    {
+        return $this->BelongsTo(Article::class);
+    }
 }
