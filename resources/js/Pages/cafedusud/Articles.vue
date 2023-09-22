@@ -204,17 +204,38 @@ export default {
                 statut: null,
             },
             form_update: {
-                titre: this.selectedArticle ? this.selectedArticle.titre : '',
-                contenu: this.selectedArticle ? this.selectedArticle.contenu : '',
-                type: this.selectedArticle ? this.selectedArticle.type : '',
-                url: this.selectedArticle ? this.selectedArticle.url : '',
-                date_publication: this.selectedArticle ? this.selectedArticle.date_publication : '',
-                date_debut: this.selectedArticle ? this.selectedArticle.date_debut : '',
-                date_fin: this.selectedArticle ? this.selectedArticle.date_fin : '',
-                statut: this.selectedArticle ? this.selectedArticle.statut : '',
+                titre: null,
+                contenu: null,
+                type: null,
+                url: null,
+                date_publication: null,
+                date_debut: null,
+                date_fin: null,
+                statut: null,
             }
         }
     },
+
+    watch: {
+    selectedArticle: {
+        handler() {
+            if (this.selectedArticle) {
+                this.form_update.titre = this.selectedArticle.titre;
+                this.form_update.contenu = this.selectedArticle.contenu;
+                this.form_update.type = this.selectedArticle.type;
+                this.form_update.url = this.selectedArticle.url;
+                this.form_update.date_publication = this.selectedArticle.date_publication;
+                this.form_update.date_debut = this.selectedArticle.date_debut;
+                this.form_update.date_fin = this.selectedArticle.date_fin;
+                this.form_update.statut = this.selectedArticle.statut;
+            }
+        },
+        deep: true,
+        immediate: true
+    }
+},
+
+
 
     methods: {
         show(article) {
