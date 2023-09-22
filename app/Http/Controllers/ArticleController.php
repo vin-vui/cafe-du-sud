@@ -2,7 +2,9 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
+
 use App\Models\Article;
+use App\Models\Tag;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -10,12 +12,17 @@ use Illuminate\Support\Facades\Validator;
 class ArticleController extends Controller
 {
     public function index(){
-        $articles = Article::all();
+        $articles = Article::with('tags')->get();
         return Inertia::render('cafedusud/Articles', compact('articles'));
     }
 
-    public function show(){
-        return Inertia::render('cafedusud/Article');
+    public function show(Article $article){
+        $article->load('tags');
+        // $article->load('tags', 'articles.tags');
+        // $article->load('articles.tags');
+        // $tags = Tag::all();
+        // $article = Article::with('tags')->findOrFail($id);
+        return Inertia::render('cafedusud/Article', compact('article'));
     }
 
     public function destroy(Article $article){
