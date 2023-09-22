@@ -1,6 +1,6 @@
 <template>
     <AppLayout>
-        <Navbar/>
+        <Navbar />
 
         <!-- INDEX ARTICLES -->
         <div class="flex flex-row flex-wrap">
@@ -14,6 +14,10 @@
                     <p> {{ article.date_debut }} </p>
                     <p> {{ article.date_fin }} </p>
                     <p> {{ article.statut }} </p>
+
+                    <div v-for="tag in article.tags">
+                        <p class="bg-yellow-700 rounded w-1/4 mx-2 text-md"> {{ tag.nom }} </p>
+                    </div>
                     <button @click="show(article)" class="rounded bg-cyan-600 px-2 py-1">SHOW</button>
                     <button @click="edit(article)" class="rounded bg-yellow-400 px-2 py-1">EDIT</button>
                 </div>
@@ -35,10 +39,10 @@
                     <p> {{ selectedArticle.date_debut }} </p>
                     <p> {{ selectedArticle.date_fin }} </p>
                     <p> {{ selectedArticle.statut }} </p>
-                </div>
 
-                <div v-for="tag in article.tags">
-                <p> {{ article.tag }} </p>
+                    <div v-for="tag in selectedArticle.tags">
+                        <p class="bg-yellow-700 rounded w-1/4 mx-2 text-md"> {{ tag.nom }} </p>
+                    </div>
                 </div>
                 <button @click="destroy(selectedArticle)" class="rounded bg-red-500 px-2 py-1">DELETE</button>
             </div>
@@ -49,13 +53,15 @@
             <div>
                 <button @click="isOpenCreate = false" class="bg-red-700 mr-auto">CLOSE</button>
                 <div>
-                    <div v-if="errors.titre" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.titre }}</div>
+                    <div v-if="errors.titre" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.titre }}
+                    </div>
                     <label>Titre</label>
                     <input v-model="form_create.titre" type="text">
                 </div>
 
                 <div>
-                    <div v-if="errors.contenu" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.contenu }}</div>
+                    <div v-if="errors.contenu" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.contenu }}
+                    </div>
                     <label>Contenu</label>
                     <input v-model="form_create.contenu" type="text">
                 </div>
@@ -76,26 +82,30 @@
                 </div>
 
                 <div>
-                    <div v-if="errors.date_publication" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.date_publication }}</div>
+                    <div v-if="errors.date_publication" class="text-red-700 text-lg mx-auto flex justify-center">{{
+                        errors.date_publication }}</div>
                     <label>Date de publication</label>
                     <input v-model="form_create.date_publication" type="date">
                 </div>
 
                 <div>
-                    <div v-if="errors.date_debut" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.date_debut }}</div>
+                    <div v-if="errors.date_debut" class="text-red-700 text-lg mx-auto flex justify-center">{{
+                        errors.date_debut }}</div>
                     <label>Date de début</label>
                     <input v-model="form_create.date_debut" type="date">
                 </div>
 
                 <div>
-                    <div v-if="errors.date_fin" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.date_fin }}</div>
+                    <div v-if="errors.date_fin" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.date_fin
+                    }}</div>
                     <label>Date de fin</label>
                     <input v-model="form_create.date_fin" type="date">
                 </div>
 
                 <div>
                     <label>Statut</label>
-                    <div v-if="errors.statut" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.statut }}</div>
+                    <div v-if="errors.statut" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.statut }}
+                    </div>
 
                     <select v-model="form_create.statut">
                         <option value="en attente">En attente</option>
@@ -155,6 +165,11 @@
                         <option value="en ligne">En ligne</option>
                     </select>
                 </div>
+
+                <div v-for="tag in selectedArticle.tags">
+                    <p class="bg-yellow-700 rounded w-1/4 mx-2 text-md"> {{ tag.nom }} </p>
+                </div>
+
             </div>
             <button @click="update(selectedArticle)" class="rounded bg-amber-500 px-2 py-1">UPDATE</button>
         </div>

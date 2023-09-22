@@ -12,7 +12,7 @@ class ArticleTagSeeder extends Seeder
 
     public function run(): void
     {
-        DB::table('articles_tags')->insert([
+        DB::table('article_tag')->insert([
             'article_id' => 1,
             'tag_id' => 1,
         ]);
