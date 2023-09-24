@@ -55,10 +55,10 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article){
         $valid_data = Validator::make($request->all(), [
             'titre' => ['required', 'max:47'],
-            'contenu' => ['required'],
-            'type' => ['required'],
-            'url' => ['nullable'],
-            'date_publication' => ['nullable'],
+            'contenu' => ['required',],
+            'type' => ['required',],
+            'url' => ['nullable',],
+            'date_publication' => ['nullable',],
             'date_debut' => ['nullable',],
             'date_fin' => ['nullable',],
             'statut' => ['required',],
