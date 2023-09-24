@@ -23,7 +23,6 @@
                 </div>
             </div>
         </div>
-
         <button @click="this.isOpenCreate = true" class="rounded bg-green-500 px-2 py-1">ADD</button>
 
         <!-- MODALE SHOW -->
@@ -166,11 +165,23 @@
                     </select>
                 </div>
 
-                <div v-for="tag in selectedArticle.tags">
+                <!-- <div v-for="tag in selectedArticle.tags">
                     <p class="bg-yellow-700 rounded w-1/4 mx-2 text-md"> {{ tag.nom }} </p>
+                </div>
+                <input v-model="form_update_tags"> -->
+
+                <div>
+                    <p>tags</p>
+                    <div v-for="tag in tags">
+                        <input type="checkbox" v-model="form_update.tags" :value="tag.id">
+                        <label>{{ tag.nom }}</label>
+                    </div>
                 </div>
 
             </div>
+
+            <button @click="console.log(selectedArticle.tags)" class="rounded bg-pink-500 px-2 py-1">selectedArticle</button>
+            <button @click="console.log(tags)" class="rounded bg-violet-500 px-2 py-1">tags</button>
             <button @click="update(selectedArticle)" class="rounded bg-amber-500 px-2 py-1">UPDATE</button>
         </div>
     </AppLayout>
@@ -185,7 +196,7 @@ export default {
         AppLayout, Navbar
     },
 
-    props: ['articles', 'errors', 'tags', 'tag'],
+    props: ['articles', 'errors', 'tag', 'tags'],
 
     data() {
         return {
@@ -212,28 +223,33 @@ export default {
                 date_debut: null,
                 date_fin: null,
                 statut: null,
-            }
+
+                tags: [],
+            },
+            tags: [],
         }
     },
 
     watch: {
-    selectedArticle: {
-        handler() {
-            if (this.selectedArticle) {
-                this.form_update.titre = this.selectedArticle.titre;
-                this.form_update.contenu = this.selectedArticle.contenu;
-                this.form_update.type = this.selectedArticle.type;
-                this.form_update.url = this.selectedArticle.url;
-                this.form_update.date_publication = this.selectedArticle.date_publication;
-                this.form_update.date_debut = this.selectedArticle.date_debut;
-                this.form_update.date_fin = this.selectedArticle.date_fin;
-                this.form_update.statut = this.selectedArticle.statut;
-            }
-        },
-        deep: true,
-        immediate: true
-    }
-},
+        selectedArticle: {
+            handler() {
+                if (this.selectedArticle) {
+                    this.form_update.titre = this.selectedArticle.titre;
+                    this.form_update.contenu = this.selectedArticle.contenu;
+                    this.form_update.type = this.selectedArticle.type;
+                    this.form_update.url = this.selectedArticle.url;
+                    this.form_update.date_publication = this.selectedArticle.date_publication;
+                    this.form_update.date_debut = this.selectedArticle.date_debut;
+                    this.form_update.date_fin = this.selectedArticle.date_fin;
+                    this.form_update.statut = this.selectedArticle.statut;
+
+                    // this.form_update.tags = this.selectedArticle.tags.map(tag => tag.id);
+                }
+            },
+            deep: true,
+            immediate: true
+        }
+    },
 
 
 
@@ -250,6 +266,8 @@ export default {
 
         update(article) {
             this.$inertia.put(route('articles.update', article), this.form_update);
+            // this.form_update.tags = article.tags.map(tag => tag.id);
+
             // TODO: gérer les erreurs pour mettre la fermeture en condition if else
             // FIXME:
             this.isOpenEdit = false;
@@ -264,6 +282,7 @@ export default {
             // return confirm ('êtes-vous sûr de vouloir supprimer l'article ?');
             this.$inertia.delete(route('articles.destroy', article))
         },
+
     },
 }
 </script>
