@@ -89,7 +89,7 @@
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
-import Navbar from '@/Components/Navbar.vue'
+import Navbar from '@/Components/CafeDuSud/Navbar.vue'
 
 
 export default {
