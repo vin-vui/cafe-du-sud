@@ -111,6 +111,11 @@
                         <option value="en ligne">En ligne</option>
                     </select>
                 </div>
+                <label>tags</label>
+                <div v-for="tag in tags">
+                    <input type="checkbox" v-model="form_create.tags" :value="tag.id">
+                    <label>{{ tag.nom }}</label>
+                </div>
             </div>
             <button @click="create(form_create)" class="rounded bg-green-500 px-2 py-1">CREATE</button>
         </div>
@@ -171,7 +176,7 @@
                 <input v-model="form_update_tags"> -->
 
                 <div>
-                    <p>tags</p>
+                    <label>tags</label>
                     <div v-for="tag in tags">
                         <input type="checkbox" v-model="form_update.tags" :value="tag.id">
                         <label>{{ tag.nom }}</label>
@@ -179,7 +184,6 @@
                 </div>
 
             </div>
-
             <button @click="console.log(selectedArticle.tags)" class="rounded bg-pink-500 px-2 py-1">selectedArticle</button>
             <button @click="console.log(tags)" class="rounded bg-violet-500 px-2 py-1">tags</button>
             <button @click="update(selectedArticle)" class="rounded bg-amber-500 px-2 py-1">UPDATE</button>
@@ -196,7 +200,7 @@ export default {
         AppLayout, Navbar
     },
 
-    props: ['articles', 'errors', 'tag', 'tags'],
+    props: ['articles', 'errors', 'tags'],
 
     data() {
         return {
@@ -213,6 +217,7 @@ export default {
                 date_debut: null,
                 date_fin: null,
                 statut: null,
+                tags:[],
             },
             form_update: {
                 titre: null,
@@ -223,10 +228,8 @@ export default {
                 date_debut: null,
                 date_fin: null,
                 statut: null,
-
                 tags: [],
             },
-            tags: [],
         }
     },
 

@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Validator;
 class ArticleController extends Controller
 {
     public function index(){
+        $tags = Tag::all();
         $articles = Article::with('tags')->get();
-        return Inertia::render('cafedusud/Articles', compact('articles'));
+        return Inertia::render('cafedusud/Articles', compact('articles', 'tags'));
     }
 
     public function show(Article $article){
@@ -45,9 +46,12 @@ class ArticleController extends Controller
             'date_debut' => ['nullable',],
             'date_fin' => ['nullable',],
             'statut' => ['required',],
+            'tags' => ['nullable', 'array'],
         ])->validate();
 
-        Article::create($valid_data);
+        $article = Article::create($valid_data);
+        $article->tags()->sync($request->input('tags'));
+
         session()->flash('flash.banner', 'Article créé avec succès');
         session()->flash('flash.bannerStyle', 'success');
     }
