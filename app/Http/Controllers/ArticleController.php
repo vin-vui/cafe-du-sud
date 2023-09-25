@@ -46,8 +46,10 @@ class ArticleController extends Controller
             'date_debut' => ['nullable',],
             'date_fin' => ['nullable',],
             'statut' => ['required',],
-            'tags' => ['nullable', 'array'],
+            'tags' => ['required'],
         ])->validate();
+
+        dd($request->input('tags'));
 
         $article = Article::create($valid_data);
         $article->tags()->sync($request->input('tags'));
@@ -66,9 +68,14 @@ class ArticleController extends Controller
             'date_debut' => ['nullable',],
             'date_fin' => ['nullable',],
             'statut' => ['required',],
+            'tags' => ['nullable'],
         ])->validate();
 
         $article->update($valid_data);
+        // $tagsToSync = array_filter($request->input('tags')); // Supprime les éléments vides du tableau
+
+        // dd($tagsToSync);
+        $article->tags()->sync($request->input('tags'));
 
         session()->flash('flash.banner', 'Article modifié avec succès');
         session()->flash('flash.bannerStyle', 'success');

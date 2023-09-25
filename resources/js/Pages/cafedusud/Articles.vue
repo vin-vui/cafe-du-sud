@@ -170,22 +170,16 @@
                     </select>
                 </div>
 
-                <!-- <div v-for="tag in selectedArticle.tags">
-                    <p class="bg-yellow-700 rounded w-1/4 mx-2 text-md"> {{ tag.nom }} </p>
-                </div>
-                <input v-model="form_update_tags"> -->
-
                 <div>
                     <label>tags</label>
                     <div v-for="tag in tags">
-                        <input type="checkbox" v-model="form_update.tags" :value="tag.id">
-                        <label>{{ tag.nom }}</label>
+                        <input type="checkbox" v-model="form_update.tags" :value="tag.id" :id="tag.id">
+                        <label :for="tag.id">{{ tag.nom }}</label>
                     </div>
                 </div>
 
             </div>
-            <button @click="console.log(selectedArticle.tags)" class="rounded bg-pink-500 px-2 py-1">selectedArticle</button>
-            <button @click="console.log(tags)" class="rounded bg-violet-500 px-2 py-1">tags</button>
+            <button @click="console.log(this.form_update.tags)" class="rounded bg-violet-500 px-2 py-1">thisformupdatetags</button>
             <button @click="update(selectedArticle)" class="rounded bg-amber-500 px-2 py-1">UPDATE</button>
         </div>
     </AppLayout>
@@ -245,8 +239,7 @@ export default {
                     this.form_update.date_debut = this.selectedArticle.date_debut;
                     this.form_update.date_fin = this.selectedArticle.date_fin;
                     this.form_update.statut = this.selectedArticle.statut;
-
-                    // this.form_update.tags = this.selectedArticle.tags.map(tag => tag.id);
+                    this.form_update.tags = this.selectedArticle.tags.map(tag => tag.id);
                 }
             },
             deep: true,
