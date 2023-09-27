@@ -43,7 +43,7 @@
                             </div>
                         </div>
 
-                        <!-- STATUS + SHOW BUTTON + DATE -->
+                        <!-- STATUS + DATE -->
                         <div class="flex justify-between">
                             <span
                                 :class="{ 'text-green-700': article.statut === 'en ligne', 'text-yellow-600': article.statut === 'en attente' }">
@@ -336,7 +336,6 @@ export default {
 
     data() {
         return {
-            isOpenShow: false,
             isOpenCreate: false,
             isOpenEdit: false,
             selectedArticle: null,
