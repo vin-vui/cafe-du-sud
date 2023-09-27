@@ -34,7 +34,7 @@
                         <span class=" mt-3"> {{ article.type }} </span>
                         <img :src=article.url class="h-">
                         <!-- <p class="mt-3"> {{ article.url }} </p> -->
-                        <p class="mt-3"> du {{ article.date_debut }} au {{ article.date_fin }} </p>
+                        <span class="mt-3"> du {{ article.date_debut }} au {{ article.date_fin }} </span>
 
                         <div class="flex gap-2">
                             <div v-for="tag in article.tags"
@@ -45,11 +45,11 @@
 
                         <!-- STATUS + SHOW BUTTON + DATE -->
                         <div class="flex justify-between">
-                            <p
+                            <span
                                 :class="{ 'text-green-700': article.statut === 'en ligne', 'text-yellow-600': article.statut === 'en attente' }">
-                                {{ article.statut }}</p>
-                            <button @click="show(article)" class="rounded bg-blue-400 px-2 py-1">Afficher</button>
-                            <p class="flex"> {{ article.date_publication }} </p>
+                                {{ article.statut }}</span>
+
+                            <span class="flex"> {{ article.date_publication }} </span>
                         </div>
 
                     </div>
@@ -64,7 +64,7 @@
             <div class=" w-6/12 p-6 bg-white my-auto rounded-lg">
                 <!-- CLOSE BUTTONS -->
                 <div class="flex items-center justify-end mb-3">
-                    <button @click="isOpenCreate = false" class="">
+                    <button @click="closeCreateModale" class="">
                         <svg class="w-6 h-6  fill-red-700 hover:fill-red-600" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 48 48">
                             <path
@@ -189,7 +189,7 @@
                     <button @click="destroy(selectedArticle)"
                         class="rounded text-red-800 hover:text-red-600 hover:underline px-2 py-1 capitalize-first">supprimer
                         l'article</button>
-                    <button @click="isOpenEdit = false" class="">
+                    <button @click="closeEditModale" class="">
                         <svg class="w-6 h-6  fill-red-700 hover:fill-red-600" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 48 48">
                             <path
@@ -388,9 +388,51 @@ export default {
 
 
     methods: {
-        show(article) {
-            this.selectedArticle = article;
-            this.isOpenShow = true;
+        closeCreateModale() {
+            this.resetCreateForm();
+            this.isOpenCreate = false;
+        },
+
+        closeEditModale() {
+            this.resetEditForm();
+            this.isOpenEdit = false;
+        },
+
+        resetCreateForm() {
+            // reinitialize form
+            this.form_create.titre = null;
+            this.form_create.contenu = null;
+            this.form_create.type = null;
+            this.form_create.url = null;
+            this.form_create.date_publication = null;
+            this.form_create.date_debut = null;
+            this.form_create.date_fin = null;
+            this.form_create.statut = null;
+            this.form_create.tags = [];
+
+            // reinitialize errors
+            this.errors.titre = null;
+            this.errors.contenu = null;
+            this.errors.type = null;
+            this.errors.url = null;
+            this.errors.date_publication = null;
+            this.errors.date_debut = null;
+            this.errors.date_fin = null;
+            this.errors.statut = null;
+            this.errors.tags = null;
+        },
+
+        resetEditForm() {
+            // reinitialize errors
+            this.errors.titre = null;
+            this.errors.contenu = null;
+            this.errors.type = null;
+            this.errors.url = null;
+            this.errors.date_publication = null;
+            this.errors.date_debut = null;
+            this.errors.date_fin = null;
+            this.errors.statut = null;
+            this.errors.tags = null;
         },
 
         edit(article) {
@@ -408,14 +450,24 @@ export default {
         },
 
         create() {
-            this.$inertia.post(route('articles.store'), this.form_create);
-            // this.isOpenCreate = false;
+            this.$inertia.post(route('articles.store'), this.form_create)
+                .then(() => {
+                    this.isOpenCreate = false;
+                })
         },
 
         destroy(article) {
-            // return confirm ('êtes-vous sûr de vouloir supprimer l'article ?');
-            this.$inertia.delete(route('articles.destroy', article))
-        },
+            const confirmed = window.confirm('Êtes-vous sûr de vouloir supprimer cet article ?');
+
+            if (confirmed) {
+                // L'utilisateur a confirmé la suppression, alors appelez la suppression ici
+                this.$inertia.delete(route('articles.destroy', article));
+            } else {
+                // L'utilisateur a annulé la suppression
+                // Vous pouvez ajouter ici du code à exécuter si l'utilisateur annule la suppression
+            }
+        }
+
 
     },
 }

@@ -49,8 +49,6 @@ class ArticleController extends Controller
             'tags' => ['required'],
         ])->validate();
 
-        dd($request->input('tags'));
-
         $article = Article::create($valid_data);
         $article->tags()->sync($request->input('tags'));
 
