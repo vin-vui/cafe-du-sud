@@ -93,6 +93,8 @@
                         <option value="en ligne">En ligne</option>
                     </select>
                 </div>
+                <button @click="create(form_create)"
+                class="mt-4 rounded border focus:ring-cyan-500 focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-50 active:bg-cyan-900 bg-cyan-800 hover:bg-cyan-700 font-medium w-full text-white px-2 py-1 uppercase">Créer un tag</button>
             </div>
         </div>
 
@@ -247,13 +249,17 @@ export default {
         },
 
         update(tag) {
-            this.$inertia.put(route('tags.update', tag), this.form_update);
-            this.isOpenEdit = false;
+            this.$inertia.put(route('tags.update', tag), this.form_update, {
+                preserveState: (page) => Object.keys(page.props.errors).length,
+                onSuccess: () => this.isOpenEdit = false,
+            });
         },
 
         create() {
-            this.$inertia.post(route('tags.store'), this.form_create);
-            this.isOpenCreate = true;
+            this.$inertia.post(route('tags.store'), this.form_create, {
+                preserveState: (page) => Object.keys(page.props.errors).length,
+                onSuccess: () => this.isOpenCreate = false,
+            })
         },
 
         destroy(tag) {

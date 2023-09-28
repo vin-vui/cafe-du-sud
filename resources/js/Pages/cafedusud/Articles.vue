@@ -175,7 +175,7 @@
                     <label class="capitalize-first">{{ tag.nom }}</label>
                 </div>
                 <button @click="create(form_create)"
-                    class="mt-4 rounded border focus:ring-cyan-500 focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-50 active:bg-cyan-900 bg-cyan-800 hover:bg-cyan-700 font-medium w-full text-white px-2 py-1 uppercase">CREATE</button>
+                    class="mt-4 rounded border focus:ring-cyan-500 focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-50 active:bg-cyan-900 bg-cyan-800 hover:bg-cyan-700 font-medium w-full text-white px-2 py-1 uppercase">Créer un article</button>
             </div>
         </div>
 
@@ -440,19 +440,17 @@ export default {
         },
 
         update(article) {
-            this.$inertia.put(route('articles.update', article), this.form_update);
-            // this.form_update.tags = article.tags.map(tag => tag.id);
-
-            // TODO: gérer les erreurs pour mettre la fermeture en condition if else
-            // FIXME:
-            this.isOpenEdit = false;
+            this.$inertia.put(route('articles.update', article), this.form_update, {
+                preserveState: (page) => Object.keys(page.props.errors).length,
+                onSuccess: () => this.isOpenEdit = false,
+            })
         },
 
         create() {
-            this.$inertia.post(route('articles.store'), this.form_create)
-                .then(() => {
-                    this.isOpenCreate = false;
-                })
+            this.$inertia.post(route('articles.store'), this.form_create, {
+                preserveState: (page) => Object.keys(page.props.errors).length,
+                onSuccess: () => this.isOpenCreate = false,
+            })
         },
 
         destroy(article) {
