@@ -2,6 +2,16 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 
+const plugin = require('tailwindcss/plugin')
+const capitalizeFirst = plugin(function ({ addUtilities }) {
+  const newUtilities = {
+    '.capitalize-first:first-letter': {
+      textTransform: 'uppercase',
+    },
+  }
+  addUtilities(newUtilities, ['responsive', 'hover'])
+})
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -20,5 +30,5 @@ export default {
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [forms, typography, capitalizeFirst],
 };
