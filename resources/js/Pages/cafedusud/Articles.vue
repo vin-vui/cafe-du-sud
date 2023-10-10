@@ -5,45 +5,49 @@
         <!-- INDEX ARTICLES -->
         <div class="flex flex-row flex-wrap">
             <div v-for="article in articles" class="w-1/4 justify-evenly">
-                <div class="bg-cyan-200 text-center mx-4 my-2">
-                    <p> {{ article.titre }} </p>
-                    <p> {{ article.contenu }} </p>
-                    <p> {{ article.type }} </p>
-                    <p> {{ article.url }} </p>
-                    <p> {{ article.date_publication }} </p>
-                    <p> {{ article.date_debut }} </p>
-                    <p> {{ article.date_fin }} </p>
-                    <p> {{ article.statut }} </p>
+                <!-- ARTICLE CARD -->
+                <div class="bg-slate-200 shadow-md border-2 border-slate-300 rounded-xl mx-4 my-2">
+                    <!-- CARD CONTENT -->
+                    <div class="mx-4 my-2 flex flex-col">
+                        <div class="flex justify-between">
+                            <h3 class="text-2xl text-slate-700 text-center"> {{ article.titre }} </h3>
+                            <!-- EDIT BUTTON -->
+                            <button @click="edit(article)" class="">
+                                <svg class="feather feather-edit" fill="none" height="24" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                </svg>
+                            </button>
+                        </div>
 
-                    <div v-for="tag in article.tags">
-                        <p class="bg-yellow-700 rounded w-1/4 mx-2 text-md"> {{ tag.nom }} </p>
+
+
+                        <p class="text-slate-700 mt-3"> {{ article.contenu }} </p>
+                        <span class=" mt-3"> {{ article.type }} </span>
+                        <img :src=article.url class="h-">
+                        <!-- <p class="mt-3"> {{ article.url }} </p> -->
+                        <span class="mt-3"> du {{ article.date_debut }} au {{ article.date_fin }} </span>
+
+                        <div class="flex gap-2">
+                            <div v-for="tag in article.tags"
+                                class="bg-yellow-50 px-2 py-1 text-yellow-700 ring-1 ring-inset ring-yellow-600/30 rounded text-md ">
+                                {{ tag.nom }}
+                            </div>
+                        </div>
+
+                        <!-- STATUS + DATE -->
+                        <div class="flex justify-between">
+                            <span
+                                :class="{ 'text-green-700': article.statut === 'en ligne', 'text-yellow-600': article.statut === 'en attente' }">
+                                {{ article.statut }}</span>
+
+                            <span class="flex"> {{ article.date_publication }} </span>
+                        </div>
+
                     </div>
-                    <button @click="show(article)" class="rounded bg-cyan-600 px-2 py-1">SHOW</button>
-                    <button @click="edit(article)" class="rounded bg-yellow-400 px-2 py-1">EDIT</button>
                 </div>
-            </div>
-        </div>
-        <button @click="this.isOpenCreate = true" class="rounded bg-green-500 px-2 py-1">ADD</button>
-
-        <!-- MODALE SHOW -->
-        <div v-if="isOpenShow" class="fixed top-0 bg-black/20 w-full h-full justify-center flex backdrop-blur-md">
-            <div class="bg-cyan-100/50">
-                <button @click="isOpenShow = false" class="bg-red-700 mr-auto">CLOSE</button>
-                <div>
-                    <p> {{ selectedArticle.titre }} </p>
-                    <p> {{ selectedArticle.contenu }} </p>
-                    <p> {{ selectedArticle.type }} </p>
-                    <p> {{ selectedArticle.image }} </p>
-                    <p> {{ selectedArticle.date_publication }} </p>
-                    <p> {{ selectedArticle.date_debut }} </p>
-                    <p> {{ selectedArticle.date_fin }} </p>
-                    <p> {{ selectedArticle.statut }} </p>
-
-                    <div v-for="tag in selectedArticle.tags">
-                        <p class="bg-yellow-700 rounded w-1/4 mx-2 text-md"> {{ tag.nom }} </p>
-                    </div>
-                </div>
-                <button @click="destroy(selectedArticle)" class="rounded bg-red-500 px-2 py-1">DELETE</button>
             </div>
         </div>
 
@@ -177,10 +181,7 @@
                         <label :for="tag.id">{{ tag.nom }}</label>
                     </div>
                 </div>
-
             </div>
-            <button @click="console.log(this.form_update.tags)" class="rounded bg-violet-500 px-2 py-1">thisformupdatetags</button>
-            <button @click="update(selectedArticle)" class="rounded bg-amber-500 px-2 py-1">UPDATE</button>
         </div>
     </AppLayout>
 </template>
@@ -211,7 +212,7 @@ export default {
                 date_debut: null,
                 date_fin: null,
                 statut: null,
-                tags:[],
+                tags: [],
             },
             form_update: {
                 titre: null,
