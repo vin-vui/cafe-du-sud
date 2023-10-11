@@ -172,18 +172,11 @@
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
-<<<<<<< Updated upstream
-
-export default {
-    components: {
-        AppLayout,
-=======
 
 
 export default {
     components: {
         AppLayout
->>>>>>> Stashed changes
     },
 
     props: ['tags', 'errors',],
