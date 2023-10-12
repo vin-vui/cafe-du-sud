@@ -45,3 +45,5 @@ Route::middleware([
 Route::resource("articles", ArticleController::class);
 Route::resource("tags", TagController::class);
 Route::resource("commentaires", CommentaireController::class);
+
+Route::get("/", [ArticleController::class, 'indexProchainsEvenements']);

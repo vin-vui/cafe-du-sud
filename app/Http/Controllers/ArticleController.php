@@ -17,6 +17,20 @@ class ArticleController extends Controller
         return Inertia::render('cafedusud/Articles', compact('articles', 'tags'));
     }
 
+    public function indexProchainsEvenements() {
+        $tags = Tag::all();
+        $articles = Article::with('tags')
+            ->prochainsEvenements()
+            ->get();
+
+            // dd($articles);
+
+            return Inertia::render('Welcome', [
+                'articles' => $articles,
+                'tags' => $tags,
+            ]);
+    }
+
     public function show(Article $article){
         $article->load('tags');
         // $article->load('tags', 'articles.tags');

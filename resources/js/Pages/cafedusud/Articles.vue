@@ -326,6 +326,7 @@
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
+import { capitalize } from 'vue';
 
 export default {
     components: {

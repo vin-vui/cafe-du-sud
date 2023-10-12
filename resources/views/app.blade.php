@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=abeezee:400,400i|alkatra:400,500,600,700|alumni-sans-inline-one:400,400i" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=dela-gothic-one:400" rel="stylesheet" />
 
 
         <!-- Scripts -->

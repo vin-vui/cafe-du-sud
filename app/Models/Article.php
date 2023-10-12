@@ -32,4 +32,13 @@ class Article extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+    public function scopeProchainsEvenements($query)
+    {
+        return $query->where('type', 'evenement') // prends les articles avec le type evenement
+            ->where('date_debut', '>', now()) // prends les evenements à venir uniquement
+            ->orderBy('date_debut', 'asc') // tris les evenements par date de début croissant
+            ->take(1); // récupére les 3 prochains événements
+    }
+
+
 }

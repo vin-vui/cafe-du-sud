@@ -30,11 +30,13 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
 
                 alumni : ['Alumni Sans Inline One'],
-                alkatra : ['Alkatra'],
+                Dela : ['Dela Gothic One'],
                 abeezee : ['ABeeZee'],
+
+                alkatra : ['Alkatra'],
             },
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [forms, typography, capitalizeFirst],
 };

@@ -29,12 +29,25 @@ const logout = () => {
 
 <template>
     <div>
+
         <Head :title="title" />
 
         <Banner />
         <div class="">
-            <nav class="backdrop-blur-sm bg-white/50 w-full fixed top-0">
-                <a>AA</a>
+            <nav class="backdrop-blur-sm bg-white/60 w-full fixed top-0">
+                <div class="w-10/12 bg-red-200 mx-auto py-2 flex justify-between">
+                    <img src="/images/logo.png">
+
+                    <!-- <NavLink :href="route('/')" :active="route().current('/')">
+                        Accueil
+                    </NavLink> -->
+
+                    <a class="capitalize my-auto font-abeezee" href="/">accueil</a>
+                    <a class="capitalize my-auto font-abeezee" href="/atelier_du_sud">atelier du sud</a>
+                    <a class="capitalize my-auto font-abeezee" href="/blog">blog</a>
+                    <a class="capitalize my-auto font-abeezee" href="/calendrier">calendrier</a>
+                    <a class="capitalize my-auto font-abeezee" href="/contact">contact</a>
+                </div>
             </nav>
 
 
