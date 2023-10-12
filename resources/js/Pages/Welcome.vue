@@ -85,72 +85,73 @@
         <section class="mt-32 w-10/12 mx-auto">
             <h2 class="w-full text-center font-alumni text-6xl capitalize-first">événement à venir</h2>
 
-            <!-- <button @click="console.log($articles)" class="px-2 py-1 bg-red-300 rounded">dd article</button> -->
-
             <!-- CARTES EVENEMENTS -->
-            <div class="flex justify-between mx-6">
-                <!-- Carte 1 -->
+            <!-- <div class="flex justify-between mx-6">
                 <div
                     class="w-3/12 h-[25rem] rounded-lg relative z-50 after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50">
-                    <!-- date -->
                     <div class="absolute bg-red-400 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
                         7 <br>septembre
                     </div>
-                    <!-- image -->
                     <img class="w-full" src="/images/image 7.png">
-                    <!-- titre -->
                     <h4 class="bg-white/50 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center">Atelier super
                     </h4>
-                    <!-- contenu -->
                     <p class="font-abeezee px-2 bottom-8 pt-4 pb-6 rounded-b-lg relative z-50 bg-red-200">Découvrez l'art de
                         l'improvisation théâtrale lors de notre prochain atelier ! Laissez libre cours à votre créativité et
                         libérez votre...</p>
                 </div>
-                <!-- Carte 2 -->
+
                 <div class="w-3/12 h-[25rem] rounded-lg relative z-50">
-                    <!-- date -->
                     <div class="absolute bg-[#CE7373] rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
                         7 <br>septembre
                     </div>
-                    <!-- image -->
                     <img class="w-full" src="/images/image 7.png">
-                    <!-- titre -->
                     <h4 class="bg-white/50 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center">Atelier super
                     </h4>
-                    <!-- contenu -->
                     <p class="font-abeezee px-2 bottom-8 pt-4 pb-6 rounded-b-lg relative z-50 bg-red-200">Découvrez l'art de
                         l'improvisation théâtrale lors de notre prochain atelier ! Laissez libre cours à votre créativité et
                         libérez votre...</p>
                 </div>
-                <!-- Carte 3 -->
+
+
                 <div
                     class="w-3/12 h-[25rem] rounded-lg relative z-50 after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50">
-                    <!-- date -->
                     <div class="absolute bg-red-400 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
                         7 <br>septembre
                     </div>
-                    <!-- image -->
                     <img class="w-full" src="/images/image 7.png">
-                    <!-- titre -->
                     <h4 class="bg-white/50 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center">Atelier super
                     </h4>
-                    <!-- contenu -->
                     <p class="font-abeezee px-2 bottom-8 pt-4 pb-6 rounded-b-lg relative z-50 bg-red-200">Découvrez l'art de
                         l'improvisation théâtrale lors de notre prochain atelier ! Laissez libre cours à votre créativité et
                         libérez votre...</p>
                 </div>
+            </div> -->
+
+
+
+            <div class="flex justify-between mx-6 mt-20">
+                <div v-for="(article, index) in articles" :class="['w-3/12 h-[25rem] rounded-lg relative z-50', index === 0 ? 'after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
+                    <!-- date -->
+                    <div class="absolute bg-[#CE7373] rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                        {{ article.date_debut }} - {{ article.date_fin }}
+                    </div>
+                    <!-- image -->
+                    <img class="w-full rounded-t-lg" :src="article.url">
+                    <!-- titre -->
+                    <h4 class="bg-white/50 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center">
+                        {{ article.titre.length > 16 ? article.titre.slice(0, 16) + '...' : article.titre }}
+                    </h4>
+                    <!-- contenu -->
+                    <p class="font-abeezee px-2 bottom-8 pt-4 pb-6 rounded-b-lg relative z-50 bg-red-200">
+                        {{ article.contenu }}
+                    </p>
+                </div>
             </div>
+
+
 
             <button class=" px-2 py-1 bg-violet-600 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-white">Découvrir
                 notre calendrier entier</button>
-
-
-            <!-- <div v-for="article in articles" class="w-3/12 bg-red-200 p-4">
-                    <p> {{ article.titre }} </p>
-                    <p> {{ article.contenu }} </p>
-                    <p> {{ article.date_debut }} </p>
-                    <p> {{ article.date_fin }} </p>
-                </div> -->
 
         </section>
 
