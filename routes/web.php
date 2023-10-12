@@ -23,15 +23,6 @@ use App\Http\controllers\CommentaireController;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -41,6 +32,12 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+
+Route::get('/blog', function () {
+    return Inertia::render('cafedusud/Blog');
+})->name('Blog');
+
 
 Route::resource("articles", ArticleController::class);
 Route::resource("tags", TagController::class);

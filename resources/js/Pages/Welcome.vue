@@ -1,14 +1,3 @@
-<script setup>
-import { Head, } from '@inertiajs/vue3';
-
-defineProps({
-    canLogin: Boolean,
-    canRegister: Boolean,
-    laravelVersion: String,
-    phpVersion: String,
-});
-</script>
-
 <template>
     <UserLayout>
 
@@ -16,7 +5,6 @@ defineProps({
         <div class="bg-[url('/images/bgImgLanding.png')] h-screen bg-no-repeat bg-cover bg-center flex">
             <h1 class="mx-auto mt-96 text-center font-alumni text-8xl text-white">Les Casas <br> atelier du sud - café du
                 sud</h1>
-
         </div>
 
         <!-- Section 2  - Atelier Du Sud  -->
@@ -119,8 +107,7 @@ defineProps({
                         libérez votre...</p>
                 </div>
                 <!-- Carte 2 -->
-                <div
-                    class="w-3/12 h-[25rem] rounded-lg relative z-50">
+                <div class="w-3/12 h-[25rem] rounded-lg relative z-50">
                     <!-- date -->
                     <div class="absolute bg-[#CE7373] rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
                         7 <br>septembre
@@ -154,15 +141,17 @@ defineProps({
                 </div>
             </div>
 
-            <button class=" px-2 py-1 bg-violet-600 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-white">Découvrir notre calendrier entier</button>
+            <button class=" px-2 py-1 bg-violet-600 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-white">Découvrir
+                notre calendrier entier</button>
 
 
-            <!-- <div v-for="article in articles" class="w-3/12 bg-red-200 p-4 top-[60px] absolute">
+            <!-- <div v-for="article in articles" class="w-3/12 bg-red-200 p-4">
                     <p> {{ article.titre }} </p>
                     <p> {{ article.contenu }} </p>
                     <p> {{ article.date_debut }} </p>
                     <p> {{ article.date_fin }} </p>
                 </div> -->
+
         </section>
 
         <!-- Section 4 - Newsletter partenaires footer -->
@@ -171,7 +160,8 @@ defineProps({
             <div class="flex-col w-full text-center mt-20">
                 <h4 class="font-alumni text-6xl ">Restons connectés</h4>
                 <p class="font-Dela w-full text-3xl mt-6">Inscrivez-vous à notre newsletter</p><br>
-                <p class="font-abeezee w-full text-lg mt-2">Pour recevoir toutes nos actualités directement dans votre boite mail</p>
+                <p class="font-abeezee w-full text-lg mt-2">Pour recevoir toutes nos actualités directement dans votre boite
+                    mail</p>
                 <div class="flex justify-center items-center">
                     <form class="">
                         <input class="h-11 rounded-l-lg w-96" type="email" name="email" placeholder="exemple@gmail.com">
@@ -205,38 +195,34 @@ defineProps({
             </div>
 
             <!-- footer -->
-            <nav class="w-10/12">
-
-                <div>
-
+            <nav class="w-10/12 mx-auto">
+                <div class="flex justify-between">
                     <!-- Pages Légales -->
-                    <div class="flex-col w-1/3 bg-red-100">
-                        <h4 class="capitalize-first">pages légales</h4>
-                        <p class="capitalize-first"><a>politique de confidentialité</a></p>
-                        <p class="capitalize-first"><a>condition générales d'utilisation</a></p>
-                        <p class="capitalize-first"><a>mentions légales</a></p>
-
+                    <div class="w-1/3 bg-red-100 p-4">
+                        <h4 class="capitalize-first font-Dela my-4">pages légales</h4>
+                        <p class="capitalize-first font-abeezee"><a>politique de confidentialité</a></p>
+                        <p class="capitalize-first font-abeezee my-1"><a>conditions générales d'utilisation</a></p>
+                        <p class="capitalize-first font-abeezee"><a>mentions légales</a></p>
                     </div>
 
                     <!-- Nous -->
-                    <div>
-
+                    <div class="w-1/3 bg-green-100 p-4 text-center">
+                        <h4 class="capitalize-first font-Dela my-4">Nous</h4>
+                        <p class="capitalize-first font-abeezee"><a>le café du sud</a></p>
+                        <p class="capitalize-first font-abeezee my-1"><a>l'atelier du sud</a></p>
+                        <p class="capitalize-first font-abeezee"><a>nous contacter</a></p>
                     </div>
 
                     <!-- L'atelier -->
-                    <div>
-
+                    <div class="w-1/3 p-4 ml-auto bg-blue-100 text-right font-abeezee">
+                        <img class="ml-auto" src="/images/logo.png">
+                        <p>04 60 85 42 01</p>
+                        <p>contact@AtelierDuSud.fr</p>
+                        <p>6 rue Bersot - 25000 Besançon</p>
                     </div>
-
                 </div>
-
             </nav>
-
-
         </section>
-
-
-
     </UserLayout>
 </template>
 
@@ -249,16 +235,24 @@ import { ref } from 'vue';  // Ajoutez cette ligne
 
 import UserLayout from '@/Layouts/UserLayout.vue'
 
-const articles = ref([]);  // Assurez-vous que cette variable est déclarée
 
 
 export default {
-    props: ['articles', 'errors', 'tags'],
+
+    components: {
+        UserLayout,
+    },
+
+    props: {
+        articles: {
+            type: Array,
+        },
+    },
+
     mounted() {
         console.log('Le composant Welcome est monté');
         console.log(articles);
     }
 };
 
-export { articles };  // Exposez articles pour y accéder dans le template
 </script>

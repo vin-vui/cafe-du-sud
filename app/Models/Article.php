@@ -39,6 +39,4 @@ class Article extends Model
             ->orderBy('date_debut', 'asc') // tris les evenements par date de début croissant
             ->take(1); // récupére les 3 prochains événements
     }
-
-
 }
