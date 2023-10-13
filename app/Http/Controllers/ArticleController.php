@@ -11,27 +11,43 @@ use Illuminate\Support\Facades\Validator;
 
 class ArticleController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $tags = Tag::all();
         $articles = Article::with('tags')->get();
         return Inertia::render('cafedusud/Articles', compact('articles', 'tags'));
     }
 
-    public function indexProchainsEvenements() {
+    public function indexProchainsTroisEvenements()
+    {
+        $tags = Tag::all();
+        $articles = Article::with('tags')
+            ->prochainsTroisEvenements()
+            ->get();
+
+        // dd($articles);
+
+        return Inertia::render('Welcome', [
+            'articles' => $articles,
+            'tags' => $tags,
+        ]);
+    }
+
+    public function indexProchainsEvenements()
+    {
         $tags = Tag::all();
         $articles = Article::with('tags')
             ->prochainsEvenements()
             ->get();
 
-            // dd($articles);
-
-            return Inertia::render('Welcome', [
-                'articles' => $articles,
-                'tags' => $tags,
-            ]);
+        return Inertia::render('cafedusud/Calendrier', [
+            'articles' => $articles,
+            'tags' => $tags,
+        ]);
     }
 
-    public function show(Article $article){
+    public function show(Article $article)
+    {
         $article->load('tags');
         // $article->load('tags', 'articles.tags');
         // $article->load('articles.tags');
@@ -40,7 +56,8 @@ class ArticleController extends Controller
         return Inertia::render('cafedusud/Article', compact('article'));
     }
 
-    public function destroy(Article $article){
+    public function destroy(Article $article)
+    {
         if ($article->delete()) {
             session()->flash('flash.banner', 'Article supprimé avec succès');
             session()->flash('flash.bannerStyle', 'success');
@@ -50,7 +67,8 @@ class ArticleController extends Controller
         }
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $valid_data = Validator::make($request->all(), [
             'titre' => ['required', 'max:47'],
             'contenu' => ['required'],
@@ -63,8 +81,6 @@ class ArticleController extends Controller
             'tags' => ['required'],
         ])->validate();
 
-        dd($request->input('tags'));
-
         $article = Article::create($valid_data);
         $article->tags()->sync($request->input('tags'));
 
@@ -72,7 +88,8 @@ class ArticleController extends Controller
         session()->flash('flash.bannerStyle', 'success');
     }
 
-    public function update(Request $request, Article $article){
+    public function update(Request $request, Article $article)
+    {
         $valid_data = Validator::make($request->all(), [
             'titre' => ['required', 'max:47'],
             'contenu' => ['required',],

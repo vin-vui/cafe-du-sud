@@ -39,8 +39,18 @@ Route::get('/blog', function () {
 })->name('Blog');
 
 
+Route::get('/calendrier', [ArticleController::class, 'indexProchainsEvenements'])->name('calendrier');
+
+
+Route::get('/contact', function () {
+    return Inertia::render('cafedusud/Contact');
+})->name('Contact');
+
+
+
 Route::resource("articles", ArticleController::class);
 Route::resource("tags", TagController::class);
 Route::resource("commentaires", CommentaireController::class);
 
-Route::get("/", [ArticleController::class, 'indexProchainsEvenements']);
+Route::get("/", [ArticleController::class, 'indexProchainsTroisEvenements']);
+

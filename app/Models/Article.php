@@ -32,11 +32,21 @@ class Article extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+    public function scopeProchainsTroisEvenements($query)
+    {
+        return $query->where('type', 'evenement') // prends les articles avec le type evenement
+            ->where('date_debut', '>', now()) // prends les evenements à venir uniquement
+            ->where('statut', 'en ligne') // prend les articles avec le statut "en ligne"
+            ->orderBy('date_debut', 'asc') // tris les evenements par date de début croissant
+            ->take(3); // récupére les 3 prochains événements
+    }
+
     public function scopeProchainsEvenements($query)
     {
         return $query->where('type', 'evenement') // prends les articles avec le type evenement
             ->where('date_debut', '>', now()) // prends les evenements à venir uniquement
-            ->orderBy('date_debut', 'asc') // tris les evenements par date de début croissant
-            ->take(3); // récupére les 3 prochains événements
+            ->where('statut', 'en ligne') // prend les articles avec le statut "en ligne"
+            ->orderBy('date_debut', 'asc'); // tris les evenements par date de début croissant
+            
     }
 }

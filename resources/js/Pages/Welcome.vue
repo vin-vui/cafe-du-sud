@@ -112,7 +112,6 @@
                         libérez votre...</p>
                 </div>
 
-
                 <div
                     class="w-3/12 h-[25rem] rounded-lg relative z-50 after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50">
                     <div class="absolute bg-red-400 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
@@ -127,10 +126,9 @@
                 </div>
             </div> -->
 
-
-
             <div class="flex justify-between mx-6 mt-20">
-                <div v-for="(article, index) in articles" :class="['w-3/12 h-[25rem] rounded-lg relative z-50', index === 0 ? 'after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
+                <div v-for="(article, index) in articles"
+                    :class="['w-3/12 rounded-lg relative z-50', index === 0 ? 'after:bg-orange-400 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
                     <!-- date -->
                     <div class="absolute bg-[#CE7373] rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
                         {{ article.date_debut }} - {{ article.date_fin }}
@@ -142,13 +140,11 @@
                         {{ article.titre.length > 16 ? article.titre.slice(0, 16) + '...' : article.titre }}
                     </h4>
                     <!-- contenu -->
-                    <p class="font-abeezee px-2 bottom-8 pt-4 pb-6 rounded-b-lg relative z-50 bg-red-200">
-                        {{ article.contenu }}
+                    <p class="font-abeezee px-2 bottom pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 bg-red-200">
+                        {{ article.contenu.length > 270 ? article.contenu.slice(0, 270) + '...' : article.contenu }}
                     </p>
                 </div>
             </div>
-
-
 
             <button class=" px-2 py-1 bg-violet-600 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-white">Découvrir
                 notre calendrier entier</button>
@@ -199,7 +195,7 @@
             <nav class="w-10/12 mx-auto">
                 <div class="flex justify-between">
                     <!-- Pages Légales -->
-                    <div class="w-1/3 bg-red-100 p-4">
+                    <div class="w-1/3 p-4">
                         <h4 class="capitalize-first font-Dela my-4">pages légales</h4>
                         <p class="capitalize-first font-abeezee"><a>politique de confidentialité</a></p>
                         <p class="capitalize-first font-abeezee my-1"><a>conditions générales d'utilisation</a></p>
@@ -207,7 +203,7 @@
                     </div>
 
                     <!-- Nous -->
-                    <div class="w-1/3 bg-green-100 p-4 text-center">
+                    <div class="w-1/ p-4 text-center">
                         <h4 class="capitalize-first font-Dela my-4">Nous</h4>
                         <p class="capitalize-first font-abeezee"><a>le café du sud</a></p>
                         <p class="capitalize-first font-abeezee my-1"><a>l'atelier du sud</a></p>
@@ -215,7 +211,7 @@
                     </div>
 
                     <!-- L'atelier -->
-                    <div class="w-1/3 p-4 ml-auto bg-blue-100 text-right font-abeezee">
+                    <div class="w-1/3 p-4 ml-aut text-right font-abeezee">
                         <img class="ml-auto" src="/images/logo.png">
                         <p>04 60 85 42 01</p>
                         <p>contact@AtelierDuSud.fr</p>
@@ -226,9 +222,6 @@
         </section>
     </UserLayout>
 </template>
-
-
-
 
 <script>
 import { Head } from '@inertiajs/vue3';

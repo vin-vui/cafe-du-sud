@@ -1,7 +1,7 @@
 <template >
     <UserLayout>
         <div>
-            <h2 class="mt-20 text-6xl font-alumni text-center">Nos articles</h2>
+            <h2 class="mt-20 text-6xl font-alumni text-center">Contact</h2>
         </div>
 
     </UserLayout>
