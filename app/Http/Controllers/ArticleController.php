@@ -18,6 +18,15 @@ class ArticleController extends Controller
         return Inertia::render('cafedusud/Articles', compact('articles', 'tags'));
     }
 
+    public function indexblog()
+    {
+        $tags = Tag::all();
+        $articles = Article::with('tags')
+        ->Blog()
+        ->get();
+        return Inertia::render('cafedusud/Blog', compact('articles', 'tags'));
+    }
+
     public function indexProchainsTroisEvenements()
     {
         $tags = Tag::all();
@@ -48,12 +57,10 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
-        $article->load('tags');
-        // $article->load('tags', 'articles.tags');
-        // $article->load('articles.tags');
-        // $tags = Tag::all();
-        // $article = Article::with('tags')->findOrFail($id);
-        return Inertia::render('cafedusud/Article', compact('article'));
+        $tags = Tag::all();
+        $articles = Article::with('tags');
+
+        return Inertia::render('cafedusud/ArticleDetails', compact('article'));
     }
 
     public function destroy(Article $article)

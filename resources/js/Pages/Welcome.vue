@@ -3,18 +3,18 @@
 
         <!-- Section 1  -->
         <div class="bg-[url('/images/bgImgLanding.png')] h-screen bg-no-repeat bg-cover bg-center flex">
-            <h1 class="mx-auto mt-96 text-center font-alumni text-8xl text-white">Les Casas <br> atelier du sud - café du
+            <h1 class="mx-auto mt-96 text-center font-alumni text-8xl text-blanc-1">Les Casas <br> atelier du sud - café du
                 sud</h1>
         </div>
 
         <!-- Section 2  - Atelier Du Sud  -->
         <section class="w-10/12 mx-auto">
-            <h2 class="capitalize font-alumni text-6xl justify-center flex my-8">l'Atelier du sud</h2>
+            <h2 class="capitalize font-alumni text-6xl justify-center flex my-8 ">l'Atelier du sud</h2>
             <!-- contenu 1 -->
             <div class="flex mt-28 justify-between">
                 <!-- Conteneur de l'image avec bordure -->
                 <div
-                    class="w-5/12 flex relative after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:z-0">
+                    class="w-5/12 flex relative after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:z-0">
                     <img class="rounded-lg relative z-10 h-full w-full" src="/images/image1.png" alt="Image 1">
                 </div>
 
@@ -52,7 +52,7 @@
 
                 <!-- Conteneur de l'image avec bordure -->
                 <div
-                    class="w-5/12 flex relative after:bg-orange-400 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:right-6 after:z-0">
+                    class="w-5/12 flex relative after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:right-6 after:z-0">
                     <img class="rounded-lg relative z-10 h-full w-full" src="/images/image2.png" alt="Image 1">
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <div class="flex mt-28 justify-between">
                 <!-- Conteneur de l'image avec bordure -->
                 <div
-                    class="w-5/12 flex relative after:bg-green-400 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:z-0">
+                    class="w-5/12 flex relative after:bg-vert-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:z-0">
                     <img class="rounded-lg relative z-10 h-full w-full" src="/images/image3.png" alt="Image 1">
                 </div>
 
@@ -89,7 +89,7 @@
             <!-- <div class="flex justify-between mx-6">
                 <div
                     class="w-3/12 h-[25rem] rounded-lg relative z-50 after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50">
-                    <div class="absolute bg-red-400 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                    <div class="absolute bg-red-400 rounded-br-lg rounded-tl-lg font-abeezee text-blanc-1 text-center">
                         7 <br>septembre
                     </div>
                     <img class="w-full" src="/images/image 7.png">
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="w-3/12 h-[25rem] rounded-lg relative z-50">
-                    <div class="absolute bg-[#CE7373] rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                    <div class="absolute bg-[#CE7373] rounded-br-lg rounded-tl-lg font-abeezee text-blanc-1 text-center">
                         7 <br>septembre
                     </div>
                     <img class="w-full" src="/images/image 7.png">
@@ -114,7 +114,7 @@
 
                 <div
                     class="w-3/12 h-[25rem] rounded-lg relative z-50 after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50">
-                    <div class="absolute bg-red-400 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                    <div class="absolute bg-red-400 rounded-br-lg rounded-tl-lg font-abeezee text-blanc-1 text-center">
                         7 <br>septembre
                     </div>
                     <img class="w-full" src="/images/image 7.png">
@@ -127,26 +127,27 @@
             </div> -->
 
             <div class="flex justify-between mx-6 mt-20">
-                <div v-for="(article, index) in articles"
-                    :class="['w-3/12 rounded-lg relative z-50', index === 0 ? 'after:bg-orange-400 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-violet-400 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
+                <a v-for="(article, index) in articles"  :key="article.id" :href="`/articles/${article.id}`"
+                    :class="['w-3/12 rounded-lg relative z-50 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']
+                    ">
                     <!-- date -->
-                    <div class="absolute bg-[#CE7373] rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                    <div class="absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-blanc-1 text-center">
                         {{ article.date_debut }} - {{ article.date_fin }}
                     </div>
                     <!-- image -->
-                    <img class="w-full rounded-t-lg" :src="article.url">
+                    <img class="w-full rounded-t-lg " :src="article.url">
                     <!-- titre -->
-                    <h4 class="bg-white/50 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center">
+                    <h4 class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center text-blanc-orange-1 group-hover:bg-violet-2/90">
                         {{ article.titre.length > 16 ? article.titre.slice(0, 16) + '...' : article.titre }}
                     </h4>
                     <!-- contenu -->
-                    <p class="font-abeezee px-2 bottom pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 bg-red-200">
+                    <p class="font-abeezee px-2 bottom pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 bg-blanc-1 ">
                         {{ article.contenu.length > 270 ? article.contenu.slice(0, 270) + '...' : article.contenu }}
                     </p>
-                </div>
+                </a>
             </div>
 
-            <button class=" px-2 py-1 bg-violet-600 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-white">Découvrir
+            <button class=" px-2 py-1 bg-violet-2 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">Découvrir
                 notre calendrier entier</button>
 
         </section>
@@ -163,7 +164,7 @@
                     <form class="">
                         <input class="h-11 rounded-l-lg w-96" type="email" name="email" placeholder="exemple@gmail.com">
                     </form>
-                    <button class="px-2 py-2 bg-violet-600 rounded-r-lg font-abeezee text-xl text-white">S'inscrire</button>
+                    <button class="px-2 py-2 bg-violet-2 rounded-r-lg font-abeezee text-xl text-blanc-1 hover:bg-violet-1 hover:ring">S'inscrire</button>
                 </div>
             </div>
 

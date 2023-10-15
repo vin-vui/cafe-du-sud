@@ -34,9 +34,13 @@ Route::middleware([
 });
 
 
-Route::get('/blog', function () {
-    return Inertia::render('cafedusud/Blog');
-})->name('Blog');
+// Route::get('/blog', function () {
+//     return Inertia::render('cafedusud/Blog');
+// })->name('Blog');
+
+Route::get('/blog', [ArticleController::class, 'indexBlog'])->name('blog');
+
+Route::get('/article/{article}', [ArticleController::class, 'show']);
 
 
 Route::get('/calendrier', [ArticleController::class, 'indexProchainsEvenements'])->name('calendrier');
