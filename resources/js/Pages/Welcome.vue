@@ -7,9 +7,46 @@
                 sud</h1>
         </div>
 
-        <!-- Section 2  - Atelier Du Sud  -->
-        <section class="w-10/12 mx-auto">
-            <h2 class="capitalize font-alumni text-6xl justify-center flex my-8 ">l'Atelier du sud</h2>
+<!-- Section 2  - Atelier Du Sud -->
+<section class="w-10/12 mx-auto">
+    <h2 class="capitalize font-alumni text-6xl justify-center flex mt-8 mb-4">l'Atelier du sud</h2>
+    <h3 class="font-Dela text-xl capitalize-first justify-center flex">en quelques points, qu'est-ce que c'est ?</h3>
+    <div class="w-full justify-between my-12 flex-col">
+        <!-- Point 1 -->
+        <div class="w-10/12 flex bg-bleu-1 rounded-xl  px-4 py-2">
+            <div>
+                <h4 class="font-Dela text-lg capitalize-first justify-center flex">🎨 L'Art sans limites 🎨</h4>
+                <p class="font-abeezee text-lg mt-2 p-2"> Plongez dans une programmation artistique qui n'a pas de
+                    règles. Tout le monde est le bienvenu, peu importe votre âge, genre ou niveau de compétence. L'Atelier du Sud vous pousse à explorer, collaborer et créer des projets novateurs. Osez l'expérience artistique sans frontières.</p>
+            </div>
+            <span class="ml-12 text-8xl">🖌️</span>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="w-10/12 flex ml-auto mt-20 bg-jaune-1 rounded-xl  px-4 py-2">
+            <span class="mr-12 text-8xl">👐</span>
+            <div>
+                <h4 class="font-Dela text-lg capitalize-first justify-center flex">🤝 Nous pour Vous 🤝</h4>
+                <p class="font-abeezee text-lg mt-2 p-2">Ce nouveau projet est un lieu de vie commun où chacun peut
+                    s'exprimer et s'épanouir. Ce bel avenir est porté par des valeurs fortes d'accessibilité,
+                    d'inclusivité et de collectif. Elle souhaite créer un monde meilleur, un monde où la culture est
+                    accessible à tous. Ce monde meilleur est un lieu où les arts se décloisonnent et où les cultures se
+                    rencontrent. C'est un lieu où chacun peut s'exprimer et s'épanouir.</p>
+            </div>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="w-10/12 flex mt-20 bg-rouge-1 rounded-xl px-4 py-2">
+            <div>
+                <h4 class="font-Dela text-lg capitalize-first justify-center flex">🌟 Créativité et partage 🌟</h4>
+                <p class="font-abeezee text-lg mt-2 p-2">L'Atelier du Sud, l'incubateur artistique de Besançon. Une
+                    association née de la passion, un lieu où chacun peut libérer son talent et se connecter. Explorez
+                    une programmation dynamique : ateliers créatifs, spectacles, débats et rencontres. Un espace
+                    foisonnant d'opportunités artistiques, à partager sans retenue.</p>
+            </div>
+            <span class="ml-12 text-8xl">✨</span>
+        </div>
+    </div>
             <!-- contenu 1 -->
             <div class="flex mt-28 justify-between">
                 <!-- Conteneur de l'image avec bordure -->
@@ -22,7 +59,7 @@
                 <div class="w-1/2 flex-col">
                     <p class="font-Dela text-3xl justify-center w-full inline-flex">Une programmation ouverte
                         à tous</p>
-                    <p class="font-abeezee text-lg mt-8 ">Cette programmation riche et variée s'adresse à tous, sans
+                    <p class="font-abeezee text-lg mt-8">Cette programmation riche et variée s'adresse à tous, sans
                         distinction
                         d'âge, de genre ou de niveau de compétence. L'atelier du sud est un lieu d'expérimentation et de
                         décloisonnement artistique.
@@ -127,8 +164,7 @@
             </div> -->
 
             <div class="flex justify-between mx-6 mt-20">
-                <a v-for="(article, index) in articles"  :key="article.id" :href="`/articles/${article.id}`"
-                    :class="['w-3/12 rounded-lg relative z-50 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']
+                <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`" :class="['w-3/12 rounded-lg relative z-50 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']
                     ">
                     <!-- date -->
                     <div class="absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-blanc-1 text-center">
@@ -137,7 +173,8 @@
                     <!-- image -->
                     <img class="w-full rounded-t-lg " :src="article.url">
                     <!-- titre -->
-                    <h4 class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center text-blanc-orange-1 group-hover:bg-violet-2/90">
+                    <h4
+                        class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center text-blanc-orange-1 group-hover:bg-violet-2/90">
                         {{ article.titre.length > 16 ? article.titre.slice(0, 16) + '...' : article.titre }}
                     </h4>
                     <!-- contenu -->
@@ -147,7 +184,8 @@
                 </a>
             </div>
 
-            <button class=" px-2 py-1 bg-violet-2 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">Découvrir
+            <button
+                class=" px-2 py-1 bg-violet-2 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">Découvrir
                 notre calendrier entier</button>
 
         </section>
@@ -164,7 +202,8 @@
                     <form class="">
                         <input class="h-11 rounded-l-lg w-96" type="email" name="email" placeholder="exemple@gmail.com">
                     </form>
-                    <button class="px-2 py-2 bg-violet-2 rounded-r-lg font-abeezee text-xl text-blanc-1 hover:bg-violet-1 hover:ring">S'inscrire</button>
+                    <button
+                        class="px-2 py-2 bg-violet-2 rounded-r-lg font-abeezee text-xl text-blanc-1 hover:bg-violet-1 hover:ring">S'inscrire</button>
                 </div>
             </div>
 
