@@ -13,7 +13,7 @@
     <h3 class="font-Dela text-xl capitalize-first justify-center flex">en quelques points, qu'est-ce que c'est ?</h3>
     <div class="w-full justify-between my-12 flex-col">
         <!-- Point 1 -->
-        <div class="w-10/12 flex bg-bleu-1 rounded-xl  px-4 py-2">
+        <div class="w-10/12 flex border-bleu-1 border-8 border-double rounded-xl px-4 py-2">
             <div>
                 <h4 class="font-Dela text-lg capitalize-first justify-center flex">🎨 L'Art sans limites 🎨</h4>
                 <p class="font-abeezee text-lg mt-2 p-2"> Plongez dans une programmation artistique qui n'a pas de
@@ -23,7 +23,7 @@
         </div>
 
         <!-- Point 2 -->
-        <div class="w-10/12 flex ml-auto mt-20 bg-jaune-1 rounded-xl  px-4 py-2">
+        <div class="w-10/12 flex ml-auto mt-20 border-jaune-1 border-8 border-double rounded-xl  px-4 py-2">
             <span class="mr-12 text-8xl">👐</span>
             <div>
                 <h4 class="font-Dela text-lg capitalize-first justify-center flex">🤝 Nous pour Vous 🤝</h4>
@@ -36,7 +36,7 @@
         </div>
 
         <!-- Point 3 -->
-        <div class="w-10/12 flex mt-20 bg-rouge-1 rounded-xl px-4 py-2">
+        <div class="w-10/12 flex mt-20 border-rouge-1 border-8 border-double rounded-xl px-4 py-2">
             <div>
                 <h4 class="font-Dela text-lg capitalize-first justify-center flex">🌟 Créativité et partage 🌟</h4>
                 <p class="font-abeezee text-lg mt-2 p-2">L'Atelier du Sud, l'incubateur artistique de Besançon. Une
