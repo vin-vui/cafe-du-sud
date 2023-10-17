@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('titre');
             $table->text('contenu');
-            $table->enum('type', ['evenement', 'actualite']);
+            $table->enum('type', ['evenement', 'blog']);
             $table->string('url');
             $table->date('date_publication');
-            $table->date('date_debut');
-            $table->date('date_fin');
+            $table->date('date_debut')->nullable();
+            $table->date('date_fin')->nullable();
             $table->enum('statut', ['en attente', 'en ligne']);
         });
     }
