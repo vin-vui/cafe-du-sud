@@ -110,9 +110,6 @@ class ArticleController extends Controller
         ])->validate();
 
         $article->update($valid_data);
-        // $tagsToSync = array_filter($request->input('tags')); // Supprime les éléments vides du tableau
-
-        // dd($tagsToSync);
         $article->tags()->sync($request->input('tags'));
 
         session()->flash('flash.banner', 'Article modifié avec succès');
