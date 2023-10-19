@@ -8,19 +8,19 @@
         </div>
 
         <!-- Carte de contact -->
-        <div class="w-10/12 mx-auto flex mt-20 relative z-50 after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:top-8 after:left-8 after:-z-50">
+        <div class="lg:w-10/12 mx-auto lg:flex mt-20 relative z-50  lg:after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:top-8 after:left-8 after:-z-50">
 
             <!-- after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50 -->
 
             <!-- Informations de contact -->
-            <div class="w-1/2 bg-orange-3 rounded-l-xl">
-                <h4 class="mt-8 text-xl font-Dela text-center w-8/12 mx-auto capitalize-first"> informations de contact</h4>
+            <div class="lg:w-1/2 bg-orange-3 rounded-l-xl">
+                <h4 class="mt-8 text-xl font-Dela text-center w-8/12 mx-auto capitalize-"> informations de contact</h4>
                 <p class="mt-4 font-abeezee mx-auto w-8/12 capitalize-first">remplissez ce formulaire pour nous envoyer un
                     message, nous vous
                     répondrons dès que possible.</p>
 
                 <!-- Renseignements -->
-                <div class="w-8/12 mx-auto mt-12 font-abeezee">
+                <div class="lg:w-8/12 -w mx-auto mt-12 font-abeezee w-10/12">
                     <!-- email -->
                     <div class="flex justify-between">
                         <div class="flex">
@@ -87,10 +87,10 @@
             </div>
 
             <!-- Formulaire de contact  -->
-            <div class="w-1/2 bg-blanc-1 font-abeezee rounded-r-xl">
+            <div class="lg:w-1/2 w-full bg-blanc-1 font-abeezee rounded-r-xl">
                 <form>
                     <!-- Prénom + Nom -->
-                    <div class="flex mb-4 justify-between px-4 py-8">
+                    <div class="lg:flex mb-4 justify-between px-4 py-8">
                         <!-- Prénom -->
                         <div class="group">
                             <label for="prenom"
@@ -102,7 +102,7 @@
 
 
                         <!-- Nom -->
-                        <div class="group">
+                        <div class="group my-6 lg:my-0">
                             <label for="nom" class="block capitalize-first group-focus-within:text-violet-1">nom</label>
                             <input type="text" id="nom" name="nom" placeholder="Dupont"
                                 class="bg-transparent border-0 border-b-2  border-gris-1 py-2 focus:ring-0 group-focus:border-violet-1 focus:border-violet-1 placeholder:italic placeholder:text-gris-2">
@@ -110,7 +110,7 @@
                     </div>
 
                     <!-- Email + Téléphone -->
-                    <div class="flex mb-4 justify-between px-4 py-8">
+                    <div class="lg:flex mb-4 justify-between px-4 py-8">
                         <!-- Email -->
                         <div class="group">
                             <label for="email" class="block capitalize-first group-focus-within:text-violet-1">email</label>
@@ -119,7 +119,7 @@
                         </div>
 
                         <!-- Téléphone -->
-                        <div class="group">
+                        <div class="group my-6 lg:my-0">
                             <label for="telephone"
                                 class="block capitalize-first group-focus-within:text-violet-1">téléphone</label>
                             <input type="tel" id="telephone" name="telephone"  placeholder="06XXXXXXXX"
@@ -131,7 +131,7 @@
                     <div class="mb-4 px-4 py-8 group">
                         <label for="message" class="block capitalize-first group-focus-within:text-violet-1">message</label>
                         <textarea id="message" name="message"  placeholder="Bonsoir, prévoyez-vous l'organisation d'un atelier pâte à crêpe ?"
-                            class="w-full  border-2 rounded  border-gris-1 py-2 focus:ring-0 group-focus:border-violet-1 focus:border-violet-1 placeholder:italic placeholder:text-gris-2 "></textarea>
+                            class="w-full border-2 rounded  border-gris-1 py-2 focus:ring-0 group-focus:border-violet-1 focus:border-violet-1 placeholder:italic placeholder:text-gris-2 "></textarea>
                     </div>
 
                     <button class=" px-2 py-1 mb-8 bg-violet-2 rounded-lg font-abeezee mx-auto flex mt-8 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">
