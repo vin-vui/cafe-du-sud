@@ -180,7 +180,10 @@
                 <div class="flex pt-28 justify-between px-4 lg:px-0">
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
-                        <p class="font-Dela text-3xl justify-center w-full inline-flex">Shon Lua</p>
+                        <div class="flex">
+                            <img class="h-40 lg:w-full" src="/images/logo-shonlua.jpg">
+                            <p class="font-Dela text-3xl justify-center w-full inline-flex">Shon Lua</p>
+                        </div>
                         <p class="font-abeezee text-lg mt-8">L'atelier du sud est une association qui œuvre pour la
                             promotion
                             des arts et de la culture à Besançon. Elle est née de la volonté d'un groupe de passionnés qui
@@ -273,9 +276,15 @@
                         <div class="lg:w-1/3 lg:px-8 px-2 my-12 lg:my-0">
                             <h4 class="capitalize-first font-Dela text-xl text-center mb-4">partenaires institutionnels</h4>
                             <div class="flex justify-between gap-2">
-                                <img class="h-14" src="/images/logo_besançon.png">
-                                <img class="h-14" src="/images/logo_doubs.png">
-                                <img class="h-14" src="/images/logo-prefecture.jpg">
+                                <a href="https://www.besancon.fr/">
+                                    <img class="h-14" src="/images/logo_besançon.png">
+                                </a>
+                                <a href="https://www.doubs.fr/">
+                                    <img class="h-14" src="/images/logo_doubs.png">
+                                </a>
+                                <a href="https://www.doubs.gouv.fr/">
+                                    <img class="h-14" src="/images/logo-prefecture.jpg">
+                                </a>
                             </div>
                         </div>
 
@@ -283,9 +292,15 @@
                         <div class="lg:w-1/3 lg:px-8 px-2 my-12 lg:my-0 lg:mx-20">
                             <h4 class="capitalize-first font-Dela text-xl text-center mb-4">grands partenaires</h4>
                             <div class="flex justify-between gap-2">
-                                <img class="h-14 " src="/images/logo-lvsl.png">
-                                <img class="h-14" src="/images/logo-adn.png">
-                                <img class="h-14 " src="/images/logo-spip.png">
+                                <a href="https://lvsl.fr/">
+                                    <img class="h-14 " src="/images/logo-lvsl.png">
+                                </a>
+                                <a href="https://www.danse-neuchatel.ch/2023/">
+                                    <img class="h-14" src="/images/logo-adn.png">
+                                </a>
+                                <a href="https://www.justice.gouv.fr/">
+                                    <img class="h-14 " src="/images/logo-spip.png">
+                                </a>
                             </div>
                         </div>
 
@@ -293,8 +308,13 @@
                         <div class="lg:w-1/3 lg:px-8 px-2 my-12 lg:my-0">
                             <h4 class="capitalize-first font-Dela text-xl text-center mb-4">partenaires medias</h4>
                             <div class="flex justify-between">
-                                <img class="h-14" src="/images/logo-linsatiable.png">
-                                <img class="h-14" src="/images/logo-radiosud.png">
+                                <a href="https://www.linsatiable.org/">
+                                    <img class="h-14" src="/images/logo-linsatiable.png">
+                                </a>
+
+                                <a href="https://radiosud.net/">
+                                    <img class="h-14" src="/images/logo-radiosud.png">
+                                </a>
                             </div>
                         </div>
                     </div>
