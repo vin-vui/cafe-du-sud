@@ -13,7 +13,7 @@
             </div>
 
             <!-- cartes blog -->
-            <div class="flex flex-wrap justify-between mx-6 mt-20">
+            <div class="lg:flex flex-wrap justify-between mx-6 mt-20">
                 <a v-for="(article, index) in articles"  :key="article.id" :href="`/articles/${article.id}`"
                     :class="['w-3/12 rounded-lg relative z-50 mx-8 my-4 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-jaune-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
                     <!-- image -->
@@ -24,16 +24,12 @@
                         {{ article.titre.length > 16 ? article.titre.slice(0, 16) + '...' : article.titre }}
                     </h4>
                     <!-- contenu -->
-                    <p class="font-abeezee px-2 bottom pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 bg-blanc-1 ">
+                    <p class="font-abeezee px-2 bottom pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 bg-blanc-bleu-1 ">
                         {{ article.contenu.length > 270 ? article.contenu.slice(0, 270) + '...' : article.contenu }}
                     </p>
                 </a>
             </div>
-
-
-
         </div>
-
     </UserLayout>
 </template>
 

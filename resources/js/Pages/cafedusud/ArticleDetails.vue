@@ -1,7 +1,7 @@
 <template>
     <UserLayout>
         <!-- Bouton retour -->
-        <button class="flex mt-20 ml-12 group" @click="Retour()">
+        <button class="flex mt-20 lg:ml-12 group fixed z-50 " @click="Retour()">
             <!-- Icone retour -->
             <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:stroke-violet-1" width="24" height="24"
                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -11,12 +11,12 @@
                 <path d="M5 12l6 6"></path>
                 <path d="M5 12l6 -6"></path>
             </svg>
-            <span class="ml-2">Retour</span>
+            <span class="ml-2 hidden lg:block">Retour</span>
         </button>
 
         <!-- Carte article détails -->
         <div
-            class="w-7/12 mx-auto flex-col relative after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50">
+            class="lg:w-7/12 mx-auto flex-col relative after:bg-orange-2 after:rounded-lg lg:after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50">
             <!-- Partie haute image / date -->
             <div class="flex-col relative text-center">
                 <img :src="article.url" class="w-full mx-auto rounded-t-xl" />

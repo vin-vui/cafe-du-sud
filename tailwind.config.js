@@ -68,11 +68,6 @@ export default {
                 'bleu-1': '#73CEC5',
                 'jaune-1': '#DFD25C',
                 'rouge-1': '#CE7373',
-
-
-
-
-
             },
         },
     },
