@@ -17,15 +17,14 @@
                 <div class="lg:flex flex-wrap justify-between mx-6 mt-20">
                     <a v-for="(article, index) in articles"  :key="article.id" :href="`/articles/${article.id}`"
                         :class="['w-3/12 rounded-lg relative z-50 mx-8 my-4 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-violet-2 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
-                        <!-- date -->
-
+                        <!-- dates -->
                         <!-- Si l'evenement n'a qu'une seule date -->
                         <div v-if="article.date_fin === null " class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
-                           le {{ article.date_debut }}
+                            Prévu le {{ moment(article.date_debut).format('DD/MM/YYYY') }}
                         </div>
                         <!-- Si l'evenement a 2 dates -->
                         <div v-else  class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
-                           du {{ article.date_debut }} au {{ article.date_fin }}
+                            Prévu du {{ moment(article.date_debut).format('DD/MM/YYYY') }} au {{ moment(article.date_fin).format('DD/MM/YYYY') }}
                         </div>
 
 
@@ -47,9 +46,15 @@
 
 <script>
 import UserLayout from '@/Layouts/UserLayout.vue'
+import moment from 'moment'
 
 export default {
     props: ['articles'],
+
+    data: () => ({
+      moment: moment
+   }),
+
 
     components: {
         UserLayout,

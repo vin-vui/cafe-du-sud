@@ -49,7 +49,7 @@
                                 :class="{ 'text-green-700': article.statut === 'en ligne', 'text-yellow-600': article.statut === 'en attente' }">
                                 {{ article.statut }}</span>
 
-                            <span class="flex"> {{ article.date_publication }} </span>
+                                Publié le {{ moment(article.date_publication).format('DD/MM/YYYY') }}
                         </div>
 
                     </div>
@@ -337,6 +337,7 @@ export default {
 
     data() {
         return {
+            moment: moment,
             isOpenCreate: false,
             isOpenEdit: false,
             selectedArticle: null,
@@ -362,6 +363,7 @@ export default {
                 statut: null,
                 tags: [],
             },
+
         }
     },
 
@@ -389,7 +391,7 @@ export default {
 
     methods: {
         closeCreateModale() {
-            
+
             this.resetCreateForm();
             this.isOpenCreate = false;
         },
