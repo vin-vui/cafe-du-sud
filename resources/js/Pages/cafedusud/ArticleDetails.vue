@@ -22,19 +22,23 @@
                 <img :src="article.url" class="w-full mx-auto rounded-t-xl" />
                 <div class="flex justify-center">
                     <!-- Si l'article est un billet de blog -->
-                    <p v-if="article.type === 'blog' " class="font-abeezee text-blanc-1 bottom-0 absolute bg-rouge-1 rounded-t-lg rounded-tl-lg px-6 py-2">
+                    <p v-if="article.type === 'blog'"
+                        class="font-abeezee text-blanc-1 bottom-0 absolute bg-rouge-1 rounded-t-lg rounded-tl-lg px-6 py-2">
                         Billet de blog
                     </p>
 
                     <!-- Si l'article est un évenement avec seulement seule date_début -->
-                    <p v-else-if="article.type === 'evenement' && article.date_fin === null" class="font-abeezee text-blanc-1 bottom-0 absolute bg-rouge-1 rounded-t-lg rounded-tl-lg px-6 py-2">
+                    <p v-else-if="article.type === 'evenement' && article.date_fin === null"
+                        class="font-abeezee text-blanc-1 bottom-0 absolute bg-rouge-1 rounded-t-lg rounded-tl-lg px-6 py-2">
                         Evénement prévu le {{ article.date_debut }}
                     </p>
 
                     <!-- Si l'article est un évenement avec date_début et date_fin -->
-                    <p v-else class="font-abeezee text-blanc-1 bottom-0 absolute bg-rouge-1 rounded-t-lg rounded-tl-lg px-6 py-2">
+                    <p v-else
+                        class="font-abeezee text-blanc-1 bottom-0 absolute bg-rouge-1 rounded-t-lg rounded-tl-lg px-6 py-2">
                         Evénement prévu du {{ article.date_debut }} au {{ article.date_fin }}
                     </p>
+
                 </div>
             </div>
 
@@ -42,6 +46,9 @@
             <div class="bg-orange-3 rounded-b-xl">
                 <p class="justify-center font-abeezee flex">
                     Publié le {{ article.date_publication }}
+                </p>
+                <p class="justify-center font-abeezee flex">
+                    Publié le {{ moment(article.date_publication).format('DD/MM/YYYY') }}
                 </p>
                 <h2 class="justify-center font-alumni flex text-6xl text-center ">
                     {{ article.titre }}
@@ -55,12 +62,16 @@
 
 <script>
 import UserLayout from '@/Layouts/UserLayout.vue'
+import moment from 'moment'
 
 export default {
     props: ['article'],
 
-    methods: {
+    data: () => ({
+      moment: moment
+   }),
 
+    methods: {
         Retour() {
             window.history.go(-1)
         },
