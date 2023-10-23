@@ -20,11 +20,11 @@
                         <!-- dates -->
                         <!-- Si l'evenement n'a qu'une seule date -->
                         <div v-if="article.date_fin === null " class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
-                            Prévu le {{ moment(article.date_debut).format('DD/MM/YYYY') }}
+                            Événement Prévu le {{ moment(article.date_debut).format('DD/MM/YYYY') }}
                         </div>
                         <!-- Si l'evenement a 2 dates -->
                         <div v-else  class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
-                            Prévu du {{ moment(article.date_debut).format('DD/MM/YYYY') }} au {{ moment(article.date_fin).format('DD/MM/YYYY') }}
+                            Événement Prévu du {{ moment(article.date_debut).format('DD/MM/YYYY') }} au {{ moment(article.date_fin).format('DD/MM/YYYY') }}
                         </div>
 
 
