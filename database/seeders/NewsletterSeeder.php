@@ -12,16 +12,16 @@ class NewsletterSeeder extends Seeder
 
     public function run(): void
     {
-        DB::table('newsletter')->insert([
+        DB::table('newsletters')->insert([
             'email' => 'courgette@gmail.com',
         ]);
 
-        DB::table('newsletter')->insert([
+        DB::table('newsletters')->insert([
             'email' => 'boson@gmail.com',
         ]);
 
 
-        DB::table('newsletter')->insert([
+        DB::table('newsletters')->insert([
             'email' => 'abeille@gmail.com',
         ]);
     }
