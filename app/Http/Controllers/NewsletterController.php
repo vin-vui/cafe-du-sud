@@ -23,4 +23,14 @@ class NewsletterController extends Controller
             session()->flash('flash.bannerStyle', 'danger');
         }
     }
+
+    public function store(Request $request){
+        $valid_data = Validator::make($request->all(), [
+            'email' => ['required', 'email'],
+        ])->validate();
+
+        Newsletter::create($valid_data);
+        session()->flash('flash.banner', 'Félicitations ! Votre email a bien été ajouté à la newsletter');
+        session()->flash('flash.bannerStyle', 'success');
+    }
 }
