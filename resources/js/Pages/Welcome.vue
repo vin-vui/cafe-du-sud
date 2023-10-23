@@ -217,10 +217,16 @@
                     <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`" :class="['w-3/12 rounded-lg relative z-50 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']
                         ">
                         <!-- date -->
-                        <div
-                            class="lg:absolute bg-rouge-1 lg:rounded-tl-lg lg:rounded-br-lg lg:rounded-tr-none lg:rounded-bl-none rounded-t-lg  font-abeezee text-blanc-1 text-center">
-                            {{ article.date_debut }} - {{ article.date_fin }}
+
+                        <!-- Si l'evenement n'a qu'une seule date -->
+                        <div v-if="article.date_fin === null " class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                            Événement Prévu le {{ moment(article.date_debut).format('DD/MM/YYYY') }}
                         </div>
+                        <!-- Si l'evenement a 2 dates -->
+                        <div v-else  class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                            Événement Prévu du {{ moment(article.date_debut).format('DD/MM/YYYY') }} au {{ moment(article.date_fin).format('DD/MM/YYYY') }}
+                        </div>
+
                         <!-- image -->
                         <img class="w-full lg:rounded-t-lg " :src="article.url">
                         <!-- titre -->
@@ -262,7 +268,6 @@
                     </div>
                 </div>
             </section>
-
 
             <section>
                 <!-- Partenaires -->
@@ -356,6 +361,7 @@
 <script>
 import { Head } from '@inertiajs/vue3';
 import { ref } from 'vue';  // Ajoutez cette ligne
+import moment from 'moment'; // Importez Moment.js
 
 import UserLayout from '@/Layouts/UserLayout.vue'
 
@@ -381,10 +387,10 @@ export default {
 
     data() {
         return {
+            moment: moment,
             form_create: {
                 email: null
-            }
-
+            },
         }
     },
 

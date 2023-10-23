@@ -34,7 +34,28 @@
                         <span class=" mt-3"> {{ article.type }} </span>
                         <img :src=article.url class="h-">
                         <!-- <p class="mt-3"> {{ article.url }} </p> -->
-                        <span class="mt-3"> du {{ article.date_debut }} au {{ article.date_fin }} </span>
+                        <!-- DATES -->
+                        <div class="py-2">
+                            <!-- Si l'article est un billet de blog -->
+                            <p v-if="article.type === 'blog'"
+                                class="">
+                                Billet de blog
+                            </p>
+
+                            <!-- Si l'article est un évenement avec seulement seule date_début -->
+                            <p v-else-if="article.type === 'evenement' && article.date_fin === null"
+                                class="">
+                                Événement prévu le {{ moment(article.date_debut).format('DD/MM/YYYY') }}
+                            </p>
+
+                            <!-- Si l'article est un évenement avec date_début et date_fin -->
+                            <p v-else
+                                class="">
+                                Événement prévu du {{ moment(article.date_debut).format('DD/MM/YYYY') }} au {{
+                                    moment(article.date_fin).format('DD/MM/YYYY') }}
+                            </p>
+                        </div>
+
 
                         <div class="flex gap-2">
                             <div v-for="tag in article.tags"
@@ -49,7 +70,7 @@
                                 :class="{ 'text-green-700': article.statut === 'en ligne', 'text-yellow-600': article.statut === 'en attente' }">
                                 {{ article.statut }}</span>
 
-                            <span class="flex"> {{ article.date_publication }} </span>
+                            Publié le {{ moment(article.date_publication).format('DD/MM/YYYY') }}
                         </div>
 
                     </div>
@@ -175,7 +196,8 @@
                     <label class="capitalize-first">{{ tag.nom }}</label>
                 </div>
                 <button @click="create(form_create)"
-                    class="mt-4 rounded border focus:ring-cyan-500 focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-50 active:bg-cyan-900 bg-cyan-800 hover:bg-cyan-700 font-medium w-full text-white px-2 py-1 uppercase">Créer un article</button>
+                    class="mt-4 rounded border focus:ring-cyan-500 focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-50 active:bg-cyan-900 bg-cyan-800 hover:bg-cyan-700 font-medium w-full text-white px-2 py-1 uppercase">Créer
+                    un article</button>
             </div>
         </div>
 
@@ -327,6 +349,8 @@
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
 import { capitalize } from 'vue';
+import moment from 'moment'
+
 
 export default {
     components: {
@@ -337,6 +361,7 @@ export default {
 
     data() {
         return {
+            moment: moment,
             isOpenCreate: false,
             isOpenEdit: false,
             selectedArticle: null,
@@ -362,6 +387,7 @@ export default {
                 statut: null,
                 tags: [],
             },
+
         }
     },
 
@@ -389,7 +415,7 @@ export default {
 
     methods: {
         closeCreateModale() {
-            
+
             this.resetCreateForm();
             this.isOpenCreate = false;
         },
