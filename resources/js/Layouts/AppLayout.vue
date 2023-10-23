@@ -64,6 +64,10 @@ const logout = () => {
                                     Commentaires
                                 </NavLink>
 
+                                <NavLink :href="route('newsletters.index')" :active="route().current('newsletters.index')">
+                                    Newsletters
+                                </NavLink>
+
 
                             </div>
                         </div>

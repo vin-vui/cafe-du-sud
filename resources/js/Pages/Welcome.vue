@@ -254,12 +254,10 @@
                     <p class="font-abeezee w-full text-lg mt-2">Pour recevoir toutes nos actualités directement dans votre
                         boite
                         mail</p>
-                    <div class="flex justify-center items-center">
-                        <form class="">
-                            <input class="h-11 rounded-l-lg lg:w-96" type="email" name="email"
-                                placeholder="exemple@gmail.com">
-                        </form>
-                        <button
+                    <div class="flex-col justify-center items-center my-6">
+                        <div v-if="errors.email" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.email }}</div>
+                        <input  placeholder="exemple@gmail.com" class="h-11 rounded-l-lg lg:w-96" v-model="form_create.email" type="email">
+                        <button @click="create()"
                             class="px-2 py-2 bg-violet-2 rounded-r-lg font-abeezee text-xl text-blanc-1 hover:bg-violet-1 hover:ring">S'inscrire</button>
                     </div>
                 </div>
@@ -372,6 +370,30 @@ export default {
     props: {
         articles: {
             type: Array,
+        },
+        newsletters: {
+            type: String,
+        },
+        errors: {
+            type: String,
+        }
+    },
+
+    data() {
+        return {
+            form_create: {
+                email: null
+            }
+
+        }
+    },
+
+
+    methods: {
+        create() {
+            this.$inertia.post(route('newsletters.store'), this.form_create, {
+                preserveState: (page) => Object.keys(page.props.errors).length,
+            })
         },
     },
 
