@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url(https://fonts.bunny.net/css?family=alkatra:400,500,600,700|alumni-sans-inline-one:400,400i);
+
 [x-cloak] {
     display: none;
 }
