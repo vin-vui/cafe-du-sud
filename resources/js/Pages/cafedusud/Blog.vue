@@ -25,7 +25,7 @@
                     </h4>
                     <!-- contenu -->
                     <p
-                        class="font-abeezee px-2 bottom-8 pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 lg:bg-blanc-bleu-1 bg-red-100 mb-20 lg:mb-0">
+                        class="whitespace-pre-line font-abeezee px-2 bottom-8 pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 lg:bg-blanc-bleu-1 bg-red-100 mb-20 lg:mb-0">
                         {{ article.contenu.length > 270 ? article.contenu.slice(0, 270) + '...' : article.contenu }}
                     </p>
                 </a>

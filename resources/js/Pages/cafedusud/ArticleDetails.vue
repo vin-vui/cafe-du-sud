@@ -50,7 +50,7 @@
                 <h2 class="justify-center font-alumni flex text-6xl text-center ">
                     {{ article.titre }}
                 </h2>
-                <p class="w-10/12 flex mx-auto font-abeezee">{{ article.contenu }}</p>
+                <p class="w-10/12 flex mx-auto font-abeezee whitespace-pre-line py-8">{{ article.contenu }}</p>
             </div>
         </div>
     </UserLayout>

@@ -27,6 +27,7 @@
                         <div class="flex ">
                             <h3 class="text-4xl font-alumni mb-4"> {{ article.titre }} </h3>
                         </div>
+
                         <!-- STATUS + DATE -->
                         <div class="flex-col py-2 border-t-2 border-t-black/50">
                             <span class="flex"
@@ -39,11 +40,11 @@
                         </div>
 
                         <!-- Contenu -->
-                        <p class="text-slate-700 border-t-2 border-t-black/50  font-abeezee pt-8"> {{ article.contenu }}
+                        <p class="text-slate-700 border-t-2 border-t-black/50 font-abeezee pt-8 whitespace-pre-line"> {{ article.contenu }}
                         </p>
-
-                        <img :src=article.url class="h-">
+                        <img :src=article.url class="">
                         <!-- <p class="mt-3"> {{ article.url }} </p> -->
+
                         <!-- DATES -->
                         <div class="py-2">
                             <!-- Si l'article est un billet de blog -->
