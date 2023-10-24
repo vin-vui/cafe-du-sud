@@ -35,12 +35,13 @@
                 <!-- image -->
                 <img class="w-full rounded-t-lg" :src="article.url">
                 <!-- titre -->
-                <h4
-                    class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center text-blanc-orange-1 group-hover:bg-violet-2/90">
-                    {{ article.titre.length > 16 ? article.titre.slice(0, 16) + '...' : article.titre }}
+                <h4 class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
+                    :class="article.titre.length < 25 ? 'py-4' : ''">
+                    {{ article.titre.length > 37 ? article.titre.slice(0, 47) + '...' : article.titre }}
                 </h4>
                 <!-- contenu -->
-                <p class="font-abeezee px-2 bottom pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 bg-blanc-bleu-1 ">
+                <p
+                    class="font-abeezee px-2 bottom-8 pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 lg:bg-blanc-bleu-1 bg-red-100 mb-20 lg:mb-0">
                     {{ article.contenu.length > 270 ? article.contenu.slice(0, 270) + '...' : article.contenu }}
                 </p>
             </a>
