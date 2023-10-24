@@ -45,7 +45,7 @@
                             <!-- Si l'article est un évenement avec seulement seule date_début -->
                             <p v-else-if="article.type === 'evenement' && article.date_fin === null"
                                 class="">
-                                Événement prévu le {{ moment(article.date_debut).format('DD/MM/YYYY') }}
+                                Prévu le {{ moment(article.date_debut).format('DD/MM/YYYY') }}
                             </p>
 
                             <!-- Si l'article est un évenement avec date_début et date_fin -->
