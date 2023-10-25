@@ -15,7 +15,7 @@
             <!-- cartes blog -->
             <div class="lg:flex flex-wrap justify-between mx-6 mt-20">
                 <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`"
-                    :class="['w-3/12 rounded-lg relative z-50 mx-8 my-4 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-jaune-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
+                    :class="['w-3/12 rounded-lg relative z-40 mx-8 my-4 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-jaune-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
                     <!-- image -->
                     <img class="w-full rounded-t-lg" :src="article.url">
                     <!-- titre -->

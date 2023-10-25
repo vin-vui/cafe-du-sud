@@ -139,14 +139,14 @@
                 </div>
 
                 <!-- DATE PUBLICATION -->
-                <div class="mt-3">
+                <!-- <div class="mt-3">
                     <div v-if="errors.date_publication" class="text-red-700 text-lg mx-auto flex justify-center">{{
                         errors.date_publication }}</div>
                     <label class="block mt-3 font-medium text-gray-700 capitalize-first">date de publication</label>
                     <input
                         class="block w-full mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                         v-model="form_create.date_publication" type="date">
-                </div>
+                </div> -->
 
                 <!-- DATE DEBUT + FIN -->
                 <div class="flex justify-between mt-3">

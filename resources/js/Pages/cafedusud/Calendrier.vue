@@ -16,7 +16,7 @@
         <!-- cartes evenements -->
         <div class="lg:flex flex-wrap justify-between mx-6 mt-20">
             <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`"
-                :class="['w-3/12 rounded-lg relative z-50 mx-8 my-4 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-violet-2 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
+                :class="['w-3/12 rounded-lg relative z-40 mx-8 my-4 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-violet-2 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
                 <!-- dates -->
                 <!-- Si l'evenement n'a qu'une seule date -->
                 <div v-if="article.date_fin === null"
@@ -36,8 +36,8 @@
                 <img class="w-full rounded-t-lg" :src="article.url">
                 <!-- titre -->
                 <h4 class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
-                    :class="article.titre.length < 25 ? 'py-4' : ''">
-                    {{ article.titre.length > 37 ? article.titre.slice(0, 47) + '...' : article.titre }}
+                    :class="article.titre.length < 29 ? 'py-4' : ''">
+                    {{ article.titre.length > 47 ? article.titre.slice(0, 47) + '...' : article.titre }}
                 </h4>
                 <!-- contenu -->
                 <p

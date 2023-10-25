@@ -82,7 +82,7 @@
 
 
         <!-- Section 3 - Les associations  -->
-        <div class="bg-blanc-1">
+        <div class="">
             <section class="lg:w-10/12 w-full mx-auto">
                 <!-- Ciconia theatre -->
                 <div class="flex pt-28 justify-between px-4 lg:px-0">
@@ -214,7 +214,7 @@
 
                 <!-- CARTES EVENEMENTS -->
                 <div class="lg:flex justify-between mx-6 mt-20">
-                    <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`" :class="['w-3/12 rounded-lg relative z-50 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']
+                    <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`" :class="['w-3/12 rounded-lg relative z-40 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']
                         ">
                         <!-- date -->
 
