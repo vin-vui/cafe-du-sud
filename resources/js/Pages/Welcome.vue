@@ -82,7 +82,7 @@
 
 
         <!-- Section 3 - Les associations  -->
-        <div class="bg-blanc-1">
+        <div class="">
             <section class="lg:w-10/12 w-full mx-auto">
                 <!-- Ciconia theatre -->
                 <div class="flex pt-28 justify-between px-4 lg:px-0">
@@ -214,7 +214,7 @@
 
                 <!-- CARTES EVENEMENTS -->
                 <div class="lg:flex justify-between mx-6 mt-20">
-                    <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`" :class="['w-3/12 rounded-lg relative z-50 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']
+                    <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`" :class="['w-3/12 rounded-lg relative z-40 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']
                         ">
                         <!-- date -->
 
@@ -231,12 +231,13 @@
                         <img class="w-full lg:rounded-t-lg " :src="article.url">
                         <!-- titre -->
                         <h4
-                            class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center text-blanc-orange-1 group-hover:bg-violet-2/90">
-                            {{ article.titre.length > 16 ? article.titre.slice(0, 16) + '...' : article.titre }}
+                            class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
+                            :class="article.titre.length < 25 ? 'py-4' : ''">
+                            {{ article.titre.length > 37 ? article.titre.slice(0, 47) + '...' : article.titre }}
                         </h4>
                         <!-- contenu -->
                         <p
-                            class="font-abeezee px-2 bottom pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 lg:bg-blanc-bleu-1 bg-red-100 mb-20 lg:mb-0">
+                            class="font-abeezee px-2 bottom-8 pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 lg:bg-blanc-bleu-1 bg-red-100 mb-20 lg:mb-0">
                             {{ article.contenu.length > 270 ? article.contenu.slice(0, 270) + '...' : article.contenu }}
                         </p>
                     </a>

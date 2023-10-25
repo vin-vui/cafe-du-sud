@@ -15,64 +15,62 @@
                 <div class="bg-slate-200 shadow-md border-2 border-slate-300 rounded-xl mx-4 my-2">
                     <!-- CARD CONTENT -->
                     <div class="mx-4 my-2 flex flex-col">
-                        <div class="flex justify-between">
-                            <h3 class="text-2xl text-slate-700 text-center"> {{ article.titre }} </h3>
-                            <!-- EDIT BUTTON -->
-                            <button @click="edit(article)" class="">
-                                <svg class="feather feather-edit" fill="none" height="24" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                    width="24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-                                </svg>
-                            </button>
+                        <!-- EDIT BUTTON -->
+                        <button @click="edit(article)" class="flex justify-end group">
+                            <svg class="feather feather-edit group-hover:stroke-violet-1" fill="none" height="24"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                            </svg>
+                        </button>
+                        <div class="flex ">
+                            <h3 class="text-4xl font-alumni mb-4"> {{ article.titre }} </h3>
                         </div>
 
+                        <!-- STATUS + DATE -->
+                        <div class="flex-col py-2 border-t-2 border-t-black/50">
+                            <span class="flex"
+                                :class="{ 'text-green-700': article.statut === 'en ligne', 'text-yellow-600': article.statut === 'en attente' }">
+                                {{ article.statut }}</span>
+                            <span class="flex my-3">Publié le : {{ moment(article.date_publication).format('DD/MM/YYYY')
+                            }}</span>
+                            <!-- Type -->
+                            <span class="flex">type : <span class="text-purple-600"> {{ article.type }}</span></span>
+                        </div>
 
-
-                        <p class="text-slate-700 mt-3"> {{ article.contenu }} </p>
-                        <span class=" mt-3"> {{ article.type }} </span>
-                        <img :src=article.url class="h-">
+                        <!-- Contenu -->
+                        <p class="text-slate-700 border-t-2 border-t-black/50 font-abeezee pt-8 whitespace-pre-line"> {{ article.contenu }}
+                        </p>
+                        <img :src=article.url class="">
                         <!-- <p class="mt-3"> {{ article.url }} </p> -->
+
                         <!-- DATES -->
                         <div class="py-2">
                             <!-- Si l'article est un billet de blog -->
-                            <p v-if="article.type === 'blog'"
-                                class="">
+                            <p v-if="article.type === 'blog'" class="">
                                 Billet de blog
                             </p>
 
                             <!-- Si l'article est un évenement avec seulement seule date_début -->
-                            <p v-else-if="article.type === 'evenement' && article.date_fin === null"
-                                class="">
+                            <p v-else-if="article.type === 'evenement' && article.date_fin === null" class="">
                                 Prévu le {{ moment(article.date_debut).format('DD/MM/YYYY') }}
                             </p>
 
                             <!-- Si l'article est un évenement avec date_début et date_fin -->
-                            <p v-else
-                                class="">
+                            <p v-else class="">
                                 Événement prévu du {{ moment(article.date_debut).format('DD/MM/YYYY') }} au {{
                                     moment(article.date_fin).format('DD/MM/YYYY') }}
                             </p>
                         </div>
 
-
                         <div class="flex gap-2">
+                            <span>tags :</span>
                             <div v-for="tag in article.tags"
                                 class="bg-yellow-50 px-2 py-1 text-yellow-700 ring-1 ring-inset ring-yellow-600/30 rounded text-md ">
                                 {{ tag.nom }}
                             </div>
                         </div>
-
-                        <!-- STATUS + DATE -->
-                        <div class="flex justify-between">
-                            <span
-                                :class="{ 'text-green-700': article.statut === 'en ligne', 'text-yellow-600': article.statut === 'en attente' }">
-                                {{ article.statut }}</span>
-
-                            Publié le {{ moment(article.date_publication).format('DD/MM/YYYY') }}
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -141,14 +139,14 @@
                 </div>
 
                 <!-- DATE PUBLICATION -->
-                <div class="mt-3">
+                <!-- <div class="mt-3">
                     <div v-if="errors.date_publication" class="text-red-700 text-lg mx-auto flex justify-center">{{
                         errors.date_publication }}</div>
                     <label class="block mt-3 font-medium text-gray-700 capitalize-first">date de publication</label>
                     <input
                         class="block w-full mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                         v-model="form_create.date_publication" type="date">
-                </div>
+                </div> -->
 
                 <!-- DATE DEBUT + FIN -->
                 <div class="flex justify-between mt-3">
@@ -321,7 +319,6 @@
                         </select>
                     </div>
 
-
                     <!-- TAGS -->
                     <div>
                         <div v-if="errors.tags" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.tags }}
@@ -341,8 +338,6 @@
                 </div>
             </div>
         </div>
-
-
     </AppLayout>
 </template>
 
