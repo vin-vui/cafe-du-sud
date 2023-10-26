@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             ArticleTagSeeder::class,
             CommentaireSeeder::class,
             NewsletterSeeder::class,
+            MessageSeeder::class,
         ]);
+
     }
 }

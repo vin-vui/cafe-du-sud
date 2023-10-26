@@ -343,7 +343,6 @@
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
-import { capitalize } from 'vue';
 import moment from 'moment'
 
 

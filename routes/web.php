@@ -8,11 +8,13 @@ use App\Models\Article;
 use App\Models\Tag;
 use App\Models\Commentaire;
 use App\Models\Newsletter;
+use App\Models\Message;
 
 use App\Http\controllers\ArticleController;
 use App\Http\controllers\TagController;
 use App\Http\controllers\CommentaireController;
 use App\Http\controllers\NewsletterController;
+use App\Http\controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,11 +37,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
-// Route::get('/blog', function () {
-//     return Inertia::render('cafedusud/Blog');
-// })->name('Blog');
-
 Route::get('/blog', [ArticleController::class, 'indexBlog'])->name('blog');
 
 Route::get('/article/{article}', [ArticleController::class, 'show']);
@@ -58,6 +55,7 @@ Route::resource("articles", ArticleController::class);
 Route::resource("tags", TagController::class);
 Route::resource("commentaires", CommentaireController::class);
 Route::resource("newsletters", NewsletterController::class);
+Route::resource("messages", MessageController::class);
 
 Route::get("/", [ArticleController::class, 'indexProchainsTroisEvenements']);
 
