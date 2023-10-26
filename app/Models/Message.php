@@ -9,8 +9,8 @@ class Message extends Model
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        'name',
         'surname',
+        'name',
         'email',
         'phone',
         'content',

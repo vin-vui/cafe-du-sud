@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
+
 use App\Models\Message;
 
 use Illuminate\Http\Request;
@@ -14,13 +15,17 @@ class MessageController extends Controller
         return Inertia::render('cafedusud/Messages', compact('messages'));
     }
 
-    // public function store(Request $request){
-    //     $valid_data = Validator::make($request->all(), [
-    //         'email' => ['required', 'email'],
-    //     ])->validate();
+    public function store(Request $request){
+        $valid_data = Validator::make($request->all(), [
+            'surname' => ['required', 'max:25'],
+            'name' => ['required', 'max:25'],
+            'email' => ['required', 'max:25', 'email'],
+            'phone' => ['required', 'max:25', 'integer'],
+            'content' => ['required',],
+        ])->validate();
 
-    //     Newsletter::create($valid_data);
-    //     session()->flash('flash.banner', 'Félicitations ! Votre email a bien été ajouté à la newsletter');
-    //     session()->flash('flash.bannerStyle', 'success');
-    // }
+        Message::create($valid_data);
+        session()->flash('flash.banner', 'Votre message a bien été envoyé !');
+        session()->flash('flash.bannerStyle', 'success');
+    }
 }

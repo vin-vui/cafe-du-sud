@@ -37,11 +37,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
-// Route::get('/blog', function () {
-//     return Inertia::render('cafedusud/Blog');
-// })->name('Blog');
-
 Route::get('/blog', [ArticleController::class, 'indexBlog'])->name('blog');
 
 Route::get('/article/{article}', [ArticleController::class, 'show']);
