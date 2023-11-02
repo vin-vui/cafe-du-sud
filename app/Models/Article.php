@@ -22,9 +22,9 @@ class Article extends Model
         'status',
     ];
 
-    public function commentaire(): HasMany
+    public function comment(): HasMany
     {
-        return $this->hasMany(Commentaire::class);
+        return $this->hasMany(Comment::class);
     }
 
     public function tags() : BelongsToMany
