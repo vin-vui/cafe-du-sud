@@ -35,7 +35,7 @@ class CommentController extends Controller
             'statut' => ['required',],
             'date_publication' => ['nullable'],
             'contenu' => ['required'],
-            'date' => now,
+            'date' => ['required'],
         ])->validate();
 
         Comment::create($valid_data);

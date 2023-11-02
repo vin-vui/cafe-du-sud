@@ -24,7 +24,6 @@ defineProps({
                         Accueil
                     </NavLink> -->
                     <a class="capitalize my-auto font-abeezee" href="/">accueil</a>
-                    <a class="capitalize my-auto font-abeezee" href="/atelier_du_sud">atelier du sud</a>
                     <a class="capitalize my-auto font-abeezee" href="/blog">blog</a>
                     <a class="capitalize my-auto font-abeezee" href="/calendrier">calendrier</a>
                     <a class="capitalize my-auto font-abeezee" href="/contact">contact</a>
