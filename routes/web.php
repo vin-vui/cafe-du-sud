@@ -42,7 +42,7 @@ Route::get('/blog', [ArticleController::class, 'indexBlog'])->name('blog');
 Route::get('/article/{article}', [ArticleController::class, 'show']);
 
 
-Route::get('/calendrier', [ArticleController::class, 'indexProchainsEvenements'])->name('calendrier');
+Route::get('/calendrier', [ArticleController::class, 'indexNextEvents'])->name('calendrier');
 
 
 Route::get('/contact', function () {
@@ -57,5 +57,5 @@ Route::resource("commentaires", CommentaireController::class);
 Route::resource("newsletters", NewsletterController::class);
 Route::resource("messages", MessageController::class);
 
-Route::get("/", [ArticleController::class, 'indexProchainsTroisEvenements']);
+Route::get("/", [ArticleController::class, 'indexNextThreeEvents']);
 

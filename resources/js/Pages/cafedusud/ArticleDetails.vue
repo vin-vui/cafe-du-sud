@@ -28,15 +28,15 @@
                     </p>
 
                     <!-- Si l'article est un évenement avec seulement seule date_début -->
-                    <p v-else-if="article.type === 'evenement' && article.date_fin === null"
+                    <p v-else-if="article.type === 'evenement' && article.end_date === null"
                         class="font-abeezee text-blanc-1 bottom-0 absolute bg-rouge-1 rounded-t-lg rounded-tl-lg px-6 py-2">
-                        Événement prévu le {{ moment(article.date_debut).format('DD/MM/YYYY') }}
+                        Événement prévu le {{ moment(article.begin_date).format('DD/MM/YYYY') }}
                     </p>
 
-                    <!-- Si l'article est un évenement avec date_début et date_fin -->
+                    <!-- Si l'article est un évenement avec date_début et end_date -->
                     <p v-else
                         class="font-abeezee text-blanc-1 bottom-0 absolute bg-rouge-1 rounded-t-lg rounded-tl-lg px-6 py-2">
-                        Événement prévu du {{ moment(article.date_debut).format('DD/MM/YYYY') }} au {{ moment(article.date_fin).format('DD/MM/YYYY') }}
+                        Événement prévu du {{ moment(article.begin_date).format('DD/MM/YYYY') }} au {{ moment(article.end_date).format('DD/MM/YYYY') }}
                     </p>
 
                 </div>
@@ -45,12 +45,12 @@
             <!-- Partie basse / Texte -->
             <div class="bg-orange-3 rounded-b-xl">
                 <p class="justify-center font-abeezee flex">
-                    Publié le {{ moment(article.date_publication).format('DD/MM/YYYY') }}
+                    Publié le {{ moment(article.publication_date).format('DD/MM/YYYY') }}
                 </p>
                 <h2 class="justify-center font-alumni flex text-6xl text-center ">
                     {{ article.titre }}
                 </h2>
-                <p class="w-10/12 flex mx-auto font-abeezee whitespace-pre-line py-8">{{ article.contenu }}</p>
+                <p class="w-10/12 flex mx-auto font-abeezee whitespace-pre-line py-8">{{ article.content }}</p>
             </div>
         </div>
     </UserLayout>
