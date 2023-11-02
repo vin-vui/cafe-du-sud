@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Validator;
 
 class CommentController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $comments = Comment::all();
         return Inertia::render('cafedusud/Comments', compact('comments'));
     }
