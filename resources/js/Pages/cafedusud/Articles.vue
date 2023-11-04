@@ -28,7 +28,7 @@
                             <h3 class="text-4xl font-alumni mb-4"> {{ article.title }} </h3>
                         </div>
 
-                        <!-- STATUS + DATE -->
+                        <!-- STATUS + DATE + TYPE -->
                         <div class="flex-col py-2 border-t-2 border-t-black/50">
                             <span class="flex"
                                 :class="{ 'text-green-700': article.status === 'en ligne', 'text-yellow-600': article.status === 'en attente' }">
@@ -39,11 +39,10 @@
                             <span class="flex">type : <span class="text-purple-600"> {{ article.type }}</span></span>
                         </div>
 
-                        <!-- content -->
+                        <!-- CONTENT -->
                         <p class="text-slate-700 border-t-2 border-t-black/50 font-abeezee pt-8 whitespace-pre-line"> {{ article.content }}
                         </p>
                         <img :src=article.url class="">
-                        <!-- <p class="mt-3"> {{ article.url }} </p> -->
 
                         <!-- DATES -->
                         <div class="py-2">
@@ -138,16 +137,6 @@
                         v-model="form_create.url" type="url">
                 </div>
 
-                <!-- DATE PUBLICATION -->
-                <!-- <div class="mt-3">
-                    <div v-if="errors.publication_date" class="text-red-700 text-lg mx-auto flex justify-center">{{
-                        errors.publication_date }}</div>
-                    <label class="block mt-3 font-medium text-gray-700 capitalize-first">date de publication</label>
-                    <input
-                        class="block w-full mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                        v-model="form_create.publication_date" type="date">
-                </div> -->
-
                 <!-- DATE DEBUT + FIN -->
                 <div class="flex justify-between mt-3">
                     <!-- DATE DEBUT -->
@@ -159,7 +148,6 @@
                             class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_create.begin_date" type="date">
                     </div>
-
                     <!-- DATE FIN -->
                     <div>
                         <div v-if="errors.end_date" class="text-red-700 text-lg mx-auto flex justify-center">{{
@@ -170,10 +158,9 @@
                             class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_create.end_date" type="date">
                     </div>
-
                 </div>
 
-                <!-- status -->
+                <!-- STATUT -->
                 <div class="mt-3">
                     <div v-if="errors.status" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.status }}
                     </div>
@@ -409,7 +396,6 @@ export default {
 
     methods: {
         closeCreateModale() {
-
             this.resetCreateForm();
             this.isOpenCreate = false;
         },

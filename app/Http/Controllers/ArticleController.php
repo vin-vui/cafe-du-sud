@@ -77,17 +77,17 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $valid_data = Validator::make($request->all(), [
-            'titre' => ['required', 'min:10', 'max:70'],
-            'contenu' => ['required', 'min:100'],
+            'title' => ['required', 'min:10', 'max:70'],
+            'content' => ['required', 'min:100'],
             'type' => ['required',],
             'url' => ['nullable',],
-            'date_debut' => ['nullable', 'date', 'after:now'],
-            'date_fin' => ['nullable', 'date',  'after:date_debut'],
-            'statut' => ['required',],
+            'begin_date' => ['nullable', 'date', 'after:now'],
+            'end_date' => ['nullable', 'date',  'after:begin_date'],
+            'status' => ['required',],
             'tags' => ['nullable',],
         ])->validate();
 
-        $valid_data['date_publication'] = now();
+        $valid_data['publication_date'] = now();
 
         $article = Article::create($valid_data);
         $article->tags()->sync($request->input('tags'));
@@ -99,14 +99,14 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $valid_data = Validator::make($request->all(), [
-            'titre' => ['required',],
-            'contenu' => ['required',],
+            'title' => ['required',],
+            'content' => ['required',],
             'type' => ['required',],
             'url' => ['nullable',],
             'date_publication' => ['nullable', 'date',],
-            'date_debut' => ['nullable', 'date', 'after:now'],
-            'date_fin' => ['nullable', 'date',  'after:date_debut'],
-            'statut' => ['required',],
+            'begin_date' => ['nullable', 'date', 'after:now'],
+            'end_date' => ['nullable', 'date',  'after:begin_date'],
+            'status' => ['required',],
             'tags' => ['nullable',],
         ])->validate();
 
