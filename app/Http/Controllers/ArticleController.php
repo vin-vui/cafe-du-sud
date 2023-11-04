@@ -27,11 +27,11 @@ class ArticleController extends Controller
         return Inertia::render('cafedusud/Blog', compact('articles', 'tags'));
     }
 
-    public function indexProchainsTroisEvenements()
+    public function indexNextThreeEvents()
     {
         $tags = Tag::all();
         $articles = Article::with('tags')
-            ->prochainsTroisEvenements()
+            ->nextThreeEvents()
             ->get();
 
         // dd($articles);
@@ -42,11 +42,11 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function indexProchainsEvenements()
+    public function indexNextEvents()
     {
         $tags = Tag::all();
         $articles = Article::with('tags')
-            ->prochainsEvenements()
+            ->nextEvents()
             ->get();
 
         return Inertia::render('cafedusud/Calendrier', [

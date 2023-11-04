@@ -60,7 +60,7 @@ const logout = () => {
                                     Tags
                                 </NavLink>
 
-                                <NavLink :href="route('commentaires.index')" :active="route().current('commentaires.index')">
+                                <NavLink :href="route('comments.index')" :active="route().current('comments.index')">
                                     Commentaires
                                 </NavLink>
 

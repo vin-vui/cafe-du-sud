@@ -30,8 +30,8 @@ class TagController extends Controller
 
     public function store(Request $request){
         $valid_data = Validator::make($request->all(), [
-            'nom' => ['required',],
-            'statut' => ['required',],
+            'name' => ['required',],
+            'status' => ['required',],
             'description' => ['required'],
         ])->validate();
 
@@ -42,8 +42,8 @@ class TagController extends Controller
 
     public function update(Request $request, Tag $tag){
         $valid_data = Validator::make($request->all(), [
-            'nom' => ['required',],
-            'statut' => ['required',],
+            'name' => ['required',],
+            'status' => ['required',],
             'description' => ['required'],
         ])->validate();
 

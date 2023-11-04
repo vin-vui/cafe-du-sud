@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('name');
             $table->text('description');
-            $table->enum('statut', ['en attente', 'en ligne']);
+            $table->enum('status', ['en attente', 'en ligne']);
         });
     }
 

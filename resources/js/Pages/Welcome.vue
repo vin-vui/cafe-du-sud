@@ -11,17 +11,17 @@
         <div class="bg-orange-3">
             <section class="w-full mx-auto bg-blanc-1 px-4 sm:w-10/12">
                 <h2 class="capitalize font-alumni text-6xl justify-center flex pt-8 mb-4 text-center">l'Atelier du sud</h2>
-                <h3 class="font-Dela text-xl capitalize-first justify-center flex text-center">en quelques points, qu'est-ce
+                <span class="font-Dela text-xl capitalize-first justify-center flex text-center">en quelques points, qu'est-ce
                     que c'est ?
-                </h3>
+                </span>
                 <div class="w-full justify-between py-12 flex-col">
                     <!-- Point 1 -->
                     <div
                         class="w-full my-12 border-jaune-1 border-8 border-double rounded-xl lg:px-4 lg:py-2 lg:w-10/12 lg:flex">
                         <span class="mr-12 hidden lg:text-8xl lg:block">👐</span>
                         <div>
-                            <h4 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🤝 Un lieu
-                                🤝</h4>
+                            <h3 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🤝 Un lieu
+                                🤝</h3>
                             <p class="font-abeezee text-lg mt-2 p-2 pb-8">
                                 L'Atelier Du Sud c'est avant tout la maison de toutes nos associations,
                                 un laboratoire dans lequel nous experimentons les limites de l'art et un lieu de vie commun
@@ -41,8 +41,8 @@
                     <div
                         class="w-full my-12 border-bleu-1 border-8 border-double rounded-xl lg:ml-auto lg:px-4 lg:py-2 lg:w-10/12 lg:flex">
                         <div>
-                            <h4 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🎨 L'Art
-                                sans limites 🎨</h4>
+                            <h3 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🎨 L'Art
+                                sans limites 🎨</h3>
                             <p class="font-abeezee text-lg mt-2 p-2">
                                 Explorez une programmation dynamique : ateliers créatifs, spectacles, débats et rencontres.
                                 Un
@@ -65,8 +65,8 @@
                         class="w-full my-12 border-rouge-1 border-8 border-double rounded-xl lg:px-4 lg:py-2 lg:w-10/12 lg:flex">
                         <span class="mr-12 hidden lg:text-8xl lg:block">✨</span>
                         <div>
-                            <h4 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🌟 Des
-                                valeurs fortes 🌟</h4>
+                            <h3 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🌟 Des
+                                valeurs fortes 🌟</h3>
                             <p class="font-abeezee text-lg mt-2 p-2">Une association née de la passion, un lieu où chacun
                                 peut
                                 libérer son talent et se connecter. Etant particulièrement sensible aux valeurs
@@ -96,7 +96,7 @@
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
                             <img src="/images/logo-ciconia.png" class="">
-                            <p class="font-Dela text-3xl justify-center w-full inline-flex">Ciconia Théâtre</p>
+                            <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Ciconia Théâtre</h3>
                         </div>
 
                         <p class="font-abeezee text-lg mt-8">Une compagnie artistique engagée, basée en Franche-Comté. <br>
@@ -118,7 +118,7 @@
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
                             <img class="w-40 lg:w-full" src="/images/logo-envida.png">
-                            <p class="font-Dela text-3xl justify-center w-full inline-flex">Envida</p>
+                            <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Envida</h3>
                         </div>
 
                         <p class="font-abeezee text-lg mt-8">Ce nouveau projet est un lieu de vie commun où chacun peut
@@ -150,7 +150,7 @@
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <p class="font-Dela text-3xl justify-center w-full inline-flex">Gangassa</p>
+                            <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Gangassa</h3>
                         </div>
 
                         <div class="flex justify-between mt-4">
@@ -182,7 +182,7 @@
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
                             <img class="h-40 lg:w-full" src="/images/logo-shonlua.jpg">
-                            <p class="font-Dela text-3xl justify-center w-full inline-flex">Shon Lua</p>
+                            <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Shon Lua</h3>
                         </div>
                         <p class="font-abeezee text-lg mt-8">L'atelier du sud est une association qui œuvre pour la
                             promotion
@@ -219,26 +219,32 @@
                         <!-- date -->
 
                         <!-- Si l'evenement n'a qu'une seule date -->
-                        <div v-if="article.date_fin === null " class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
-                             Prévu le {{ moment(article.date_debut).format('DD/MM/YYYY') }}
+                        <div
+                        v-if="article.end_date === null " class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                        <span itemprop="date">
+                            Prévu le {{ moment(article.begin_date).format('DD/MM/YYYY') }}
+                        </span>
+
                         </div>
                         <!-- Si l'evenement a 2 dates -->
                         <div v-else  class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
-                             Prévu du {{ moment(article.date_debut).format('DD/MM/YYYY') }} au {{ moment(article.date_fin).format('DD/MM/YYYY') }}
+                            <span itemprop="date">
+                              Prévu du {{ moment(article.begin_date).format('DD/MM/YYYY') }} au {{ moment(article.end_date).format('DD/MM/YYYY') }}
+                            </span>
                         </div>
 
                         <!-- image -->
                         <img class="w-full lg:rounded-t-lg " :src="article.url">
                         <!-- titre -->
-                        <h4
+                        <h3
                             class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
-                            :class="article.titre.length < 25 ? 'py-4' : ''">
-                            {{ article.titre.length > 37 ? article.titre.slice(0, 47) + '...' : article.titre }}
-                        </h4>
+                            :class="article.title.length < 25 ? 'py-4' : ''">
+                            {{ article.title.length > 37 ? article.title.slice(0, 47) + '...' : article.title }}
+                        </h3>
                         <!-- contenu -->
                         <p
                             class="font-abeezee px-2 bottom-8 pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 lg:bg-blanc-bleu-1 bg-red-100 mb-20 lg:mb-0">
-                            {{ article.contenu.length > 270 ? article.contenu.slice(0, 270) + '...' : article.contenu }}
+                            {{ article.content.length > 270 ? article.content.slice(0, 270) + '...' : article.content }}
                         </p>
                     </a>
                 </div>
@@ -246,7 +252,6 @@
                 <button
                     class=" px-2 py-1 bg-violet-2 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">Découvrir
                     notre calendrier entier</button>
-
             </section>
         </div>
 

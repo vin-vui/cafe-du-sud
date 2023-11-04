@@ -11,8 +11,8 @@ class Tag extends Model
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        'nom',
-        'statut',
+        'name',
+        'status',
         'description',
     ];
 

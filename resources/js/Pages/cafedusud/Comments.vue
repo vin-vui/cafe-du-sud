@@ -3,15 +3,15 @@
         <Navbar/>
 
         <!-- INDEX COMMENTAIRES -->
-        <div v-for="commentaire in commentaires" class="w-1/4 justify-evenly">
+        <div v-for="comment in comments" class="w-1/4 justify-evenly">
             <div class=" bg-cyan-200 text-center mx-4 my-2">
-                <p> {{ commentaire.pseudo }} </p>
-                <p> {{ commentaire.date_publication }} </p>
-                <p> {{ commentaire.statut }} </p>
-                <p> {{ commentaire.contenu }} </p>
+                <p> {{ comment.pseudo }} </p>
+                <p> {{ comment.date_publication }} </p>
+                <p> {{ comment.statut }} </p>
+                <p> {{ comment.contenu }} </p>
 
-                <button @click="show(commentaire)" class="rounded bg-cyan-600 px-2 py-1">SHOW</button>
-                <button @click="edit(commentaire)" class="rounded bg-yellow-400 px-2 py-1">EDIT</button>
+                <button @click="show(comment)" class="rounded bg-cyan-600 px-2 py-1">SHOW</button>
+                <button @click="edit(comment)" class="rounded bg-yellow-400 px-2 py-1">EDIT</button>
             </div>
         </div>
         <button @click="this.isOpenCreate = true" class="rounded bg-green-500 px-2 py-1">ADD</button>
@@ -21,12 +21,12 @@
             <div class="bg-cyan-100/50">
                 <button @click="isOpenShow = false" class="bg-red-700 mr-auto">CLOSE</button>
                 <div>
-                    <p> {{ selectedCommentaire.pseudo }} </p>
-                    <p> {{ selectedCommentaire.date_publication }} </p>
-                    <p> {{ selectedCommentaire.statut }} </p>
-                    <p> {{ selectedCommentaire.contenu }} </p>
+                    <p> {{ selectedComment.pseudo }} </p>
+                    <p> {{ selectedComment.publication_date }} </p>
+                    <p> {{ selectedComment.status }} </p>
+                    <p> {{ selectedComment.content }} </p>
                 </div>
-                <button @click="destroy(selectedCommentaire)" class="rounded bg-red-500 px-2 py-1">DELETE</button>
+                <button @click="destroy(selectedComment)" class="rounded bg-red-500 px-2 py-1">DELETE</button>
             </div>
         </div>
 
@@ -98,7 +98,7 @@
                     <input v-model="form_update.contenu" type="text">
                 </div>
             </div>
-            <button @click="update(selectedCommentaire)" class="rounded bg-amber-500 px-2 py-1">UPDATE</button>
+            <button @click="update(selectedComment)" class="rounded bg-amber-500 px-2 py-1">UPDATE</button>
         </div>
     </AppLayout>
 </template>
@@ -113,7 +113,7 @@ export default {
         AppLayout, Navbar
     },
 
-    props: ['commentaires', 'errors',],
+    props: ['comments', 'errors',],
 
     data() {
         return {
@@ -122,41 +122,41 @@ export default {
             isOpenEdit: false,
             form_create: {
                 pseudo: null,
-                statut: null,
-                date_publication: null,
-                contenu: null,
+                status: null,
+                publication_date: null,
+                content: null,
             },
             form_update: {
-                pseudo: this.selectedCommentaire ? this.selectedCommentaire.pseudo : '',
-                statut: this.selectedCommentaire ? this.selectedCommentaire.statut : '',
-                date_publication: this.selectedCommentaire ? this.selectedCommentaire.date_publication : '',
-                contenu: this.selectedCommentaire ? this.selectedCommentaire.contenu : '',
+                pseudo: this.selectedComment ? this.selectedComment.pseudo : '',
+                status: this.selectedComment ? this.selectedComment.status : '',
+                publication_date: this.selectedComment ? this.selectedComment.publicaiton_date : '',
+                content: this.selectedComment ? this.selectedComment.conten : '',
             }
         }
     },
 
     methods: {
-        show(commentaire) {
-            this.selectedCommentaire = commentaire;
+        show(comment) {
+            this.selectedComment = comment;
             this.isOpenShow = true;
         },
 
-        edit(commentaire) {
-            this.selectedCommentaire = commentaire;
+        edit(comment) {
+            this.selectedComment = comment;
             this.isOpenEdit = true;
         },
 
-        update(commentaire) {
-            this.$inertia.put(route('commentaires.update', commentaire), this.form_update);
+        update(comment) {
+            this.$inertia.put(route('comments.update', comment), this.form_update);
             this.isOpenEdit = false;
         },
 
         create() {
-            this.$inertia.post(route('commentaires.store'), this.form_create);
+            this.$inertia.post(route('comments.store'), this.form_create);
         },
 
-        destroy(commentaire) {
-            this.$inertia.delete(route('commentaires.destroy', commentaire))
+        destroy(comment) {
+            this.$inertia.delete(route('comments.destroy', comment))
         },
     }
 }
