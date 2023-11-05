@@ -15,7 +15,7 @@ defineProps({
         <Head :title="title" />
 
         <div class="">
-            <nav class="backdrop-blur-md bg-blanc-orange-1/60 w-full fixed top-0 z-50">
+            <nav class="backdrop-blur-sm bg-blanc-orange-1/60 w-full fixed top-0 z-50">
                 <Banner />
                 <div class="w-10/12 mx-auto py-2 flex justify-between">
                     <img src="/images/logo.png">

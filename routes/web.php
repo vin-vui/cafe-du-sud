@@ -41,15 +41,11 @@ Route::get('/blog', [ArticleController::class, 'indexBlog'])->name('blog');
 
 Route::get('/article/{article}', [ArticleController::class, 'show']);
 
-
 Route::get('/calendrier', [ArticleController::class, 'indexNextEvents'])->name('calendrier');
-
 
 Route::get('/contact', function () {
     return Inertia::render('cafedusud/Contact');
 })->name('Contact');
-
-
 
 Route::resource("articles", ArticleController::class);
 Route::resource("tags", TagController::class);

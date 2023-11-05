@@ -34,8 +34,6 @@ class ArticleController extends Controller
             ->nextThreeEvents()
             ->get();
 
-        // dd($articles);
-
         return Inertia::render('Welcome', [
             'articles' => $articles,
             'tags' => $tags,
