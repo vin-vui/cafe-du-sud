@@ -53,6 +53,6 @@ class Article extends Model
     {
         return $query->where('type', 'blog') // prends les articles avec le type blog
             ->where('status', 'en ligne') // prend les articles de blog avec le statut "en ligne"
-            ->orderBy('begin_date', 'asc'); // tris les articles par date de début croissant
+            ->orderBy('publication_date', 'asc'); // tris les articles par date de début croissant
     }
 }

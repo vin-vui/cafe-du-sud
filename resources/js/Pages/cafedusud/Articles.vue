@@ -67,7 +67,7 @@
                             <span>tags :</span>
                             <div v-for="tag in article.tags"
                                 class="bg-yellow-50 px-2 py-1 text-yellow-700 ring-1 ring-inset ring-yellow-600/30 rounded text-md ">
-                                {{ tag.nom }}
+                                {{ tag.name }}
                             </div>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
                 <div class="flex items-center" v-for="tag in tags">
                     <input class="rounded mr-1 focus:ring-0 focus:ring-offset-0" type="checkbox" v-model="form_create.tags"
                         :value="tag.id">
-                    <label class="capitalize-first">{{ tag.nom }}</label>
+                    <label class="capitalize-first">{{ tag.name }}</label>
                 </div>
                 <button @click="create(form_create)"
                     class="mt-4 rounded border focus:ring-cyan-500 focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-50 active:bg-cyan-900 bg-cyan-800 hover:bg-cyan-700 font-medium w-full text-white px-2 py-1 uppercase">Créer
@@ -314,7 +314,7 @@
                                 <div class="flex items-center" v-for="tag in tags">
                                     <input class="rounded mr-1 focus:ring-0 focus:ring-offset-0" type="checkbox"
                                         v-model="form_update.tags" :value="tag.id" :id="tag.id">
-                                    <label class="capitalize-first" :for="tag.id">{{ tag.nom }}</label>
+                                    <label class="capitalize-first" :for="tag.id">{{ tag.name }}</label>
                                 </div>
                             </div>
                         </div>
