@@ -33,11 +33,11 @@
 
 
                 <!-- image -->
-                <img class="w-full rounded-t-lg" :src="article.url">
+                <img class="w-full h-96 object-cover object-center rounded-t-lg" :src="article.url">
                 <!-- title -->
-                <h4 class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
-                    :class="article.title.length < 29 ? 'py-4' : ''">
-                    {{ article.title.length > 47 ? article.title.slice(0, 47) + '...' : article.title }}
+                <h4 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
+                :class="article.title.length < 30 ? 'py-4' : ''">
+                {{ article.title.length > 37 ? article.title.slice(0, 47) + '...' : article.title }}
                 </h4>
                 <!-- content -->
                 <p

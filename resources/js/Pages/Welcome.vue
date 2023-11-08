@@ -11,7 +11,8 @@
         <div class="bg-orange-3">
             <section class="w-full mx-auto bg-blanc-1 px-4 sm:w-10/12">
                 <h2 class="capitalize font-alumni text-6xl justify-center flex pt-8 mb-4 text-center">l'Atelier du sud</h2>
-                <span class="font-Dela text-xl capitalize-first justify-center flex text-center">en quelques points, qu'est-ce
+                <span class="font-Dela text-xl capitalize-first justify-center flex text-center">en quelques points,
+                    qu'est-ce
                     que c'est ?
                 </span>
                 <div class="w-full justify-between py-12 flex-col">
@@ -218,26 +219,27 @@
                         ">
                         <!-- date -->
                         <!-- Si l'evenement n'a qu'une seule date -->
-                        <div
-                        v-if="article.end_date === null " class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
-                        <span itemprop="date">
-                            Prévu le {{ moment(article.begin_date).format('DD/MM/YYYY') }}
-                        </span>
+                        <div v-if="article.end_date === null"
+                            class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                            <span itemprop="date">
+                                Prévu le {{ moment(article.begin_date).format('DD/MM/YYYY') }}
+                            </span>
 
                         </div>
                         <!-- Si l'evenement a 2 dates -->
-                        <div v-else  class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                        <div v-else
+                            class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
                             <span itemprop="date">
-                              Prévu du {{ moment(article.begin_date).format('DD/MM/YYYY') }} au {{ moment(article.end_date).format('DD/MM/YYYY') }}
+                                Prévu du {{ moment(article.begin_date).format('DD/MM/YYYY') }} au {{
+                                    moment(article.end_date).format('DD/MM/YYYY') }}
                             </span>
                         </div>
 
                         <!-- image -->
-                        <img class="w-full lg:rounded-t-lg " :src="article.url">
+                        <img class="w-full h-96 object-cover object-center lg:rounded-t-lg " :src="article.url">
                         <!-- titre -->
-                        <h3
-                            class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
-                            :class="article.title.length < 25 ? 'py-4' : ''">
+                        <h3 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
+                            :class="article.title.length < 22 ? 'py-4' : ''">
                             {{ article.title.length > 37 ? article.title.slice(0, 47) + '...' : article.title }}
                         </h3>
                         <!-- contenu -->
@@ -248,9 +250,11 @@
                     </a>
                 </div>
 
-                <button
-                    class=" px-2 py-1 bg-violet-2 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">Découvrir
-                    notre calendrier entier</button>
+                <a href="/calendrier">
+                    <button
+                        class=" px-2 py-1 bg-violet-2 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">Découvrir
+                        notre calendrier entier</button>
+                </a>
             </section>
         </div>
 
@@ -266,8 +270,10 @@
                         boite
                         mail</p>
                     <div class="flex-col justify-center items-center my-6">
-                        <div v-if="errors.email" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.email }}</div>
-                        <input  placeholder="exemple@gmail.com" class="h-11 rounded-l-lg lg:w-96" v-model="form_create.email" type="email">
+                        <div v-if="errors.email" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.email }}
+                        </div>
+                        <input placeholder="exemple@gmail.com" class="h-11 rounded-l-lg lg:w-96" v-model="form_create.email"
+                            type="email">
                         <button @click="create()"
                             class="px-2 py-2 bg-violet-2 rounded-r-lg font-abeezee text-xl text-blanc-1 hover:bg-violet-1 hover:ring">S'inscrire</button>
                     </div>
