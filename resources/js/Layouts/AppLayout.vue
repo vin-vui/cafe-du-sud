@@ -71,8 +71,6 @@ const logout = () => {
                                 <NavLink :href="route('messages.index')" :active="route().current('messages.index')">
                                     Messages
                                 </NavLink>
-
-
                             </div>
                         </div>
 

@@ -43,9 +43,10 @@ Route::get('/article/{article}', [ArticleController::class, 'show']);
 
 Route::get('/calendrier', [ArticleController::class, 'indexNextEvents'])->name('calendrier');
 
+
 Route::get('/contact', function () {
     return Inertia::render('cafedusud/Contact');
-})->name('Contact');
+})->name('contact');
 
 Route::resource("articles", ArticleController::class);
 Route::resource("tags", TagController::class);
@@ -53,5 +54,5 @@ Route::resource("comments", CommentController::class);
 Route::resource("newsletters", NewsletterController::class);
 Route::resource("messages", MessageController::class);
 
-Route::get("/", [ArticleController::class, 'indexNextThreeEvents']);
+Route::get("/", [ArticleController::class, 'indexNextThreeEvents'])->name('accueil');
 

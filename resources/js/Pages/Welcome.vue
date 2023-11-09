@@ -405,7 +405,6 @@ export default {
         }
     },
 
-
     methods: {
         create() {
             this.$inertia.post(route('newsletters.store'), this.form_create, {
@@ -413,11 +412,6 @@ export default {
             })
         },
     },
-
-    mounted() {
-        console.log('Le composant Welcome est monté');
-        console.log(articles);
-    }
 };
 
 </script>
