@@ -30,12 +30,6 @@
                                 chacun peut venir s'exprimer et s'épanouir.
                                 <br><br>
                             </p>
-
-                            <!-- <p class="font-abeezee text-lg mt-2 p-2">Ce nouveau projet est un lieu de vie commun où chacun peut
-                        s'exprimer et s'épanouir. Ce bel avenir est porté par des valeurs fortes d'accessibilité,
-                        d'inclusivité et de collectif. Elle souhaite créer un monde meilleur, un monde où la culture est
-                        accessible à tous. Ce monde meilleur est un lieu où les arts se décloisonnent et où les cultures se
-                        rencontrent. C'est un lieu où chacun peut s'exprimer et s'épanouir.</p> -->
                         </div>
                     </div>
                     <!-- Point 2 -->
@@ -83,7 +77,7 @@
 
 
         <!-- Section 3 - Les associations  -->
-        <div class="">
+        <div class="bg-white">
             <section class="lg:w-10/12 w-full mx-auto">
                 <!-- Ciconia theatre -->
                 <div class="flex pt-28 justify-between px-4 lg:px-0">
@@ -238,7 +232,7 @@
                         <!-- image -->
                         <img class="w-full h-96 object-cover object-center lg:rounded-t-lg " :src="article.url" alt="Image d'illustration de l'article">
                         <!-- titre -->
-                        <h3 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
+                        <h3 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-4"
                             :class="article.title.length < 22 ? 'py-4' : ''">
                             {{ article.title.length > 37 ? article.title.slice(0, 47) + '...' : article.title }}
                         </h3>
@@ -252,7 +246,7 @@
 
                 <a href="/calendrier">
                     <button
-                        class=" px-2 py-1 bg-violet-2 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">Découvrir
+                        class=" px-2 py-1 bg-violet-4 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">Découvrir
                         notre calendrier entier</button>
                 </a>
             </section>
@@ -275,7 +269,7 @@
                         <input placeholder="exemple@gmail.com" class="h-11 rounded-l-lg lg:w-96" v-model="form_create.email"
                             type="email">
                         <button @click="create()"
-                            class="px-2 py-2 bg-violet-2 rounded-r-lg font-abeezee text-xl text-blanc-1 hover:bg-violet-1 hover:ring">S'inscrire</button>
+                            class="px-2 py-2 bg-violet-4 rounded-r-lg font-abeezee text-xl text-blanc-1 hover:bg-violet-1 hover:ring">S'inscrire</button>
                     </div>
                 </div>
             </section>

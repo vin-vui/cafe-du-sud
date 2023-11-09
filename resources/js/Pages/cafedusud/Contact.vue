@@ -10,9 +10,6 @@
         <!-- Carte de contact -->
         <div
             class="lg:w-10/12 mx-auto lg:flex mt-20 relative z-50  lg:after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:top-8 after:left-8 after:-z-50">
-
-            <!-- after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50 -->
-
             <!-- Informations de contact -->
             <div class="lg:w-1/2 bg-orange-3 rounded-l-xl">
                 <h4 class="mt-8 text-xl font-Dela text-center w-8/12 mx-auto capitalize-"> informations de contact</h4>
@@ -70,9 +67,6 @@
                         </div>
                         <p>6 rue bersot, 25000 Besançon</p>
                     </div>
-
-
-
                 </div>
 
                 <!-- Réseaux sociaux -->
@@ -161,7 +155,7 @@
                     </div>
 
                     <button @click="create()"
-                        class=" px-2 py-1 mb-8 bg-violet-2 rounded-lg font-abeezee mx-auto flex mt-8 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">
+                        class=" px-2 py-1 mb-8 bg-violet-4 rounded-lg font-abeezee mx-auto flex mt-8 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">
                         Envoyer mon message</button>
                 </form>
             </div>

@@ -43,6 +43,8 @@ export default {
                 'violet-2': '#6D72D9',
                 'violet-3': '#B8BAD9',
 
+                'violet-4': '#353DD4', // AAA contrast
+
                 'orange-1': '#FF7E26',
                 'orange-2': '#FFBB8C',
                 'orange-3': '#FFE1CC',
@@ -69,7 +71,7 @@ export default {
                 'jaune-1': '#DFD25C',
                 'rouge-1': '#CE7373',
 
-                'rouge-2' :'#933434'
+                'rouge-2' :'#933434', // AAA contrast
             },
         },
     },

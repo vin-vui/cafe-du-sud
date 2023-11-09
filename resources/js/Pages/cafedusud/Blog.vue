@@ -19,7 +19,7 @@
                     <!-- image -->
                     <img class="w-full h-96 object-cover object-center rounded-t-lg" :src="article.url" alt="Image d'illustration de l'article de blog">
                     <!-- title -->
-                    <h4 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
+                    <h4 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-4"
                     :class="article.title.length < 30 ? 'py-4' : ''">
                     {{ article.title.length > 37 ? article.title.slice(0, 47) + '...' : article.title }}
                     </h4>
