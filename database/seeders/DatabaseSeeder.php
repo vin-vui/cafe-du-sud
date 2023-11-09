@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             CommentSeeder::class,
             NewsletterSeeder::class,
             MessageSeeder::class,
+            UserSeeder::class,
         ]);
 
     }

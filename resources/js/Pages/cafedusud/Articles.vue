@@ -100,7 +100,7 @@
                 <div class="mt-3">
                     <div v-if="errors.title" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.title }}
                     </div>
-                    <label class="block font-medium text-gray-700 capitalize">title</label>
+                    <label class="block font-medium text-gray-700 capitalize">Titre</label>
                     <input
                         class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                         v-model="form_create.title" type="text">
@@ -110,10 +110,11 @@
                 <div class="mt-3">
                     <div v-if="errors.content" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.content }}
                     </div>
-                    <label class="block font-medium text-gray-700 capitalize">content</label>
-                    <input
+                    <label class="block font-medium text-gray-700 capitalize">Contenu</label>
+                    <textarea
                         class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                         v-model="form_create.content" type="text">
+                    </textarea>
                 </div>
 
                 <!-- TYPE -->
@@ -131,7 +132,7 @@
                 <!-- URL -->
                 <div class="mt-3">
                     <div v-if="errors.url" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.url }}</div>
-                    <label class="block font-medium text-gray-700 capitalize-first">lien de l'image</label>
+                    <label class="block font-medium text-gray-700 capitalize-first">Lien de l'image</label>
                     <input
                         class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                         v-model="form_create.url" type="url">
@@ -143,7 +144,7 @@
                     <div>
                         <div v-if="errors.begin_date" class="text-red-700 text-lg mx-auto flex justify-center">{{
                             errors.begin_date }}</div>
-                        <label class="block  mt-3 font-medium text-gray-700 capitalize-first">date de début</label>
+                        <label class="block  mt-3 font-medium text-gray-700 capitalize-first">Date de début</label>
                         <input
                             class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_create.begin_date" type="date">
@@ -153,7 +154,7 @@
                         <div v-if="errors.end_date" class="text-red-700 text-lg mx-auto flex justify-center">{{
                             errors.end_date
                         }}</div>
-                        <label class="block  mt-3 font-medium text-gray-700 capitalize-first">date de fin</label>
+                        <label class="block  mt-3 font-medium text-gray-700 capitalize-first">Date de fin</label>
                         <input
                             class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_create.end_date" type="date">
@@ -164,7 +165,7 @@
                 <div class="mt-3">
                     <div v-if="errors.status" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.status }}
                     </div>
-                    <label class="block font-medium text-gray-700 capitalize-first">status</label>
+                    <label class="block font-medium text-gray-700 capitalize-first">Statut</label>
                     <select
                         class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                         v-model="form_create.status">
@@ -174,7 +175,7 @@
                 </div>
 
                 <!-- TAGS -->
-                <label class="block  mt-3 font-medium text-gray-700 capitalize-first">tags</label>
+                <label class="block  mt-3 font-medium text-gray-700 capitalize-first">Tags</label>
                 <div class="flex items-center" v-for="tag in tags">
                     <input class="rounded mr-1 focus:ring-0 focus:ring-offset-0" type="checkbox" v-model="form_create.tags"
                         :value="tag.id">
@@ -217,7 +218,7 @@
                     <div class="mt-3">
                         <div v-if="errors.title" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.title }}
                         </div>
-                        <label class="block font-medium text-gray-700 capitalize">title</label>
+                        <label class="block font-medium text-gray-700 capitalize">Titre</label>
                         <input
                             class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_update.title" type="text">
@@ -227,7 +228,7 @@
                     <div class="mt-3">
                         <div v-if="errors.content" class="text-red-700 text-lg mx-auto flex justify-center">{{
                             errors.content }}</div>
-                        <label class="block mt-3 font-medium text-gray-700 capitalize">content</label>
+                        <label class="block mt-3 font-medium text-gray-700 capitalize">Contenu</label>
                         <textarea
                             class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_update.content" type="text"></textarea>
@@ -237,7 +238,7 @@
                     <div class="mt-3">
                         <div v-if="errors.type" class="text-red-700 text-lg mx-auto flex justify-center">{{
                             errors.type }}</div>
-                        <label class="block  mt-3 font-medium text-gray-700 capitalize">type</label>
+                        <label class="block  mt-3 font-medium text-gray-700 capitalize">Type</label>
                         <select
                             class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_update.type">
@@ -250,7 +251,7 @@
                     <div class="mt-3">
                         <div v-if="errors.url" class="text-red-700 text-lg mx-auto flex justify-center">{{
                             errors.url }}</div>
-                        <label class="block mt-3 font-medium text-gray-700 capitalize-first">lien de l'image</label>
+                        <label class="block mt-3 font-medium text-gray-700 capitalize-first">Lien de l'image</label>
                         <input
                             class="block w-full mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_update.url" type="url">
@@ -274,7 +275,7 @@
                             <div v-if="errors.begin_date" class="text-red-700 text-lg mx-auto flex justify-center">
                                 {{
                                     errors.begin_date }}</div>
-                            <label class="block mt-1 font-medium text-gray-700 my-auto capitalize-first">date de
+                            <label class="block mt-1 font-medium text-gray-700 my-auto capitalize-first">Date de
                                 début</label>
                             <input
                                 class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
@@ -284,7 +285,7 @@
                         <div>
                             <div v-if="errors.end_date" class="text-red-700 text-lg mx-auto flex justify-center">{{
                                 errors.end_date }}</div>
-                            <label class="block mt-1 font-medium text-gray-700 my-auto capitalize-first">date de
+                            <label class="block mt-1 font-medium text-gray-700 my-auto capitalize-first">Date de
                                 fin</label>
                             <input
                                 class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
@@ -297,7 +298,7 @@
                         <div v-if="errors.status" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.status
                         }}
                         </div>
-                        <label class="block font-medium text-gray-700 capitalize-first">status</label>
+                        <label class="block font-medium text-gray-700 capitalize-first">Statut</label>
                         <select
                             class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_update.status">
@@ -309,7 +310,7 @@
                     <!-- TAGS -->
                     <div>
                         <div v-if="errors.tags" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.tags }}
-                            <label class="block mt-3 font-medium text-gray-700 capitalize-first">tags</label>
+                            <label class="block mt-3 font-medium text-gray-700 capitalize-first">Tags</label>
                             <div class="items-center flex gap-2">
                                 <div class="flex items-center" v-for="tag in tags">
                                     <input class="rounded mr-1 focus:ring-0 focus:ring-offset-0" type="checkbox"

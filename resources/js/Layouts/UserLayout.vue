@@ -18,7 +18,7 @@ defineProps({
             <nav class="backdrop-blur-sm bg-blanc-orange-1/60 w-full fixed top-0 z-50">
                 <Banner />
                 <div class="w-10/12 mx-auto py-2 flex justify-between">
-                    <img src="/images/logo.png">
+                    <img src="/images/logo.png" alt="Logo de L'Atelier du Sud">
 
                     <!-- <NavLink :href="route('/')" :active="route().current('/')">
                         Accueil
@@ -29,6 +29,8 @@ defineProps({
                     <a class="capitalize my-auto font-abeezee" href="/contact">contact</a>
                 </div>
             </nav>
+
+            
 
 
 
