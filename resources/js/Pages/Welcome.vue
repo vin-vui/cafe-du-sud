@@ -2,7 +2,7 @@
     <UserLayout>
 
         <!-- Section 1  -->
-        <div class="bg-[url('/images/bgImgLanding.png')] h-screen bg-no-repeat bg-cover bg-center flex">
+        <div class="bg-[url('/images/bgImgLanding.webp')] h-screen bg-no-repeat bg-cover bg-center flex">
             <h1 class="mx-auto mt-96 text-center font-alumni text-8xl text-blanc-1">Les Casas <br> atelier du sud - café du
                 sud</h1>
         </div>
@@ -84,14 +84,15 @@
                     <!-- Conteneur de l'image avec bordure -->
                     <div
                         class="w-5/12 hidden lg:flex relative after:bg-bleu-1 after:rounded-lg after:absolute lg:after:w-full after:h-full after:top-6 after:left-6 after:z-0">
-                        <img class="rounded-lg relative z-10 lg:h-full w-full h-40 " src="/images/image1.jpg" alt="Image d'illustration de l'association Ciconia theatre">
+                        <img class="rounded-lg relative z-10 lg:h-full w-full h-40 " src="/images/image1.webp"
+                            alt="Image d'illustration de l'association Ciconia theatre">
                     </div>
 
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <img src="/images/logo-ciconia.png" alt="Logo de Ciconia théatre">
-                            <h3 class="font-Dela text-3xl justify-center w-full inline-flex" >Ciconia Théâtre</h3>
+                            <img src="/images/logo-ciconia.webp" alt="Logo de Ciconia théatre">
+                            <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Ciconia Théâtre</h3>
                         </div>
 
                         <p class="font-abeezee text-lg mt-8">Une compagnie artistique engagée, basée en Franche-Comté. <br>
@@ -112,7 +113,7 @@
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <img class="w-40 lg:w-full" src="/images/logo-envida.png" alt="Logo de l'association Envida">
+                            <img class="w-40 lg:w-full" src="/images/logo-envida.webp" alt="Logo de l'association Envida">
                             <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Envida</h3>
                         </div>
 
@@ -130,7 +131,8 @@
                     <!-- Conteneur de l'image avec bordure -->
                     <div
                         class="w-5/12 hidden lg:flex relative after:bg-bleu-1 after:rounded-lg after:absolute lg:after:w-full after:h-full after:top-6 after:left-6 after:z-0">
-                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image2.png" alt="Image d'illustration de l'association Envida">
+                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image2.webp"
+                            alt="Image d'illustration de l'association Envida">
                     </div>
                 </div>
 
@@ -139,7 +141,8 @@
                     <!-- Conteneur de l'image avec bordure -->
                     <div
                         class="w-5/12 hidden lg:flex relative after:bg-vert-1 after:rounded-lg after:absolute lg:after:w-full after:h-full after:top-6 after:left-6 after:z-0">
-                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image3.png" alt="Image d'illustration de l'association Gangassa">
+                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image3.webp"
+                            alt="Image d'illustration de l'association Gangassa">
                     </div>
 
                     <!-- texte -->
@@ -149,7 +152,7 @@
                         </div>
 
                         <div class="flex justify-between mt-4">
-                            <img class="w-32 h-32" src="/images/gangassa-logo.png" alt="Logo de l'association Gangassa">
+                            <img class="w-32 h-32" src="/images/gangassa-logo.webp" alt="Logo de l'association Gangassa">
                             <p class="font-abeezee text-lg w-9/12 ">
                                 Rejoignez notre association, un lieu d'inspiration et de partage,
                                 où l'art et la convivialité se rencontrent. Nous encourageons la diversité des savoirs, des
@@ -176,7 +179,7 @@
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <img class="h-40 lg:w-full" src="/images/logo-shonlua.jpg" alt="Logo de l'association Shonlua">
+                            <img class="h-40 lg:w-full" src="/images/logo-shonlua.webp" alt="Logo de l'association Shonlua">
                             <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Shon Lua</h3>
                         </div>
                         <p class="font-abeezee text-lg mt-8">L'atelier du sud est une association qui œuvre pour la
@@ -193,7 +196,8 @@
                     <!-- Conteneur de l'image avec bordure -->
                     <div
                         class="w-5/12 hidden lg:flex relative after:bg-jaune-1 after:rounded-lg after:absolute lg:after:w-full after:h-full after:top-6 after:left-6 after:z-0">
-                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image3.png" alt="Image d'illustration de l'association Shonlua">
+                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image3.webp"
+                            alt="Image d'illustration de l'association Shonlua">
                     </div>
 
                 </div>
@@ -230,7 +234,8 @@
                         </div>
 
                         <!-- image -->
-                        <img class="w-full h-96 object-cover object-center lg:rounded-t-lg " :src="article.url" alt="Image d'illustration de l'article">
+                        <img class="w-full h-96 object-cover object-center lg:rounded-t-lg " :src="article.url"
+                            alt="Image d'illustration de l'article">
                         <!-- titre -->
                         <h3 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-4"
                             :class="article.title.length < 22 ? 'py-4' : ''">
@@ -285,13 +290,14 @@
                             <h4 class="capitalize-first font-Dela text-xl text-center mb-4">partenaires institutionnels</h4>
                             <div class="flex justify-between gap-2">
                                 <a href="https://www.besancon.fr/">
-                                    <img class="h-14" src="/images/logo_besançon.png" alt="Logo de la ville de Besançon">
+                                    <img class="h-14" src="/images/logo_besançon.webp" alt="Logo de la ville de Besançon">
                                 </a>
                                 <a href="https://www.doubs.fr/">
-                                    <img class="h-14" src="/images/logo_doubs.png" alt="Logo du departement du Doubs">
+                                    <img class="h-14" src="/images/logo_doubs.webp" alt="Logo du departement du Doubs">
                                 </a>
                                 <a href="https://www.doubs.gouv.fr/">
-                                    <img class="h-14" src="/images/logo-prefecture.jpg" alt="Logo de la prefecture du Doubs">
+                                    <img class="h-14" src="/images/logo-prefecture.webp"
+                                        alt="Logo de la prefecture du Doubs">
                                 </a>
                             </div>
                         </div>
@@ -301,13 +307,13 @@
                             <h4 class="capitalize-first font-Dela text-xl text-center mb-4">grands partenaires</h4>
                             <div class="flex justify-between gap-2">
                                 <a href="https://lvsl.fr/">
-                                    <img class="h-14 " src="/images/logo-lvsl.png" alt="Logo du vent se leve">
+                                    <img class="h-14 " src="/images/logo-lvsl.webp" alt="Logo du vent se leve">
                                 </a>
                                 <a href="https://www.danse-neuchatel.ch/2023/">
-                                    <img class="h-14" src="/images/logo-adn.png" alt="Logo de adn">
+                                    <img class="h-14" src="/images/logo-adn.webp" alt="Logo de adn">
                                 </a>
                                 <a href="https://www.justice.gouv.fr/">
-                                    <img class="h-14 " src="/images/logo-spip.png" alt="Logo du SPIP">
+                                    <img class="h-14 " src="/images/logo-spip.webp" alt="Logo du SPIP">
                                 </a>
                             </div>
                         </div>
@@ -317,11 +323,11 @@
                             <h4 class="capitalize-first font-Dela text-xl text-center mb-4">partenaires medias</h4>
                             <div class="flex justify-between">
                                 <a href="https://www.linsatiable.org/">
-                                    <img class="h-14" src="/images/logo-linsatiable.png" alt="Logo de l'insatiable">
+                                    <img class="h-14" src="/images/logo-linsatiable.webp" alt="Logo de l'insatiable">
                                 </a>
 
                                 <a href="https://radiosud.net/">
-                                    <img class="h-14" src="/images/logo-radiosud.png" alt="Logo de radiosud">
+                                    <img class="h-14" src="/images/logo-radiosud.webp" alt="Logo de radiosud">
                                 </a>
                             </div>
                         </div>
@@ -335,23 +341,23 @@
                     <!-- Pages Légales -->
                     <div class="lg:w-1/3 lg:p-4 w-full text-center lg:text-left">
                         <h4 class="capitalize-first font-Dela my-4">pages légales</h4>
-                        <p class="capitalize-first font-abeezee"><a>politique de confidentialité</a></p>
-                        <p class="capitalize-first font-abeezee my-1"><a>conditions générales d'utilisation</a></p>
-                        <p class="capitalize-first font-abeezee"><a>mentions légales</a></p>
+                        <p class="capitalize-first font-abeezee">politique de confidentialité</p>
+                        <p class="capitalize-first font-abeezee my-1">conditions générales d'utilisation</p>
+                        <p class="capitalize-first font-abeezee">mentions légales</p>
                     </div>
 
                     <!-- Nous -->
                     <div class="lg:w-1/3 lg:p-4 w-full text-center my-12 lg:my-0">
                         <h4 class="capitalize-first font-Dela my-4">Nous</h4>
-                        <p class="capitalize-first font-abeezee"><a>le café du sud</a></p>
-                        <p class="capitalize-first font-abeezee my-1"><a>l'atelier du sud</a></p>
-                        <p class="capitalize-first font-abeezee"><a>nous contacter</a></p>
+                        <p class="capitalize-first font-abeezee">le café du sud</p>
+                        <p class="capitalize-first font-abeezee my-1">l'atelier du sud</p>
+                        <p class="capitalize-first font-abeezee"><a href="/contact">nous contacter</a></p>
                     </div>
 
                     <!-- L'atelier -->
                     <div class="lg:w-1/3 lg:p-4 w-full mx-auto lg:text-right text-center font-abeezee">
                         <div class="flex w-full lg:justify-end justify-center">
-                            <img class="" src="/images/logo.png" alt="Logo de l'association L'Atelier du Sud">
+                            <img class="" src="/images/logo.webp" alt="Logo de l'association L'Atelier du Sud">
                         </div>
                         <p>04 60 85 42 01</p>
                         <p>contact@AtelierDuSud.fr</p>
@@ -364,8 +370,6 @@
 </template>
 
 <script>
-import { Head } from '@inertiajs/vue3';
-import { ref } from 'vue';  // Ajoutez cette ligne
 import moment from 'moment'; // Importez Moment.js
 
 import UserLayout from '@/Layouts/UserLayout.vue'
@@ -392,6 +396,7 @@ export default {
 
     data() {
         return {
+            pageTitle: "Les Casas du Sud - Accueil",
             moment: moment,
             form_create: {
                 email: null
