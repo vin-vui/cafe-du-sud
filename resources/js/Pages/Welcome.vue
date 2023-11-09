@@ -238,7 +238,7 @@
                             alt="Image d'illustration de l'article">
                         <!-- titre -->
                         <h3 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-4"
-                            :class="article.title.length < 22 ? 'py-4' : ''">
+                            :class="article.title.length < 28 ? 'py-4' : ''">
                             {{ article.title.length > 37 ? article.title.slice(0, 47) + '...' : article.title }}
                         </h3>
                         <!-- contenu -->

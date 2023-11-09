@@ -1,7 +1,7 @@
 <template >
     <UserLayout>
         <div class="flex-col justify-center">
-            <h2 class="mt-20 text-6xl font-alumni text-center">Contactez-nous !</h2>
+            <h2 class="mt-16 text-6xl font-alumni text-center">Contactez-nous !</h2>
             <p class="mt-8 text-3xl font-Dela text-center w-8/12 mx-auto">Une question, une remarque, une suggestion, une
                 demande ?
                 Envoyez-nous simplement un message !</p>
@@ -71,7 +71,7 @@
 
                 <!-- Réseaux sociaux -->
                 <div class="flex justify-between w-4/12 mx-auto mt-16 ">
-                    <a href="https://www.facebook.com/atelierdusudbesancon/" class="group">
+                    <a href="https://www.facebook.com/atelierdusudbesancon/" aria-label="Page Facebook de l'Atelier du Sud Besançon" class="group">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="group-hover:stroke-violet-1 rounded-full bg-orange-2 w-10 h-10 p-1" width="24"
                             height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -81,7 +81,7 @@
                         </svg>
                     </a>
 
-                    <a href="https://www.instagram.com/latelierdusudbesancon/" class="group">
+                    <a href="https://www.instagram.com/latelierdusudbesancon/" aria-label="Compte Instagram de l'Atelier du Sud Besançon" class="group">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="group-hover:stroke-violet-1 rounded-full bg-orange-2 w-10 h-10 p-1" width="24"
                             height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -92,7 +92,6 @@
                             <path d="M16.5 7.5l0 .01"></path>
                         </svg>
                     </a>
-
                 </div>
 
             </div>

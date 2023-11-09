@@ -34,25 +34,25 @@ class Article extends Model
 
     public function scopeNextThreeEvents($query)
     {
-        return $query->where('type', 'evenement') // prends les articles avec le type evenement
-            ->where('begin_date', '>', now()) // prends les evenements à venir uniquement
-            ->where('status', 'en ligne') // prend les articles avec le statut "en ligne"
-            ->orderBy('begin_date', 'asc') // tris les evenements par date de début croissant
-            ->take(3); // récupére les 3 prochains événements
+        return $query->where('type', 'evenement') // prends les articles avec le type evenement - SELECT * FROM articles WHERE type = 'evenement'
+            ->where('begin_date', '>', now()) // prends les evenements à venir uniquement - AND begin_date > NOW()
+            ->where('status', 'en ligne') // prend les articles avec le statut "en ligne" - AND status = 'en ligne'
+            ->orderBy('begin_date', 'asc') // tris les evenements par date de début croissant - ORDER BY begin_date ASC
+            ->take(3); // récupére les 3 prochains événements - LIMIT 3;
     }
 
     public function scopeNextEvents($query)
     {
-        return $query->where('type', 'evenement') // prends les articles avec le type evenement
-            ->where('begin_date', '>', now()) // prends les evenements à venir uniquement
-            ->where('status', 'en ligne') // prend les evenements avec le statut "en ligne"
-            ->orderBy('begin_date', 'asc'); // tris les evenements par date de début croissant
+        return $query->where('type', 'evenement') // prends les articles avec le type evenement - SELECT * FROM articles WHERE type = 'evenement'
+            ->where('begin_date', '>', now()) // prends les evenements à venir uniquement -  AND begin_date > NOW()
+            ->where('status', 'en ligne') // prend les evenements avec le statut "en ligne" -  AND status = 'en ligne'
+            ->orderBy('begin_date', 'asc'); // tris les evenements par date de début croissant - ORDER BY begin_date ASC;
     }
 
     public function scopeBlog($query)
     {
-        return $query->where('type', 'blog') // prends les articles avec le type blog
-            ->where('status', 'en ligne') // prend les articles de blog avec le statut "en ligne"
-            ->orderBy('publication_date', 'asc'); // tris les articles par date de début croissant
+        return $query->where('type', 'blog') // prends les articles avec le type blog - SELECT * FROM articles  WHERE type = 'blog'
+            ->where('status', 'en ligne') // prend les articles de blog avec le statut "en ligne" - AND status = 'en ligne'
+            ->orderBy('publication_date', 'asc'); // tris les articles par date de début croissant - ORDER BY publication_date ASC;
     }
 }
