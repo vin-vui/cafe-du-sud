@@ -2,24 +2,25 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
-use App\Models\Commentaire;
+use App\Models\Comment;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CommentaireController extends Controller
+class CommentController extends Controller
 {
-    public function index(){
-        $commentaires = Commentaire::all();
-        return Inertia::render('cafedusud/Commentaires', compact('commentaires'));
+    public function index()
+    {
+        $comments = Comment::all();
+        return Inertia::render('cafedusud/Comments', compact('comments'));
     }
 
     public function show(){
-        return Inertia::render('cafedusud/Commentaire');
+        return Inertia::render('cafedusud/Comment');
     }
 
-    public function destroy(Commentaire $commentaire){
-        if ($commentaire->delete()) {
+    public function destroy(Comment $comment){
+        if ($comment->delete()) {
             session()->flash('flash.banner', 'Commentaire supprimé avec succès');
             session()->flash('flash.bannerStyle', 'success');
         } else {
@@ -34,14 +35,15 @@ class CommentaireController extends Controller
             'statut' => ['required',],
             'date_publication' => ['nullable'],
             'contenu' => ['required'],
+            'date' => ['required'],
         ])->validate();
 
-        Commentaire::create($valid_data);
+        Comment::create($valid_data);
         session()->flash('flash.banner', 'Article créé avec succès');
         session()->flash('flash.bannerStyle', 'success');
     }
 
-    public function update(Request $request, Commentaire $commentaire){
+    public function update(Request $request, Comment $comment){
         $valid_data = Validator::make($request->all(), [
             'pseudo' => ['required', 'max:47'],
             'statut' => ['required',],
@@ -49,7 +51,7 @@ class CommentaireController extends Controller
             'contenu' => ['required'],
         ])->validate();
 
-        $commentaire->update($valid_data);
+        $comment->update($valid_data);
 
         session()->flash('flash.banner', 'Commentaire modifié avec succès');
         session()->flash('flash.bannerStyle', 'success');

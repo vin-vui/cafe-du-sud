@@ -2,7 +2,7 @@
     <UserLayout>
 
         <!-- Section 1  -->
-        <div class="bg-[url('/images/bgImgLanding.png')] h-screen bg-no-repeat bg-cover bg-center flex">
+        <div class="bg-[url('/images/bgImgLanding.webp')] h-screen bg-no-repeat bg-cover bg-center flex">
             <h1 class="mx-auto mt-96 text-center font-alumni text-8xl text-blanc-1">Les Casas <br> atelier du sud - café du
                 sud</h1>
         </div>
@@ -11,17 +11,18 @@
         <div class="bg-orange-3">
             <section class="w-full mx-auto bg-blanc-1 px-4 sm:w-10/12">
                 <h2 class="capitalize font-alumni text-6xl justify-center flex pt-8 mb-4 text-center">l'Atelier du sud</h2>
-                <h3 class="font-Dela text-xl capitalize-first justify-center flex text-center">en quelques points, qu'est-ce
+                <span class="font-Dela text-xl capitalize-first justify-center flex text-center">en quelques points,
+                    qu'est-ce
                     que c'est ?
-                </h3>
+                </span>
                 <div class="w-full justify-between py-12 flex-col">
                     <!-- Point 1 -->
                     <div
                         class="w-full my-12 border-jaune-1 border-8 border-double rounded-xl lg:px-4 lg:py-2 lg:w-10/12 lg:flex">
                         <span class="mr-12 hidden lg:text-8xl lg:block">👐</span>
                         <div>
-                            <h4 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🤝 Un lieu
-                                🤝</h4>
+                            <h3 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🤝 Un lieu
+                                🤝</h3>
                             <p class="font-abeezee text-lg mt-2 p-2 pb-8">
                                 L'Atelier Du Sud c'est avant tout la maison de toutes nos associations,
                                 un laboratoire dans lequel nous experimentons les limites de l'art et un lieu de vie commun
@@ -29,20 +30,14 @@
                                 chacun peut venir s'exprimer et s'épanouir.
                                 <br><br>
                             </p>
-
-                            <!-- <p class="font-abeezee text-lg mt-2 p-2">Ce nouveau projet est un lieu de vie commun où chacun peut
-                        s'exprimer et s'épanouir. Ce bel avenir est porté par des valeurs fortes d'accessibilité,
-                        d'inclusivité et de collectif. Elle souhaite créer un monde meilleur, un monde où la culture est
-                        accessible à tous. Ce monde meilleur est un lieu où les arts se décloisonnent et où les cultures se
-                        rencontrent. C'est un lieu où chacun peut s'exprimer et s'épanouir.</p> -->
                         </div>
                     </div>
                     <!-- Point 2 -->
                     <div
                         class="w-full my-12 border-bleu-1 border-8 border-double rounded-xl lg:ml-auto lg:px-4 lg:py-2 lg:w-10/12 lg:flex">
                         <div>
-                            <h4 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🎨 L'Art
-                                sans limites 🎨</h4>
+                            <h3 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🎨 L'Art
+                                sans limites 🎨</h3>
                             <p class="font-abeezee text-lg mt-2 p-2">
                                 Explorez une programmation dynamique : ateliers créatifs, spectacles, débats et rencontres.
                                 Un
@@ -65,8 +60,8 @@
                         class="w-full my-12 border-rouge-1 border-8 border-double rounded-xl lg:px-4 lg:py-2 lg:w-10/12 lg:flex">
                         <span class="mr-12 hidden lg:text-8xl lg:block">✨</span>
                         <div>
-                            <h4 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🌟 Des
-                                valeurs fortes 🌟</h4>
+                            <h3 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mt-2">🌟 Des
+                                valeurs fortes 🌟</h3>
                             <p class="font-abeezee text-lg mt-2 p-2">Une association née de la passion, un lieu où chacun
                                 peut
                                 libérer son talent et se connecter. Etant particulièrement sensible aux valeurs
@@ -82,21 +77,22 @@
 
 
         <!-- Section 3 - Les associations  -->
-        <div class="bg-blanc-1">
+        <div class="bg-white">
             <section class="lg:w-10/12 w-full mx-auto">
                 <!-- Ciconia theatre -->
                 <div class="flex pt-28 justify-between px-4 lg:px-0">
                     <!-- Conteneur de l'image avec bordure -->
                     <div
                         class="w-5/12 hidden lg:flex relative after:bg-bleu-1 after:rounded-lg after:absolute lg:after:w-full after:h-full after:top-6 after:left-6 after:z-0">
-                        <img class="rounded-lg relative z-10 lg:h-full w-full h-40 " src="/images/image1.jpg" alt="Image 1">
+                        <img class="rounded-lg relative z-10 lg:h-full w-full h-40 " src="/images/image1.webp"
+                            alt="Image d'illustration de l'association Ciconia theatre">
                     </div>
 
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <img src="/images/logo-ciconia.png" class="">
-                            <p class="font-Dela text-3xl justify-center w-full inline-flex">Ciconia Théâtre</p>
+                            <img src="/images/logo-ciconia.webp" alt="Logo de Ciconia théatre">
+                            <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Ciconia Théâtre</h3>
                         </div>
 
                         <p class="font-abeezee text-lg mt-8">Une compagnie artistique engagée, basée en Franche-Comté. <br>
@@ -117,8 +113,8 @@
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <img class="w-40 lg:w-full" src="/images/logo-envida.png">
-                            <p class="font-Dela text-3xl justify-center w-full inline-flex">Envida</p>
+                            <img class="w-40 lg:w-full" src="/images/logo-envida.webp" alt="Logo de l'association Envida">
+                            <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Envida</h3>
                         </div>
 
                         <p class="font-abeezee text-lg mt-8">Ce nouveau projet est un lieu de vie commun où chacun peut
@@ -135,7 +131,8 @@
                     <!-- Conteneur de l'image avec bordure -->
                     <div
                         class="w-5/12 hidden lg:flex relative after:bg-bleu-1 after:rounded-lg after:absolute lg:after:w-full after:h-full after:top-6 after:left-6 after:z-0">
-                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image2.png" alt="Image 1">
+                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image2.webp"
+                            alt="Image d'illustration de l'association Envida">
                     </div>
                 </div>
 
@@ -144,17 +141,18 @@
                     <!-- Conteneur de l'image avec bordure -->
                     <div
                         class="w-5/12 hidden lg:flex relative after:bg-vert-1 after:rounded-lg after:absolute lg:after:w-full after:h-full after:top-6 after:left-6 after:z-0">
-                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image3.png" alt="Image 1">
+                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image3.webp"
+                            alt="Image d'illustration de l'association Gangassa">
                     </div>
 
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <p class="font-Dela text-3xl justify-center w-full inline-flex">Gangassa</p>
+                            <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Gangassa</h3>
                         </div>
 
                         <div class="flex justify-between mt-4">
-                            <img class="w-32 h-32" src="/images/gangassa-logo.png">
+                            <img class="w-32 h-32" src="/images/gangassa-logo.webp" alt="Logo de l'association Gangassa">
                             <p class="font-abeezee text-lg w-9/12 ">
                                 Rejoignez notre association, un lieu d'inspiration et de partage,
                                 où l'art et la convivialité se rencontrent. Nous encourageons la diversité des savoirs, des
@@ -181,8 +179,8 @@
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <img class="h-40 lg:w-full" src="/images/logo-shonlua.jpg">
-                            <p class="font-Dela text-3xl justify-center w-full inline-flex">Shon Lua</p>
+                            <img class="h-40 lg:w-full" src="/images/logo-shonlua.webp" alt="Logo de l'association Shonlua">
+                            <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Shon Lua</h3>
                         </div>
                         <p class="font-abeezee text-lg mt-8">L'atelier du sud est une association qui œuvre pour la
                             promotion
@@ -198,7 +196,8 @@
                     <!-- Conteneur de l'image avec bordure -->
                     <div
                         class="w-5/12 hidden lg:flex relative after:bg-jaune-1 after:rounded-lg after:absolute lg:after:w-full after:h-full after:top-6 after:left-6 after:z-0">
-                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image3.png" alt="Image 1">
+                        <img class="rounded-lg relative z-10 h-full w-full" src="/images/image3.webp"
+                            alt="Image d'illustration de l'association Shonlua">
                     </div>
 
                 </div>
@@ -209,37 +208,52 @@
 
         <!-- Section 4 - Evenement a venir -->
         <div class="bg-blanc-1">
-            <section class="pt-32 w-10/12 mx-auto bg-blanc-1">
+            <section class="pt-32 w-10/12 mx-auto bg-blanc-1 pb-4">
                 <h2 class="w-full text-center font-alumni text-6xl capitalize-first">événement à venir</h2>
 
                 <!-- CARTES EVENEMENTS -->
                 <div class="lg:flex justify-between mx-6 mt-20">
-                    <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`" :class="['w-3/12 rounded-lg relative z-50 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']
+                    <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`" :class="['w-3/12 rounded-lg relative z-40 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-bleu-1 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']
                         ">
                         <!-- date -->
-                        <div
-                            class="lg:absolute bg-rouge-1 lg:rounded-tl-lg lg:rounded-br-lg lg:rounded-tr-none lg:rounded-bl-none rounded-t-lg  font-abeezee text-blanc-1 text-center">
-                            {{ article.date_debut }} - {{ article.date_fin }}
+                        <!-- Si l'evenement n'a qu'une seule date -->
+                        <div v-if="article.end_date === null"
+                            class="px-2 py-1 absolute bg-rouge-2 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                            <span itemprop="date">
+                                Prévu le {{ moment(article.begin_date).format('DD/MM/YYYY') }}
+                            </span>
+
                         </div>
+                        <!-- Si l'evenement a 2 dates -->
+                        <div v-else
+                            class="px-2 py-1 absolute bg-rouge-2 rounded-br-lg rounded-tl-lg font-abeezee text-blanc-1 text-center">
+                            <span itemprop="date">
+                                Prévu du {{ moment(article.begin_date).format('DD/MM/YYYY') }} au {{
+                                    moment(article.end_date).format('DD/MM/YYYY') }}
+                            </span>
+                        </div>
+
                         <!-- image -->
-                        <img class="w-full lg:rounded-t-lg " :src="article.url">
+                        <img class="w-full h-96 object-cover object-center lg:rounded-t-lg " :src="article.url"
+                            alt="Image d'illustration de l'article">
                         <!-- titre -->
-                        <h4
-                            class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-8 text-center text-blanc-orange-1 group-hover:bg-violet-2/90">
-                            {{ article.titre.length > 16 ? article.titre.slice(0, 16) + '...' : article.titre }}
-                        </h4>
+                        <h3 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-4"
+                            :class="article.title.length < 28 ? 'py-4' : ''">
+                            {{ article.title.length > 37 ? article.title.slice(0, 47) + '...' : article.title }}
+                        </h3>
                         <!-- contenu -->
                         <p
-                            class="font-abeezee px-2 bottom pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 lg:bg-blanc-bleu-1 bg-red-100 mb-20 lg:mb-0">
-                            {{ article.contenu.length > 270 ? article.contenu.slice(0, 270) + '...' : article.contenu }}
+                            class="font-abeezee px-2 bottom-8 pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 lg:bg-blanc-bleu-1 bg-red-100 mb-20 lg:mb-0">
+                            {{ article.content.length > 270 ? article.content.slice(0, 270) + '...' : article.content }}
                         </p>
                     </a>
                 </div>
 
-                <button
-                    class=" px-2 py-1 bg-violet-2 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">Découvrir
-                    notre calendrier entier</button>
-
+                <a href="/calendrier">
+                    <button
+                        class=" px-2 py-1 bg-violet-4 rounded-lg font-abeezee mx-auto flex mt-20 text-xl text-blanc-1 hover:bg-violet-1 hover:ring">Découvrir
+                        notre calendrier entier</button>
+                </a>
             </section>
         </div>
 
@@ -255,14 +269,15 @@
                         boite
                         mail</p>
                     <div class="flex-col justify-center items-center my-6">
-                        <div v-if="errors.email" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.email }}</div>
-                        <input  placeholder="exemple@gmail.com" class="h-11 rounded-l-lg lg:w-96" v-model="form_create.email" type="email">
+                        <div v-if="errors.email" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.email }}
+                        </div>
+                        <input placeholder="exemple@gmail.com" class="h-11 rounded-l-lg lg:w-96" v-model="form_create.email"
+                            type="email">
                         <button @click="create()"
-                            class="px-2 py-2 bg-violet-2 rounded-r-lg font-abeezee text-xl text-blanc-1 hover:bg-violet-1 hover:ring">S'inscrire</button>
+                            class="px-2 py-2 bg-violet-4 rounded-r-lg font-abeezee text-xl text-blanc-1 hover:bg-violet-1 hover:ring">S'inscrire</button>
                     </div>
                 </div>
             </section>
-
 
             <section>
                 <!-- Partenaires -->
@@ -275,13 +290,14 @@
                             <h4 class="capitalize-first font-Dela text-xl text-center mb-4">partenaires institutionnels</h4>
                             <div class="flex justify-between gap-2">
                                 <a href="https://www.besancon.fr/">
-                                    <img class="h-14" src="/images/logo_besançon.png">
+                                    <img class="h-14" src="/images/logo_besançon.webp" alt="Logo de la ville de Besançon">
                                 </a>
                                 <a href="https://www.doubs.fr/">
-                                    <img class="h-14" src="/images/logo_doubs.png">
+                                    <img class="h-14" src="/images/logo_doubs.webp" alt="Logo du departement du Doubs">
                                 </a>
                                 <a href="https://www.doubs.gouv.fr/">
-                                    <img class="h-14" src="/images/logo-prefecture.jpg">
+                                    <img class="h-14" src="/images/logo-prefecture.webp"
+                                        alt="Logo de la prefecture du Doubs">
                                 </a>
                             </div>
                         </div>
@@ -291,13 +307,13 @@
                             <h4 class="capitalize-first font-Dela text-xl text-center mb-4">grands partenaires</h4>
                             <div class="flex justify-between gap-2">
                                 <a href="https://lvsl.fr/">
-                                    <img class="h-14 " src="/images/logo-lvsl.png">
+                                    <img class="h-14 " src="/images/logo-lvsl.webp" alt="Logo du vent se leve">
                                 </a>
                                 <a href="https://www.danse-neuchatel.ch/2023/">
-                                    <img class="h-14" src="/images/logo-adn.png">
+                                    <img class="h-14" src="/images/logo-adn.webp" alt="Logo de adn">
                                 </a>
                                 <a href="https://www.justice.gouv.fr/">
-                                    <img class="h-14 " src="/images/logo-spip.png">
+                                    <img class="h-14 " src="/images/logo-spip.webp" alt="Logo du SPIP">
                                 </a>
                             </div>
                         </div>
@@ -307,11 +323,11 @@
                             <h4 class="capitalize-first font-Dela text-xl text-center mb-4">partenaires medias</h4>
                             <div class="flex justify-between">
                                 <a href="https://www.linsatiable.org/">
-                                    <img class="h-14" src="/images/logo-linsatiable.png">
+                                    <img class="h-14" src="/images/logo-linsatiable.webp" alt="Logo de l'insatiable">
                                 </a>
 
                                 <a href="https://radiosud.net/">
-                                    <img class="h-14" src="/images/logo-radiosud.png">
+                                    <img class="h-14" src="/images/logo-radiosud.webp" alt="Logo de radiosud">
                                 </a>
                             </div>
                         </div>
@@ -325,23 +341,23 @@
                     <!-- Pages Légales -->
                     <div class="lg:w-1/3 lg:p-4 w-full text-center lg:text-left">
                         <h4 class="capitalize-first font-Dela my-4">pages légales</h4>
-                        <p class="capitalize-first font-abeezee"><a>politique de confidentialité</a></p>
-                        <p class="capitalize-first font-abeezee my-1"><a>conditions générales d'utilisation</a></p>
-                        <p class="capitalize-first font-abeezee"><a>mentions légales</a></p>
+                        <p class="capitalize-first font-abeezee">politique de confidentialité</p>
+                        <p class="capitalize-first font-abeezee my-1">conditions générales d'utilisation</p>
+                        <p class="capitalize-first font-abeezee">mentions légales</p>
                     </div>
 
                     <!-- Nous -->
                     <div class="lg:w-1/3 lg:p-4 w-full text-center my-12 lg:my-0">
                         <h4 class="capitalize-first font-Dela my-4">Nous</h4>
-                        <p class="capitalize-first font-abeezee"><a>le café du sud</a></p>
-                        <p class="capitalize-first font-abeezee my-1"><a>l'atelier du sud</a></p>
-                        <p class="capitalize-first font-abeezee"><a>nous contacter</a></p>
+                        <p class="capitalize-first font-abeezee">le café du sud</p>
+                        <p class="capitalize-first font-abeezee my-1">l'atelier du sud</p>
+                        <p class="capitalize-first font-abeezee"><a href="/contact">nous contacter</a></p>
                     </div>
 
                     <!-- L'atelier -->
                     <div class="lg:w-1/3 lg:p-4 w-full mx-auto lg:text-right text-center font-abeezee">
                         <div class="flex w-full lg:justify-end justify-center">
-                            <img class="" src="/images/logo.png">
+                            <img class="" src="/images/logo.webp" alt="Logo de l'association L'Atelier du Sud">
                         </div>
                         <p>04 60 85 42 01</p>
                         <p>contact@AtelierDuSud.fr</p>
@@ -354,8 +370,7 @@
 </template>
 
 <script>
-import { Head } from '@inertiajs/vue3';
-import { ref } from 'vue';  // Ajoutez cette ligne
+import moment from 'moment'; // Importez Moment.js
 
 import UserLayout from '@/Layouts/UserLayout.vue'
 
@@ -381,13 +396,13 @@ export default {
 
     data() {
         return {
+            pageTitle: "Les Casas du Sud - Accueil",
+            moment: moment,
             form_create: {
                 email: null
-            }
-
+            },
         }
     },
-
 
     methods: {
         create() {
@@ -396,11 +411,6 @@ export default {
             })
         },
     },
-
-    mounted() {
-        console.log('Le composant Welcome est monté');
-        console.log(articles);
-    }
 };
 
 </script>

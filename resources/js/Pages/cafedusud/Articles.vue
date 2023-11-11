@@ -15,43 +15,61 @@
                 <div class="bg-slate-200 shadow-md border-2 border-slate-300 rounded-xl mx-4 my-2">
                     <!-- CARD CONTENT -->
                     <div class="mx-4 my-2 flex flex-col">
-                        <div class="flex justify-between">
-                            <h3 class="text-2xl text-slate-700 text-center"> {{ article.titre }} </h3>
-                            <!-- EDIT BUTTON -->
-                            <button @click="edit(article)" class="">
-                                <svg class="feather feather-edit" fill="none" height="24" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                    width="24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-                                </svg>
-                            </button>
+                        <!-- EDIT BUTTON -->
+                        <button @click="edit(article)" class="flex justify-end group">
+                            <svg class="feather feather-edit group-hover:stroke-violet-1" fill="none" height="24"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                            </svg>
+                        </button>
+                        <div class="flex ">
+                            <h3 class="text-4xl font-alumni mb-4"> {{ article.title }} </h3>
                         </div>
 
+                        <!-- STATUS + DATE + TYPE -->
+                        <div class="flex-col py-2 border-t-2 border-t-black/50">
+                            <span class="flex"
+                                :class="{ 'text-green-700': article.status === 'en ligne', 'text-yellow-600': article.status === 'en attente' }">
+                                {{ article.status }}</span>
+                            <span class="flex my-3">Publié le : {{ moment(article.publication_date).format('DD/MM/YYYY')
+                            }}</span>
+                            <!-- Type -->
+                            <span class="flex">type : <span class="text-purple-600"> {{ article.type }}</span></span>
+                        </div>
 
+                        <!-- CONTENT -->
+                        <p class="text-slate-700 border-t-2 border-t-black/50 font-abeezee pt-8 whitespace-pre-line"> {{ article.content }}
+                        </p>
+                        <img :src=article.url class="">
 
-                        <p class="text-slate-700 mt-3"> {{ article.contenu }} </p>
-                        <span class=" mt-3"> {{ article.type }} </span>
-                        <img :src=article.url class="h-">
-                        <!-- <p class="mt-3"> {{ article.url }} </p> -->
-                        <span class="mt-3"> du {{ article.date_debut }} au {{ article.date_fin }} </span>
+                        <!-- DATES -->
+                        <div class="py-2">
+                            <!-- Si l'article est un billet de blog -->
+                            <p v-if="article.type === 'blog'" class="">
+                                Billet de blog
+                            </p>
+
+                            <!-- Si l'article est un évenement avec seulement seule date_début -->
+                            <p v-else-if="article.type === 'evenement' && article.end_date === null" class="">
+                                Prévu le {{ moment(article.begin_date).format('DD/MM/YYYY') }}
+                            </p>
+
+                            <!-- Si l'article est un évenement avec date_début et end_date -->
+                            <p v-else class="">
+                                Événement prévu du {{ moment(article.begin_date).format('DD/MM/YYYY') }} au {{
+                                    moment(article.end_date).format('DD/MM/YYYY') }}
+                            </p>
+                        </div>
 
                         <div class="flex gap-2">
+                            <span>tags :</span>
                             <div v-for="tag in article.tags"
                                 class="bg-yellow-50 px-2 py-1 text-yellow-700 ring-1 ring-inset ring-yellow-600/30 rounded text-md ">
-                                {{ tag.nom }}
+                                {{ tag.name }}
                             </div>
                         </div>
-
-                        <!-- STATUS + DATE -->
-                        <div class="flex justify-between">
-                            <span
-                                :class="{ 'text-green-700': article.statut === 'en ligne', 'text-yellow-600': article.statut === 'en attente' }">
-                                {{ article.statut }}</span>
-
-                            <span class="flex"> {{ article.date_publication }} </span>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -78,24 +96,25 @@
                     class="mb-6 uppercase text-xl leading-6 font-semibold tracking-widest border-b-2 pb-1 border-cyan-600  text-cyan-600 relative">
                     créer un article</h3>
 
-                <!-- TITRE -->
+                <!-- title -->
                 <div class="mt-3">
-                    <div v-if="errors.titre" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.titre }}
+                    <div v-if="errors.title" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.title }}
                     </div>
-                    <label class="block font-medium text-gray-700 capitalize">titre</label>
+                    <label class="block font-medium text-gray-700 capitalize">Titre</label>
                     <input
                         class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                        v-model="form_create.titre" type="text">
+                        v-model="form_create.title" type="text">
                 </div>
 
-                <!-- CONTENU -->
+                <!-- content -->
                 <div class="mt-3">
-                    <div v-if="errors.contenu" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.contenu }}
+                    <div v-if="errors.content" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.content }}
                     </div>
-                    <label class="block font-medium text-gray-700 capitalize">contenu</label>
-                    <input
+                    <label class="block font-medium text-gray-700 capitalize">Contenu</label>
+                    <textarea
                         class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                        v-model="form_create.contenu" type="text">
+                        v-model="form_create.content" type="text">
+                    </textarea>
                 </div>
 
                 <!-- TYPE -->
@@ -113,69 +132,58 @@
                 <!-- URL -->
                 <div class="mt-3">
                     <div v-if="errors.url" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.url }}</div>
-                    <label class="block font-medium text-gray-700 capitalize-first">lien de l'image</label>
+                    <label class="block font-medium text-gray-700 capitalize-first">Lien de l'image</label>
                     <input
                         class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                         v-model="form_create.url" type="url">
-                </div>
-
-                <!-- DATE PUBLICATION -->
-                <div class="mt-3">
-                    <div v-if="errors.date_publication" class="text-red-700 text-lg mx-auto flex justify-center">{{
-                        errors.date_publication }}</div>
-                    <label class="block mt-3 font-medium text-gray-700 capitalize-first">date de publication</label>
-                    <input
-                        class="block w-full mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                        v-model="form_create.date_publication" type="date">
                 </div>
 
                 <!-- DATE DEBUT + FIN -->
                 <div class="flex justify-between mt-3">
                     <!-- DATE DEBUT -->
                     <div>
-                        <div v-if="errors.date_debut" class="text-red-700 text-lg mx-auto flex justify-center">{{
-                            errors.date_debut }}</div>
-                        <label class="block  mt-3 font-medium text-gray-700 capitalize-first">date de début</label>
+                        <div v-if="errors.begin_date" class="text-red-700 text-lg mx-auto flex justify-center">{{
+                            errors.begin_date }}</div>
+                        <label class="block  mt-3 font-medium text-gray-700 capitalize-first">Date de début</label>
                         <input
                             class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                            v-model="form_create.date_debut" type="date">
+                            v-model="form_create.begin_date" type="date">
                     </div>
-
                     <!-- DATE FIN -->
                     <div>
-                        <div v-if="errors.date_fin" class="text-red-700 text-lg mx-auto flex justify-center">{{
-                            errors.date_fin
+                        <div v-if="errors.end_date" class="text-red-700 text-lg mx-auto flex justify-center">{{
+                            errors.end_date
                         }}</div>
-                        <label class="block  mt-3 font-medium text-gray-700 capitalize-first">date de fin</label>
+                        <label class="block  mt-3 font-medium text-gray-700 capitalize-first">Date de fin</label>
                         <input
                             class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                            v-model="form_create.date_fin" type="date">
+                            v-model="form_create.end_date" type="date">
                     </div>
-
                 </div>
 
                 <!-- STATUT -->
                 <div class="mt-3">
-                    <div v-if="errors.statut" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.statut }}
+                    <div v-if="errors.status" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.status }}
                     </div>
                     <label class="block font-medium text-gray-700 capitalize-first">Statut</label>
                     <select
                         class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                        v-model="form_create.statut">
+                        v-model="form_create.status">
                         <option value="en attente">En attente</option>
                         <option value="en ligne">En ligne</option>
                     </select>
                 </div>
 
                 <!-- TAGS -->
-                <label class="block  mt-3 font-medium text-gray-700 capitalize-first">tags</label>
+                <label class="block  mt-3 font-medium text-gray-700 capitalize-first">Tags</label>
                 <div class="flex items-center" v-for="tag in tags">
                     <input class="rounded mr-1 focus:ring-0 focus:ring-offset-0" type="checkbox" v-model="form_create.tags"
                         :value="tag.id">
-                    <label class="capitalize-first">{{ tag.nom }}</label>
+                    <label class="capitalize-first">{{ tag.name }}</label>
                 </div>
                 <button @click="create(form_create)"
-                    class="mt-4 rounded border focus:ring-cyan-500 focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-50 active:bg-cyan-900 bg-cyan-800 hover:bg-cyan-700 font-medium w-full text-white px-2 py-1 uppercase">Créer un article</button>
+                    class="mt-4 rounded border focus:ring-cyan-500 focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-50 active:bg-cyan-900 bg-cyan-800 hover:bg-cyan-700 font-medium w-full text-white px-2 py-1 uppercase">Créer
+                    un article</button>
             </div>
         </div>
 
@@ -206,31 +214,31 @@
                         modifier un article
                     </h3>
 
-                    <!-- TITRE -->
+                    <!-- title -->
                     <div class="mt-3">
-                        <div v-if="errors.titre" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.titre }}
+                        <div v-if="errors.title" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.title }}
                         </div>
-                        <label class="block font-medium text-gray-700 capitalize">titre</label>
+                        <label class="block font-medium text-gray-700 capitalize">Titre</label>
                         <input
                             class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                            v-model="form_update.titre" type="text">
+                            v-model="form_update.title" type="text">
                     </div>
 
-                    <!-- CONTENU -->
+                    <!-- content -->
                     <div class="mt-3">
-                        <div v-if="errors.contenu" class="text-red-700 text-lg mx-auto flex justify-center">{{
-                            errors.contenu }}</div>
-                        <label class="block mt-3 font-medium text-gray-700 capitalize">contenu</label>
+                        <div v-if="errors.content" class="text-red-700 text-lg mx-auto flex justify-center">{{
+                            errors.content }}</div>
+                        <label class="block mt-3 font-medium text-gray-700 capitalize">Contenu</label>
                         <textarea
                             class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                            v-model="form_update.contenu" type="text"></textarea>
+                            v-model="form_update.content" type="text"></textarea>
                     </div>
 
                     <!-- TYPE -->
                     <div class="mt-3">
                         <div v-if="errors.type" class="text-red-700 text-lg mx-auto flex justify-center">{{
                             errors.type }}</div>
-                        <label class="block  mt-3 font-medium text-gray-700 capitalize">type</label>
+                        <label class="block  mt-3 font-medium text-gray-700 capitalize">Type</label>
                         <select
                             class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_update.type">
@@ -243,7 +251,7 @@
                     <div class="mt-3">
                         <div v-if="errors.url" class="text-red-700 text-lg mx-auto flex justify-center">{{
                             errors.url }}</div>
-                        <label class="block mt-3 font-medium text-gray-700 capitalize-first">lien de l'image</label>
+                        <label class="block mt-3 font-medium text-gray-700 capitalize-first">Lien de l'image</label>
                         <input
                             class="block w-full mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_update.url" type="url">
@@ -251,64 +259,63 @@
 
                     <!-- DATE PUBLICATION -->
                     <div class="mt-3">
-                        <div v-if="errors.date_publication" class="text-red-700 text-lg mx-auto flex justify-center">{{
-                            errors.date_publication }}</div>
+                        <div v-if="errors.publication_date" class="text-red-700 text-lg mx-auto flex justify-center">{{
+                            errors.publication_date }}</div>
                         <label class="block mt-3 font-medium text-gray-700 capitalize-first">date de
                             publication</label>
                         <input
                             class="block w-full mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                            v-model="form_update.date_publication" type="date">
+                            v-model="form_update.publication_date" type="date">
                     </div>
 
                     <!-- DATE DEBUT + FIN -->
                     <div class="flex justify-between mt-3">
                         <!-- DATE DEBUT -->
                         <div>
-                            <div v-if="errors.date_debut" class="text-red-700 text-lg mx-auto flex justify-center">
+                            <div v-if="errors.begin_date" class="text-red-700 text-lg mx-auto flex justify-center">
                                 {{
-                                    errors.date_debut }}</div>
-                            <label class="block mt-1 font-medium text-gray-700 my-auto capitalize-first">date de
+                                    errors.begin_date }}</div>
+                            <label class="block mt-1 font-medium text-gray-700 my-auto capitalize-first">Date de
                                 début</label>
                             <input
                                 class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                                v-model="form_update.date_debut" type="date">
+                                v-model="form_update.begin_date" type="date">
                         </div>
                         <!-- DATE FIN -->
                         <div>
-                            <div v-if="errors.date_fin" class="text-red-700 text-lg mx-auto flex justify-center">{{
-                                errors.date_fin }}</div>
-                            <label class="block mt-1 font-medium text-gray-700 my-auto capitalize-first">date de
+                            <div v-if="errors.end_date" class="text-red-700 text-lg mx-auto flex justify-center">{{
+                                errors.end_date }}</div>
+                            <label class="block mt-1 font-medium text-gray-700 my-auto capitalize-first">Date de
                                 fin</label>
                             <input
                                 class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                                v-model="form_update.date_fin" type="date">
+                                v-model="form_update.end_date" type="date">
                         </div>
                     </div>
 
-                    <!-- STATUT -->
+                    <!-- status -->
                     <div class="mt-3">
-                        <div v-if="errors.statut" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.statut
+                        <div v-if="errors.status" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.status
                         }}
                         </div>
-                        <label class="block font-medium text-gray-700 capitalize-first">statut</label>
+                        <label class="block font-medium text-gray-700 capitalize-first">Statut</label>
                         <select
                             class="block mt-1 rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
-                            v-model="form_update.statut">
+                            v-model="form_update.status">
                             <option value="en attente">En attente</option>
                             <option value="en ligne">En ligne</option>
                         </select>
                     </div>
 
-
                     <!-- TAGS -->
                     <div>
                         <div v-if="errors.tags" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.tags }}
-                            <label class="block mt-3 font-medium text-gray-700 capitalize-first">tags</label>
+                            <label class="block mt-3 font-medium text-gray-700 capitalize-first">Tags</label>
                             <div class="items-center flex gap-2">
                                 <div class="flex items-center" v-for="tag in tags">
                                     <input class="rounded mr-1 focus:ring-0 focus:ring-offset-0" type="checkbox"
                                         v-model="form_update.tags" :value="tag.id" :id="tag.id">
-                                    <label class="capitalize-first" :for="tag.id">{{ tag.nom }}</label>
+                                    <label class="capitalize-first" :for="tag.id">{{ tag.name }}</label>
                                 </div>
                             </div>
                         </div>
@@ -319,14 +326,13 @@
                 </div>
             </div>
         </div>
-
-
     </AppLayout>
 </template>
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
-import { capitalize } from 'vue';
+import moment from 'moment'
+
 
 export default {
     components: {
@@ -337,31 +343,33 @@ export default {
 
     data() {
         return {
+            moment: moment,
             isOpenCreate: false,
             isOpenEdit: false,
             selectedArticle: null,
             form_create: {
-                titre: null,
-                contenu: null,
+                title: null,
+                content: null,
                 type: null,
                 url: null,
-                date_publication: null,
-                date_debut: null,
-                date_fin: null,
-                statut: null,
+                publication_date: null,
+                begin_date: null,
+                end_date: null,
+                status: null,
                 tags: [],
             },
             form_update: {
-                titre: null,
-                contenu: null,
+                title: null,
+                content: null,
                 type: null,
                 url: null,
-                date_publication: null,
-                date_debut: null,
-                date_fin: null,
-                statut: null,
+                publication_date: null,
+                begin_date: null,
+                end_date: null,
+                status: null,
                 tags: [],
             },
+
         }
     },
 
@@ -369,14 +377,14 @@ export default {
         selectedArticle: {
             handler() {
                 if (this.selectedArticle) {
-                    this.form_update.titre = this.selectedArticle.titre;
-                    this.form_update.contenu = this.selectedArticle.contenu;
+                    this.form_update.title = this.selectedArticle.title;
+                    this.form_update.content = this.selectedArticle.content;
                     this.form_update.type = this.selectedArticle.type;
                     this.form_update.url = this.selectedArticle.url;
-                    this.form_update.date_publication = this.selectedArticle.date_publication;
-                    this.form_update.date_debut = this.selectedArticle.date_debut;
-                    this.form_update.date_fin = this.selectedArticle.date_fin;
-                    this.form_update.statut = this.selectedArticle.statut;
+                    this.form_update.publication_date = this.selectedArticle.publication_date;
+                    this.form_update.begin_date = this.selectedArticle.begin_date;
+                    this.form_update.end_date = this.selectedArticle.end_date;
+                    this.form_update.status = this.selectedArticle.status;
                     this.form_update.tags = this.selectedArticle.tags.map(tag => tag.id);
                 }
             },
@@ -389,7 +397,6 @@ export default {
 
     methods: {
         closeCreateModale() {
-            
             this.resetCreateForm();
             this.isOpenCreate = false;
         },
@@ -401,38 +408,38 @@ export default {
 
         resetCreateForm() {
             // reinitialize form
-            this.form_create.titre = null;
-            this.form_create.contenu = null;
+            this.form_create.title = null;
+            this.form_create.content = null;
             this.form_create.type = null;
             this.form_create.url = null;
-            this.form_create.date_publication = null;
-            this.form_create.date_debut = null;
-            this.form_create.date_fin = null;
-            this.form_create.statut = null;
+            this.form_create.publication_date = null;
+            this.form_create.begin_date = null;
+            this.form_create.end_date = null;
+            this.form_create.status = null;
             this.form_create.tags = [];
 
             // reinitialize errors
-            this.errors.titre = null;
-            this.errors.contenu = null;
+            this.errors.title = null;
+            this.errors.content = null;
             this.errors.type = null;
             this.errors.url = null;
-            this.errors.date_publication = null;
-            this.errors.date_debut = null;
-            this.errors.date_fin = null;
-            this.errors.statut = null;
+            this.errors.publication_date = null;
+            this.errors.begin_date = null;
+            this.errors.end_date = null;
+            this.errors.status = null;
             this.errors.tags = null;
         },
 
         resetEditForm() {
             // reinitialize errors
-            this.errors.titre = null;
-            this.errors.contenu = null;
+            this.errors.title = null;
+            this.errors.content = null;
             this.errors.type = null;
             this.errors.url = null;
-            this.errors.date_publication = null;
-            this.errors.date_debut = null;
-            this.errors.date_fin = null;
-            this.errors.statut = null;
+            this.errors.publication_date = null;
+            this.errors.begin_date = null;
+            this.errors.end_date = null;
+            this.errors.status = null;
             this.errors.tags = null;
         },
 

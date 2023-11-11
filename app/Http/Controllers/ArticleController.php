@@ -27,14 +27,12 @@ class ArticleController extends Controller
         return Inertia::render('cafedusud/Blog', compact('articles', 'tags'));
     }
 
-    public function indexProchainsTroisEvenements()
+    public function indexNextThreeEvents()
     {
         $tags = Tag::all();
         $articles = Article::with('tags')
-            ->prochainsTroisEvenements()
+            ->nextThreeEvents()
             ->get();
-
-        // dd($articles);
 
         return Inertia::render('Welcome', [
             'articles' => $articles,
@@ -42,11 +40,11 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function indexProchainsEvenements()
+    public function indexNextEvents()
     {
         $tags = Tag::all();
         $articles = Article::with('tags')
-            ->prochainsEvenements()
+            ->nextEvents()
             ->get();
 
         return Inertia::render('cafedusud/Calendrier', [
@@ -77,16 +75,17 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $valid_data = Validator::make($request->all(), [
-            'titre' => ['required', 'max:47'],
-            'contenu' => ['required'],
-            'type' => ['required'],
-            'url' => ['nullable'],
-            'date_publication' => ['nullable'],
-            'date_debut' => ['nullable',],
-            'date_fin' => ['nullable',],
-            'statut' => ['required',],
-            'tags' => ['required'],
+            'title' => ['required', 'min:10', 'max:70'],
+            'content' => ['required', 'min:100'],
+            'type' => ['required',],
+            'url' => ['nullable',],
+            'begin_date' => ['nullable', 'date', 'after:now'],
+            'end_date' => ['nullable', 'date',  'after:begin_date'],
+            'status' => ['required',],
+            'tags' => ['nullable',],
         ])->validate();
+
+        $valid_data['publication_date'] = now();
 
         $article = Article::create($valid_data);
         $article->tags()->sync($request->input('tags'));
@@ -98,15 +97,15 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $valid_data = Validator::make($request->all(), [
-            'titre' => ['required', 'max:47'],
-            'contenu' => ['required',],
+            'title' => ['required',],
+            'content' => ['required',],
             'type' => ['required',],
             'url' => ['nullable',],
-            'date_publication' => ['nullable',],
-            'date_debut' => ['nullable',],
-            'date_fin' => ['nullable',],
-            'statut' => ['required',],
-            'tags' => ['nullable'],
+            'date_publication' => ['nullable', 'date',],
+            'begin_date' => ['nullable', 'date', 'after:now'],
+            'end_date' => ['nullable', 'date',  'after:begin_date'],
+            'status' => ['required',],
+            'tags' => ['nullable',],
         ])->validate();
 
         $article->update($valid_data);

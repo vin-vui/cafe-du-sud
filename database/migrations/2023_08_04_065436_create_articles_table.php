@@ -1,31 +1,31 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration; // Importe la classe de base pour les migrations de base de données
+use Illuminate\Database\Schema\Blueprint; // Importe la classe Blueprint utilisée pour définir la structure de la table
+use Illuminate\Support\Facades\Schema; // Importe la classe Schema qui permet d'interagir avec la base de données via des migrations
 
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Cette méthode définit la migration pour créer la table 'articles'
      */
     public function up(): void
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->id();
-            $table->string('titre');
-            $table->text('contenu');
+            $table->id(); // Colonne d'ID auto-incrémentée
+            $table->string('title');
+            $table->text('content');
             $table->enum('type', ['evenement', 'blog']);
             $table->string('url');
-            $table->date('date_publication');
-            $table->date('date_debut')->nullable();
-            $table->date('date_fin')->nullable();
-            $table->enum('statut', ['en attente', 'en ligne']);
+            $table->date('publication_date');
+            $table->date('begin_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->enum('status', ['en attente', 'en ligne']);
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Cette méthode définit comment annuler la migration en cas d'exécution de la fonction rollback.
      */
     public function down(): void
     {

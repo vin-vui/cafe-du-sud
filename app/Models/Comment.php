@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 
-class Commentaire extends Model
+class Comment extends Model
 {
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        'statut',
+        'status',
         'pseudo',
-        'date_publication',
-        'contenu',
+        'publication_date',
+        'content',
     ];
 
 
