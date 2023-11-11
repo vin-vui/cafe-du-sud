@@ -2,15 +2,15 @@
     <UserLayout>
         <!-- title + barre de filtre -->
         <div>
-            <h2 class="mt-20 text-6xl font-alumni text-center">Prochains événements</h2>
-            <!-- barre de filtres  -->
-            <div class="w-4/12 ml-40 flex font-abeezee justify-between">
+            <h2 class="mt-16 text-6xl font-alumni text-center">Prochains événements</h2>
+            <!-- barre de filtres des tags  -->
+            <!-- <div class="w-4/12 ml-40 flex font-abeezee justify-between">
                 <button class="capitalize-first pr-20 hover:font-bold">tout</button>
                 <button class="capitalize-first pr-20 hover:font-bold">evenements</button>
                 <button class="capitalize-first pr-20 hover:font-bold">présentations</button>
                 <button class="capitalize-first pr-20 hover:font-bold">actualités</button>
                 <button class="capitalize-first pr-20 hover:font-bold">articles</button>
-            </div>
+            </div> -->
         </div>
 
         <!-- cartes evenements -->
@@ -20,24 +20,21 @@
                 <!-- dates -->
                 <!-- Si l'evenement n'a qu'une seule date -->
                 <div v-if="article.end_date === null"
-                    class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                    class="px-2 py-1 absolute bg-rouge-2 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
                     Prévu le {{ moment(article.begin_date).format('DD/MM/YYYY') }}
                 </div>
                 <!-- Si l'evenement a 2 dates -->
                 <div v-else
-                    class="px-2 py-1 absolute bg-rouge-1 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
+                    class="px-2 py-1 absolute bg-rouge-2 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
                     Prévu du {{ moment(article.begin_date).format('DD/MM/YYYY') }} au {{
                         moment(article.end_date).format('DD/MM/YYYY') }}
                 </div>
-
-
-
                 <!-- image -->
-                <img class="w-full rounded-t-lg" :src="article.url">
+                <img class="w-full h-96 object-cover object-center rounded-t-lg" :src="article.url" alt="Image d'illustration de l'évènement">
                 <!-- title -->
-                <h4 class="bg-white/30 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-2/90"
-                    :class="article.title.length < 29 ? 'py-4' : ''">
-                    {{ article.title.length > 47 ? article.title.slice(0, 47) + '...' : article.title }}
+                <h4 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-4"
+                :class="article.title.length < 28 ? 'py-4' : ''">
+                {{ article.title.length > 37 ? article.title.slice(0, 47) + '...' : article.title }}
                 </h4>
                 <!-- content -->
                 <p

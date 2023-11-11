@@ -23,10 +23,9 @@ class ArticleSeeder extends Seeder
 
             L'atelier est un refuge pour les esprits créatifs, les rêveurs, les révolutionnaires de l'âme. Il est ouvert à tous, quel que soit votre parcours, votre âge, ou votre origine. Rejoignez-nous dans cette quête de l'inconnu, de la spontanéité, et de l'authenticité.",
             'type' => 'evenement',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1ULvOqhAt-W1lJYB2OGT8LqQpjnKXb4Ia',
             'publication_date' => '2023/04/09',
-            'begin_date' => '2023/11/12',
-            'end_date' => '2023/12/11',
+            'begin_date' => '2023/11/14',
             'status' => 'en ligne',
         ]);
 
@@ -40,10 +39,10 @@ class ArticleSeeder extends Seeder
 
             'Ateliers d'Art Urbain pour les Jeunes' promet d'inspirer, d'éduquer et de décorer, tout en favorisant la créativité chez les plus jeunes.",
             'type' => 'evenement',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1sVZgcGiobuI0yyaRePJN-urmu8f8Z7Dk',
             'publication_date' => '2023/04/09',
-            'begin_date' => '2023/11/12',
-            'end_date' => '2023/12/11',
+            'begin_date' => '2023/11/15',
+            'end_date' => '2023/12/22',
             'status' => 'en ligne',
         ]);
 
@@ -57,10 +56,10 @@ class ArticleSeeder extends Seeder
 
             L'événement est un lieu de partage, d'inspiration, et de création, où chacun peut apporter sa contribution, quel que soit son âge. C'est une déclaration d'amour à la diversité intergénérationnelle, où la créativité et l'authenticité sont à l'honneur. Vous êtes tous invités à rejoindre cette mosaïque d'histoires et de sourires, à prendre place autour de la grande table de la vie.",
             'type' => 'evenement',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1aJXrKDUMH4Pl5k3SPhcH2oOBn1P7tijG',
             'publication_date' => '2023/04/09',
-            'begin_date' => '2023/11/12',
-            'end_date' => '2023/12/11',
+            'begin_date' => '2023/11/16',
+            'end_date' => '2023/12/18',
             'status' => 'en ligne',
         ]);
 
@@ -72,10 +71,10 @@ class ArticleSeeder extends Seeder
 
             Que vous soyez un amateur d'art ou simplement en quête de divertissement, 'SudArt' vous invite à vous joindre à cette fête artistique, à découvrir de nouvelles formes d'expression et à participer à un événement communautaire mémorable.",
             'type' => 'evenement',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1IFIe78U1uoJe_Qice8tumjC6Ybq6DzDl',
             'publication_date' => '2023/04/09',
-            'begin_date' => '2023/11/12',
-            'end_date' => '2023/12/11',
+            'begin_date' => '2023/12/12',
+            'end_date' => '2023/12/16',
             'status' => 'en ligne',
         ]);
 
@@ -87,13 +86,12 @@ class ArticleSeeder extends Seeder
 
             Tous sont invités à participer, à dialoguer avec les artistes et à apporter leur contribution à la discussion. C'est un moment pour se laisser inspirer, pour s'engager et pour découvrir comment l'art peut être un agent du changement social positif.",
             'type' => 'evenement',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1Ne8MHPONGKz5mdyd8VwlB5TQvbGWrDfJ',
             'publication_date' => '2023/04/09',
-            'begin_date' => '2023/11/12',
-            'end_date' => '2023/12/11',
+            'begin_date' => '2023/12/18',
+            'end_date' => '2023/12/23',
             'status' => 'en ligne',
         ]);
-
         DB::table('articles')->insert([
             'title' => "Nuit de l'Improvisation Théâtrale",
             'content' => "La 'Nuit de l'Improvisation Théâtrale' est une soirée d'humour et de créativité spontanée. Les troupes locales d'improvisation théâtrale se réunissent pour offrir des performances hilarantes basées sur les suggestions du public. Les spectateurs sont invités à proposer des thèmes, des lieux et des idées, ce qui conduit à des scènes inattendues et souvent hilarantes.
@@ -102,10 +100,10 @@ class ArticleSeeder extends Seeder
 
             Que vous soyez un amateur de théâtre ou simplement à la recherche de divertissement, 'La Nuit de l'Improvisation Théâtrale' promet de vous faire rire aux éclats et de vous laisser pantois face à la créativité humaine. C'est une soirée de légèreté et de comédie qui réchauffe le cœur et l'âme.",
             'type' => 'evenement',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1qzZALHP9QBTliVmMVWARFKWvo3a0yUho',
             'publication_date' => '2023/04/09',
-            'begin_date' => '2023/11/12',
-            'end_date' => '2023/12/11',
+            'begin_date' => '2024/01/03',
+            'end_date' => '2024/01/08',
             'status' => 'en ligne',
         ]);
 
@@ -114,7 +112,7 @@ class ArticleSeeder extends Seeder
             'title' => "L'Art de la Photographie : Capturer l'Âme d'un Instant",
             'content' => "La photographie est un art qui transcende les limites du temps. C'est la magie de figer un instant, de capturer une émotion, de raconter une histoire sans un seul mot. Dans cet article, nous plongeons profondément dans l'art de la photographie. Des techniques de composition aux secrets de l'éclairage, nous explorons les astuces qui transforment une simple image en une œuvre d'art. Les photographes professionnels partagent leur passion et leur vision de l'art de la photographie, vous invitant dans un monde où chaque instant devient une opportunité artistique. La photographie va au-delà de la technique, c'est l'art de voir le monde sous un nouvel angle, de révéler la beauté dans les détails les plus simples, de transmettre des émotions profondes et de susciter la réflexion.",
             'type' => 'blog',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1TTDL2ShSF3Y_HCMtSS9jdgmXbzfHSOht',
             'publication_date' => '2023/04/09',
             'begin_date' => null,
             'end_date' => null,
@@ -125,7 +123,7 @@ class ArticleSeeder extends Seeder
             'title' => "Le Pouvoir de l'Art dans la Vie Quotidienne",
             'content' => "L'art ne se limite pas aux musées et aux galeries. Il peut être un compagnon quotidien qui égaye notre vie, suscite la créativité et enrichit notre âme. Dans cet article, nous explorons le pouvoir de l'art dans notre vie de tous les jours. Des graffitis colorés qui ornent les murs de nos villes aux objets artisanaux qui décorent nos maisons, découvrez comment l'art peut inspirer, apaiser et enrichir nos expériences quotidiennes. Nous plongeons dans le monde des artistes de rue, des artisans locaux et des amateurs de bricolage passionnés qui apportent la créativité dans chaque coin de notre vie. Explorez comment vous pouvez intégrer davantage d'art dans votre quotidien, transformant ainsi chaque jour en une œuvre d'art.",
             'type' => 'blog',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1_b8o8JSFqrxrQT5og8N6dUKG5YPN-ykp',
             'publication_date' => '2023/04/09',
             'begin_date' => null,
             'end_date' => null,
@@ -136,7 +134,7 @@ class ArticleSeeder extends Seeder
             'title' => "La Magie de la Danse : Émotions à l'État Pur",
             'content' => "La danse est un langage universel de l'âme, une expression de l'émotion pure à travers le mouvement. Dans cet article, nous nous plongeons dans la magie de la danse, explorant ses différentes formes, de la grâce du ballet classique à l'énergie explosive de la danse contemporaine. Rencontrez les danseurs et les chorégraphes qui donnent vie à des histoires sans mots, en utilisant leur corps comme pinceau et la scène comme toile. Découvrez comment la danse transcende les barrières culturelles, évoque des émotions profondes et nous connecte à notre essence humaine. Plongez dans un monde où chaque mouvement est une histoire, chaque pas est une émotion et chaque danseur est un artiste de l'âme.",
             'type' => 'blog',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1vMeBUQm2cRdo4QIZF-SbJ846S29DJGcH',
             'publication_date' => '2023/04/09',
             'begin_date' => null,
             'end_date' => null,
@@ -147,7 +145,7 @@ class ArticleSeeder extends Seeder
             'title' => "Le Langage de la Couleur : Comprendre l'Impact Émotionnel de la Palette",
             'content' => "Les couleurs sont bien plus que des pigments sur une toile, ce sont des moyens de communication émotionnelle. Dans cet article, nous explorons la signification des couleurs, de l'apaisement du bleu à la passion du rouge en passant par la sérénité du vert. Nous plongeons dans la psychologie des couleurs, révélant comment elles influencent nos émotions, nos réactions et nos perceptions. Des artistes et des designers aux psychologues et aux marketeurs, tout le monde utilise la palette de couleurs pour susciter des émotions spécifiques. Découvrez comment les couleurs transforment notre environnement, influencent nos choix et nous immergent dans des expériences visuelles captivantes. Plongez dans le monde fascinant du langage des couleurs et explorez comment vous pouvez utiliser ce langage pour améliorer votre vie quotidienne.",
             'type' => 'blog',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1iMGZNM0-7sUCU1wAFML43sUncLcsDrNU',
             'publication_date' => '2023/04/09',
             'begin_date' => null,
             'end_date' => null,
@@ -158,7 +156,7 @@ class ArticleSeeder extends Seeder
             'title' => "L'Art de la Poterie : Créer des Œuvres uniques de la Terre",
             'content' => "La poterie est une forme d'art millénaire qui unit la créativité à l'élément terre. Dans cet article, nous explorons l'art de la poterie, en révélant les techniques de modelage, de tournage et de décoration qui transforment l'argile en œuvres d'art fonctionnelles et esthétiques. Rencontrez les potiers qui créent des pièces uniques, des bols élégants aux sculptures expressives, en utilisant leur habileté et leur imagination. Découvrez le processus de création, de la première touche à la cuisson en passant par l'émaillage, et comment chaque pièce raconte une histoire. Plongez dans un monde de beauté tactile, où la terre devient une toile pour l'expression artistique, où chaque poterie est une ode à la créativité humaine.",
             'type' => 'blog',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1ibmxBzrL6FWYqYt5DTnzam-J5jbEzE5X',
             'publication_date' => '2023/04/09',
             'begin_date' => null,
             'end_date' => null,
@@ -169,7 +167,7 @@ class ArticleSeeder extends Seeder
             'title' => "L'Art de la Calligraphie : Écrire avec Beauté et Signification",
             'content' => " La calligraphie est un art de l'écriture qui marie la beauté à la signification. Dans cet article, nous explorons la calligraphie, une pratique artistique séculaire qui élève les mots à un niveau supérieur. Découvrez comment les calligraphes manient la plume avec grâce et précision pour créer des œuvres d'art littéraire. Chaque ligne, chaque courbe devient une danse sur la page, ajoutant une dimension visuelle à l'écriture. Découvrez comment la calligraphie transforme les mots en images, ajoute une touche artistique à l'expression écrite et véhicule des messages profonds. Plongez dans l'univers de la beauté des mots, où chaque lettre devient une œuvre d'art en soi, et explorez comment la calligraphie peut être une source d'inspiration dans l'art de la communication.",
             'type' => 'blog',
-            'url' => 'https://www.theatreinparis.com/uploads/images/article/la-nouvelle-seine-petits-theatres-paris-header.jpg',
+            'url' => 'https://drive.google.com/uc?export=view&id=1tNce8fmvWbZz_sUzn5AP92eDfO9lMh7Y',
             'publication_date' => '2023/04/09',
             'begin_date' => null,
             'end_date' => null,

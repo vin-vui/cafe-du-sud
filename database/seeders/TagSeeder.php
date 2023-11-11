@@ -13,15 +13,15 @@ class TagSeeder extends Seeder
     public function run(): void
     {
         DB::table('tags')->insert([
-            'name' => 'Evenement',
+            'name' => 'Exposition',
             'status' => "en ligne",
-            'description' => "mettre ce tag pour les evenements passés ou a venir",
+            'description' => "mettre ce tag pour les expositions",
         ]);
 
         DB::table('tags')->insert([
-            'name' => 'Présentation',
+            'name' => 'Atelier',
             'status' => "en ligne",
-            'description' => "mettre ce tag pour les présentations d'artistes ou d'oeuvres",
+            'description' => "mettre ce tag pour les ateliers",
         ]);
     }
 }
