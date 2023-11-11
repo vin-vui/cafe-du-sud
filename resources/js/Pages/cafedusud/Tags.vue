@@ -16,7 +16,7 @@
                     <!-- CARD CONTENT -->
                     <div class="mx-4 my-2 flex flex-col">
                         <div class="flex justify-between">
-                            <h3 class="text-2xl text-slate-700 text-center"> {{ tag.nom }} </h3>
+                            <h3 class="text-2xl text-slate-700 text-center"> {{ tag.name }} </h3>
                             <!-- EDIT BUTTON -->
                             <button @click="edit(tag)" class="">
                                 <svg class="feather feather-edit" fill="none" height="24" stroke="currentColor"
