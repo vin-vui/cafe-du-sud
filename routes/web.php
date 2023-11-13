@@ -55,4 +55,3 @@ Route::resource("newsletters", NewsletterController::class);
 Route::resource("messages", MessageController::class);
 
 Route::get("/", [ArticleController::class, 'indexNextThreeEvents'])->name('accueil');
-
