@@ -11,6 +11,8 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 defineProps({
     title: String,
 });
+
+const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
@@ -52,6 +54,7 @@ defineProps({
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
+
 
 
 
