@@ -243,7 +243,7 @@
                             class="block mt-1 w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 shadow-sm"
                             v-model="form_update.type">
                             <option value="evenement">Évenement</option>
-                            <option value="actualite">Actualité</option>
+                            <option value="blog">Blog</option>
                         </select>
                     </div>
 
