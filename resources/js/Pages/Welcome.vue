@@ -91,20 +91,25 @@
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <img src="/images/logo-ciconia.webp" alt="Logo de Ciconia théatre">
                             <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Ciconia Théâtre</h3>
                         </div>
 
-                        <p class="font-abeezee text-lg mt-8">Une compagnie artistique engagée, basée en Franche-Comté. <br>
-                            Notre mission ? Explorer les recoins de l'art et de la créativité pour susciter la réflexion,
-                            l'expression et la révolte. <br><br> De l'animation d'ateliers en milieu carcéral à nos
+                        <div class="flex justify-between mt-4">
+                            <img src="/images/logo-ciconia.webp" class="h-24 " alt="Logo de Ciconia théatre">
+                            <p class="font-abeezee text-lg mt-4">Une compagnie artistique engagée, basée en Franche-Comté.
+                                <br>
+                                Notre mission ? Explorer les recoins de l'art et de la créativité pour susciter la
+                                réflexion,
+                                l'expression et la révolte. <br><br>
+                            </p>
+                        </div>
+                        <p class="font-abeezee text-lg mt-4"> De l'animation d'ateliers en milieu carcéral à nos
                             performances
                             en milieu rural, nous mettons en avant l'inclusion, la diversité et le partage.<br>Venez
                             rejoindre
                             notre communauté, où chaque voix compte, chaque histoire est précieuse, et chaque spectacle est
                             une
-                            aventure. Ensemble, créons un monde de poésie, de solidarité et de découverte.
-                        </p>
+                            aventure. Ensemble, créons un monde de poésie, de solidarité et de découverte.</p>
                     </div>
                 </div>
 
@@ -113,14 +118,18 @@
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <img class="w-40 lg:w-full" src="/images/logo-envida.webp" alt="Logo de l'association Envida">
                             <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Envida</h3>
                         </div>
 
-                        <p class="font-abeezee text-lg mt-8">Ce nouveau projet est un lieu de vie commun où chacun peut
-                            s'exprimer et s'épanouir. Ce bel avenir est porté par des valeurs fortes d'accessibilité,
-                            d'inclusivité et de collectif.
-                            <br> <br>
+                        <div class="flex justify-between mt-4">
+                            <img class="w-40 lg:w-50%" src="/images/logo-envida.webp" alt="Logo de l'association Envida">
+                            <p class="font-abeezee text-lg mt-8">Ce nouveau projet est un lieu de vie commun où chacun peut
+                                s'exprimer et s'épanouir. Ce bel avenir est porté par des valeurs fortes d'accessibilité,
+                                d'inclusivité et de collectif.
+                            </p>
+                        </div>
+
+                        <p class="font-abeezee text-lg mt-8">
                             Elle souhaite créer un monde meilleur, un monde où la culture est accessible à tous.
                             Ce monde meilleur est un lieu où les arts se décloisonnent et où les cultures se rencontrent.
                             C'est
@@ -169,7 +178,7 @@
                             <br><br>
                             Nous sommes engagés dans des actions sociales et artistiques, offrant des moments de partage au
                             public. Notre espace collectif, "le Café du Sud," est le lieu de rencontres, d'émotions et de
-                            projets communs. Rejoignez notre communauté où l'art et la solidarité s'épanouissent. 🎨🎭🎶🤝🏠
+                            projets communs. Rejoignez notre communauté où l'art et la solidarité s'épanouissent.
                         </p>
                     </div>
                 </div>
@@ -179,14 +188,21 @@
                     <!-- texte -->
                     <div class="lg:w-1/2 flex-col">
                         <div class="flex">
-                            <img class="h-40 lg:w-full" src="/images/logo-shonlua.webp" alt="Logo de l'association Shonlua">
                             <h3 class="font-Dela text-3xl justify-center w-full inline-flex">Shon Lua</h3>
                         </div>
-                        <p class="font-abeezee text-lg mt-8">L'atelier du sud est une association qui œuvre pour la
-                            promotion
-                            des arts et de la culture à Besançon. Elle est née de la volonté d'un groupe de passionnés qui
-                            souhaitent créer un espace de vie commun où chacun peut s'exprimer et partager ses talents.
-                            <br><br>
+
+                        <div class="flex justify-between mt-4">
+                            <img class="h-40 lg:w-full" src="/images/logo-shonlua.webp" alt="Logo de l'association Shonlua">
+                            <p class="font-abeezee text-lg mt-8">L'atelier du sud est une association qui œuvre pour la
+                                promotion
+                                des arts et de la culture à Besançon. Elle est née de la volonté d'un groupe de passionnés
+                                qui
+                                souhaitent créer un espace de vie commun où chacun peut s'exprimer et partager ses talents.
+                                <br><br>
+                            </p>
+                        </div>
+
+                        <p class="font-abeezee text-lg mt-8">
                             Cet espace de vie commun est un lieu de partage et de création où chacun peut s'exprimer et
                             partager
                             ses talents. Il propose une programmation riche et variée, allant des ateliers de création aux
@@ -357,7 +373,7 @@
                     <!-- L'atelier -->
                     <div class="lg:w-1/3 lg:p-4 w-full mx-auto lg:text-right text-center font-abeezee">
                         <div class="flex w-full lg:justify-end justify-center">
-                            <img class="" src="/images/logo.webp" alt="Logo de l'association L'Atelier du Sud">
+                            <img class="h-[50px]" src="/images/logo.webp" alt="Logo de l'association L'Atelier du Sud">
                         </div>
                         <p>04 60 85 42 01</p>
                         <p>contact@AtelierDuSud.fr</p>

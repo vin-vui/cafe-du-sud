@@ -58,7 +58,7 @@
 
                             <!-- Si l'article est un évenement avec date_début et end_date -->
                             <p v-else class="">
-                                Événement événement prévu du {{ moment(article.begin_date).format('DD/MM/YYYY') }} au {{
+                                Événement  prévu du {{ moment(article.begin_date).format('DD/MM/YYYY') }} au {{
                                     moment(article.end_date).format('DD/MM/YYYY') }}
                             </p>
                         </div>
