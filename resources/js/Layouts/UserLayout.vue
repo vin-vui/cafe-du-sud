@@ -18,7 +18,7 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <Head :title="title" />
-        <Banner class="fixed w-full pt-16 " />
+        <Banner class="fixed w-full pt-16 z-50" />
 
         <div class="min-h-screen bg-gray-100">
             <nav class="backdrop-blur-sm bg-blanc-orange-1/60 w-full fixed top-0 z-50">
