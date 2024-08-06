@@ -3,8 +3,6 @@ import { ref } from 'vue';
 import { Head, Link, router } from '@inertiajs/vue3';
 import ApplicationMark from '@/Components/ApplicationMark.vue';
 import Banner from '@/Components/Banner.vue';
-import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 
@@ -20,8 +18,8 @@ const showingNavigationDropdown = ref(false);
         <Head :title="title" />
         <Banner class="fixed w-full pt-16 z-50" />
 
-        <div class="min-h-screen bg-gray-100">
-            <nav class="backdrop-blur-sm bg-blanc-orange-1/60 w-full fixed top-0 z-50">
+        <div class="min-h-screen">
+            <nav class="backdrop-blur-3xl bg-white/30 w-full fixed top-0 z-50">
                 <!-- Primary Navigation Menu -->
                 <div class="w-10/12 mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -43,7 +41,7 @@ const showingNavigationDropdown = ref(false);
                                     Blog
                                 </NavLink>
 
-                                <NavLink :href="route('calendrier')" :active="route().current('calendrier')">
+                                <NavLink :href="route('calendar')" :active="route().current('calendar')">
                                     Calendrier
                                 </NavLink>
 
@@ -96,7 +94,7 @@ const showingNavigationDropdown = ref(false);
                             Blog
                         </ResponsiveNavLink>
 
-                        <ResponsiveNavLink :href="route('calendrier')" :active="route().current('calendrier')">
+                        <ResponsiveNavLink :href="route('calendar')" :active="route().current('calendar')">
                             Calendrier
                         </ResponsiveNavLink>
 

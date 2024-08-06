@@ -333,7 +333,6 @@
 import AppLayout from '@/Layouts/AppLayout.vue'
 import moment from 'moment'
 
-
 export default {
     components: {
         AppLayout,
