@@ -1,5 +1,5 @@
 <template >
-    <UserLayout>
+    <UserLayout :title="title">
         <section class="bg-[url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1768&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] h-screen bg-no-repeat bg-cover bg-center">
             <div class="absolute bottom-0 h-48 w-full bg-gradient-to-t from-white from-20%"></div>
             <div class="h-full flex items-center justify-center">
@@ -55,6 +55,12 @@ export default {
         articles: {
             type: Array,
         },
+    },
+
+    data() {
+        return {
+            title: "Calendrier",
+        }
     },
 }
 </script>

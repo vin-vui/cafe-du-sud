@@ -1,6 +1,5 @@
 <template>
-    <UserLayout>
-
+    <UserLayout :title="title">
         <!-- Section 1  -->
         <section class="bg-[url('/images/bgImgLanding.webp')] h-screen bg-no-repeat bg-cover bg-center">
             <div class="absolute bottom-0 h-48 w-full bg-gradient-to-t from-white from-20%"></div>
@@ -313,7 +312,7 @@ export default {
 
     data() {
         return {
-            pageTitle: "Les Casas du Sud - Accueil",
+            title: "Accueil",
             form_create: {
                 email: null
             },
