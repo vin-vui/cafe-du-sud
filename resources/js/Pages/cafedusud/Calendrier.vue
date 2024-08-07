@@ -10,7 +10,7 @@
             </div>
         </section>
 
-        <div class="shapedividers_com-9629 h-28 -mb-28"></div>
+        <ShapeTop />
 
         <div class="bg-gradient-to-tl from-indigo-200 via-red-200 to-yellow-100">
             <div class="max-w-7xl mx-auto py-48">
@@ -24,21 +24,31 @@
                 </div> -->
                 <!-- cartes événements -->
                 <div class="grid grid-cols-3 gap-4">
-                    <EventCard v-for="(article, index) in articles" :key="article.id" :article="article" :index="index" :length="articles.length" />Eve
+                    <EventCard v-for="(article, index) in articles" :key="article.id" :article="article" :index="index" :length="articles.length" />
                 </div>
             </div>
         </div>
+
+        <ShapeBottom />
+
+        <Footer />
+
     </UserLayout>
 </template>
 
 <script>
 import UserLayout from '@/Layouts/UserLayout.vue'
 import EventCard from '@/Components/EventCard.vue'
+import Footer from '@/Components/Footer.vue'
+import ShapeTop from '@/Components/ShapeTop.vue'
+import ShapeBottom from '@/Components/ShapeBottom.vue'
 
 export default {
     components: {
         UserLayout,
-        EventCard
+        EventCard,
+        Footer,
+        ShapeTop, ShapeBottom
     },
 
     props: {
