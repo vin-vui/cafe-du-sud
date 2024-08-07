@@ -1,65 +1,50 @@
 <template >
     <UserLayout>
-        <!-- title + barre de filtre -->
-        <div>
-            <h2 class="mt-16 text-6xl font-alumni text-center">Prochains événements</h2>
-            <!-- barre de filtres des tags  -->
-            <!-- <div class="w-4/12 ml-40 flex font-abeezee justify-between">
-                <button class="capitalize-first pr-20 hover:font-bold">tout</button>
-                <button class="capitalize-first pr-20 hover:font-bold">evenements</button>
-                <button class="capitalize-first pr-20 hover:font-bold">présentations</button>
-                <button class="capitalize-first pr-20 hover:font-bold">actualités</button>
-                <button class="capitalize-first pr-20 hover:font-bold">articles</button>
-            </div> -->
-        </div>
+        <section class="bg-[url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1768&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] h-screen bg-no-repeat bg-cover bg-center">
+            <div class="absolute bottom-0 h-48 w-full bg-gradient-to-t from-white from-20%"></div>
+            <div class="h-full flex items-center justify-center">
+                <h1 class="mx-4 text-center font-alumni text-blanc-1 backdrop-blur-3xl bg-black/30 md:p-12 p-6 rounded-3xl -rotate-2 flex flex-col border-8 border-double border-blanc-1">
+                    <span class="md:text-9xl text-7xl bg-gradient-to-bl from-indigo-200 via-red-200 to-yellow-100 bg-clip-text text-transparent">Calendrier</span>
+                    <span class="font-Dela md:text-3xl text-xl">nos prochains moments forts</span>
+                </h1>
+            </div>
+        </section>
 
-        <!-- cartes evenements -->
-        <div class="lg:flex flex-wrap justify-between mx-6 mt-20">
-            <a v-for="(article, index) in articles" :key="article.id" :href="`/articles/${article.id}`"
-                :class="['w-3/12 rounded-lg relative z-40 mx-8 my-4 hover:scale-105 ease-in-out duration-100 group', index === 0 ? 'after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:bottom-6 after:right-6 after:-z-50' : '', index === articles.length - 1 ? 'after:bg-violet-2 after:rounded-lg after:absolute after:w-full after:h-full after:top-6 after:left-6 after:-z-50' : '']">
-                <!-- dates -->
-                <!-- Si l'evenement n'a qu'une seule date -->
-                <div v-if="article.end_date === null"
-                    class="px-2 py-1 absolute bg-rouge-2 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
-                    Prévu le {{ moment(article.begin_date).format('DD/MM/YYYY') }}
+        <div class="shapedividers_com-9629 h-28 -mb-28"></div>
+
+        <div class="bg-gradient-to-tl from-indigo-200 via-red-200 to-yellow-100">
+            <div class="max-w-7xl mx-auto py-48">
+                <!-- barre de filtres des tags  -->
+                <!-- <div class="w-4/12 ml-40 flex font-abeezee justify-between">
+                    <button class="capitalize-first pr-20 hover:font-bold">tout</button>
+                    <button class="capitalize-first pr-20 hover:font-bold">evenements</button>
+                    <button class="capitalize-first pr-20 hover:font-bold">présentations</button>
+                    <button class="capitalize-first pr-20 hover:font-bold">actualités</button>
+                    <button class="capitalize-first pr-20 hover:font-bold">articles</button>
+                </div> -->
+                <!-- cartes événements -->
+                <div class="grid grid-cols-3 gap-4">
+                    <EventCard v-for="(article, index) in articles" :key="article.id" :article="article" :index="index" :length="articles.length" />Eve
                 </div>
-                <!-- Si l'evenement a 2 dates -->
-                <div v-else
-                    class="px-2 py-1 absolute bg-rouge-2 rounded-br-lg rounded-tl-lg font-abeezee text-white text-center">
-                    Prévu du {{ moment(article.begin_date).format('DD/MM/YYYY') }} au {{
-                        moment(article.end_date).format('DD/MM/YYYY') }}
-                </div>
-                <!-- image -->
-                <img class="w-full h-96 object-cover object-center rounded-t-lg" :src="article.url" alt="Image d'illustration de l'évènement">
-                <!-- title -->
-                <h4 class="bg-black/70 backdrop-blur-sm font-Dela text-2xl relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-4"
-                :class="article.title.length < 28 ? 'py-4' : ''">
-                {{ article.title.length > 37 ? article.title.slice(0, 47) + '...' : article.title }}
-                </h4>
-                <!-- content -->
-                <p
-                    class="font-abeezee px-2 bottom-8 pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 lg:bg-blanc-bleu-1 bg-red-100 mb-20 lg:mb-0 whitespace-pre-line">
-                    {{ article.content.length > 270 ? article.content.slice(0, 270) + '...' : article.content }}
-                </p>
-            </a>
+            </div>
         </div>
     </UserLayout>
 </template>
 
 <script>
 import UserLayout from '@/Layouts/UserLayout.vue'
-import moment from 'moment'
+import EventCard from '@/Components/EventCard.vue'
 
 export default {
-    props: ['articles'],
-
-    data: () => ({
-        moment: moment
-    }),
-
-
     components: {
         UserLayout,
+        EventCard
+    },
+
+    props: {
+        articles: {
+            type: Array,
+        },
     },
 }
 </script>
