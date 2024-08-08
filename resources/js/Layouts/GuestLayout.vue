@@ -14,7 +14,7 @@ const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
-    <div>
+    <div class="overflow-x-hidden">
         <Head :title="title" />
         <Banner class="fixed w-full pt-16 z-50" />
 
@@ -26,22 +26,22 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('accueil')">
+                                <Link :href="route('home')">
                                     <ApplicationMark class="block h-9 w-auto" />
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href="route('accueil')" :active="route().current('accueil')">
+                                <NavLink :href="route('home')" :active="route().current('home')">
                                     Accueil
                                 </NavLink>
 
-                                <NavLink :href="route('blog')" :active="route().current('blog')">
+                                <NavLink :href="route('posts')" :active="route().current('posts')">
                                     Blog
                                 </NavLink>
 
-                                <NavLink :href="route('calendar')" :active="route().current('calendar')">
+                                <NavLink :href="route('events')" :active="route().current('events')">
                                     Calendrier
                                 </NavLink>
 
@@ -86,15 +86,15 @@ const showingNavigationDropdown = ref(false);
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('accueil')" :active="route().current('accueil')">
+                        <ResponsiveNavLink :href="route('home')" :active="route().current('home')">
                             Accueil
                         </ResponsiveNavLink>
 
-                        <ResponsiveNavLink :href="route('blog')" :active="route().current('blog')">
+                        <ResponsiveNavLink :href="route('posts')" :active="route().current('posts')">
                             Blog
                         </ResponsiveNavLink>
 
-                        <ResponsiveNavLink :href="route('calendar')" :active="route().current('calendar')">
+                        <ResponsiveNavLink :href="route('events')" :active="route().current('events')">
                             Calendrier
                         </ResponsiveNavLink>
 

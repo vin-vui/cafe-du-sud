@@ -33,7 +33,7 @@
                 </address>
             </div>
         </div>
-        <div class="flex justify-center border-t-8 border-double pt-4">Développé avec ❤️ par <a class="text-violet-4 hover:text-violet-1/50 mx-1" href="https://quasark.netlify.app/">Quasark</a> & <a class="text-violet-4 hover:text-violet-1/50 mx-1" href="https://cv.vinvui.com/">Vinvui</a></div>
+        <div class="flex justify-center border-t-8 border-double pt-4 mt-4">Développé avec ❤️ par <a class="text-violet-4 hover:text-violet-1/50 mx-1" href="https://quasark.netlify.app/">Quasark</a> & <a class="text-violet-4 hover:text-violet-1/50 mx-1" href="https://cv.vinvui.com/">Vinvui</a></div>
     </nav>
 </template>
 

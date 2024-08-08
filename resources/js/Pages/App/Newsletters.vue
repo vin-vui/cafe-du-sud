@@ -1,12 +1,12 @@
 <template>
-    <appLayout>
+    <AppLayout>
         <div class="w-6/12 bg-slate-300 mx-auto">
             <div v-for="newsletter in newsletters" class="flex justify-between border-b-2 border-b-slate-950 py-4 px-2">
                 <p> {{ newsletter.email }} </p>
                 <button @click="destroy(newsletter)">supprimer</button>
             </div>
         </div>
-    </appLayout>
+    </AppLayout>
 </template>
 
 <script>

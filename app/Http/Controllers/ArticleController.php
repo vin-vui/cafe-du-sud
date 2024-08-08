@@ -15,50 +15,8 @@ class ArticleController extends Controller
     {
         $tags = Tag::all();
         $articles = Article::with('tags')->get();
-        return Inertia::render('cafedusud/Articles', compact('articles', 'tags'));
-    }
 
-    public function indexblog()
-    {
-        $tags = Tag::all();
-        $articles = Article::with('tags')
-        ->Blog()
-        ->get();
-        return Inertia::render('cafedusud/Blog', compact('articles', 'tags'));
-    }
-
-    public function indexNextThreeEvents()
-    {
-        $tags = Tag::all();
-        $articles = Article::with('tags')
-            ->nextThreeEvents()
-            ->get();
-
-        return Inertia::render('Welcome', [
-            'articles' => $articles,
-            'tags' => $tags,
-        ]);
-    }
-
-    public function indexNextEvents()
-    {
-        $tags = Tag::all();
-        $articles = Article::with('tags')
-            ->nextEvents()
-            ->get();
-
-        return Inertia::render('cafedusud/Calendrier', [
-            'articles' => $articles,
-            'tags' => $tags,
-        ]);
-    }
-
-    public function show(Article $article)
-    {
-        $tags = Tag::all();
-        $articles = Article::with('tags');
-
-        return Inertia::render('cafedusud/ArticleDetails', compact('article'));
+        return Inertia::render('App/Articles', compact('articles', 'tags'));
     }
 
     public function destroy(Article $article)

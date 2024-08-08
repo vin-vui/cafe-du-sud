@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\controllers\GuestController;
 use App\Http\controllers\ArticleController;
 use App\Http\controllers\TagController;
 use App\Http\controllers\CommentController;
@@ -35,10 +36,11 @@ Route::middleware([
     Route::resource("messages", MessageController::class);
 });
 
-Route::get("/", [ArticleController::class, 'indexNextThreeEvents'])->name('accueil');
-Route::get('/blog', [ArticleController::class, 'indexBlog'])->name('blog');
-Route::get('/article/{article}', [ArticleController::class, 'show'])->name('article');
-Route::get('/calendrier', [ArticleController::class, 'indexNextEvents'])->name('calendar');
+Route::get("/",                             [GuestController::class, 'home'])   ->name('home');
+Route::get('/tous-les-billets',             [GuestController::class, 'posts'])  ->name('posts');
+Route::get('/billet/{article:slug}',        [GuestController::class, 'show'])   ->name('post.show');
+Route::get('/tous-les-événements',          [GuestController::class, 'events']) ->name('events');
+Route::get('/événements/{article:slug}',    [GuestController::class, 'show'])   ->name('event.show');
 Route::get('/contact', function () {
-    return Inertia::render('cafedusud/Contact');
+    return Inertia::render('Guest/Contact');
 })->name('contact');
