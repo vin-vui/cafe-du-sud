@@ -36,7 +36,7 @@ const logout = () => {
         <div class="min-h-screen bg-gray-100">
             <nav class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
@@ -53,7 +53,7 @@ const logout = () => {
                                 </NavLink>
 
                                 <NavLink :href="route('articles.index')" :active="route().current('articles.index')">
-                                    Articles
+                                    Billets & Événements
                                 </NavLink>
 
                                 <NavLink :href="route('tags.index')" :active="route().current('tags.index')">
@@ -75,7 +75,6 @@ const logout = () => {
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
-
 
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
@@ -197,13 +196,6 @@ const logout = () => {
                     </div>
                 </div>
             </nav>
-
-            <!-- Page Heading -->
-            <header v-if="$slots.header" class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <slot name="header" />
-                </div>
-            </header>
 
             <!-- Page Content -->
             <main>
