@@ -41,6 +41,6 @@ Route::get('/tous-les-billets',             [GuestController::class, 'posts'])  
 Route::get('/billet/{article:slug}',        [GuestController::class, 'show'])   ->name('post.show');
 Route::get('/tous-les-événements',          [GuestController::class, 'events']) ->name('events');
 Route::get('/événements/{article:slug}',    [GuestController::class, 'show'])   ->name('event.show');
-Route::get('/contact', function () {
+Route::get('/contactez-nous', function () {
     return Inertia::render('Guest/Contact');
 })->name('contact');

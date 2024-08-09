@@ -46,7 +46,7 @@
                                 <h1 class="font-alumni text-6xl">
                                     {{ article.title }}
                                 </h1>
-                                <p class="mt-6 font-abeezee text-gray-800 whitespace-pre-line">{{ article.content }}</p>
+                                <p class="mt-6 font-abeezee leading-relaxed text-gray-800 whitespace-pre-line">{{ article.content }}</p>
                             </div>
                             <div class="font-abeezee text-blanc-1 bg-rouge-2 rounded-b-lg px-6 py-2">
                                 Publié le {{ moment(article.publication_date).format('DD/MM/YYYY') }}

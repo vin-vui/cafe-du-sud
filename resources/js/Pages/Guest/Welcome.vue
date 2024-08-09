@@ -28,7 +28,7 @@
                         class="w-full my-12 bg-blanc-1 border-jaune-1 border-8 border-double rounded-xl lg:px-8 px-4 py-6 lg:w-10/12 rotate-1">
                         <h3 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mb-4">🤝 Un lieu
                             🤝</h3>
-                        <p class="font-abeezee text-lg mt-2 p-2">
+                        <p class="font-abeezee leading-relaxed text-lg mt-2 p-2">
                             L'Atelier Du Sud c'est avant tout la maison de toutes nos associations,
                             un laboratoire dans lequel nous expérimentons les limites de l'art et un lieu de vie commun
                             où chacun peut venir s'exprimer et s'épanouir.
@@ -39,7 +39,7 @@
                         class="w-full my-12 bg-blanc-1 border-bleu-1 border-8 border-double rounded-xl lg:ml-auto lg:px-8 px-4 py-6 lg:w-10/12 -rotate-1">
                         <h3 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mb-4">🎨 L'Art
                             sans limites 🎨</h3>
-                        <p class="font-abeezee text-lg mt-2 p-2">
+                        <p class="font-abeezee leading-relaxed text-lg mt-2 p-2">
                             Explorez une programmation dynamique : ateliers créatifs, spectacles, débats et rencontres.
                             Un espace foisonnant d'opportunités artistiques, à partager sans retenue.
                             Collaborer et créer des projets novateurs. Osez l'expérience artistique sans frontières.
@@ -50,7 +50,7 @@
                         class="w-full my-12 bg-blanc-1 border-rouge-1 border-8 border-double rounded-xl lg:px-8 px-4 py-6 lg:w-10/12 skew-x-1">
                         <h3 class="font-Dela text-xl lg:text-2xl capitalize-first justify-center flex mb-4">🌟 Des
                             valeurs fortes 🌟</h3>
-                        <p class="font-abeezee text-lg mt-2 p-2">
+                        <p class="font-abeezee leading-relaxed text-lg mt-2 p-2">
                             Une association née de la passion, un lieu où chacun peut libérer son talent et se
                             connecter.
                             Etant particulièrement sensible aux valeurs d'inclusivité, nous accueillons tout le monde
@@ -86,11 +86,11 @@
                                 </h4>
                             </div>
                         </div>
-                        <p class="font-abeezee text-lg md:ml-36 ml mt-4">
+                        <p class="font-abeezee leading-relaxed text-lg md:ml-36 ml mt-4">
                             Notre mission ? Explorer les recoins de l'art et de la créativité pour susciter la
                             réflexion, l'expression et la révolte.
                         </p>
-                        <p class="font-abeezee text-lg md:ml-36 mt-4">
+                        <p class="font-abeezee leading-relaxed text-lg md:ml-36 mt-4">
                             De l'animation d'ateliers en milieu carcéral à nos performances en milieu rural, nous
                             mettons en avant l'inclusion, la diversité et le partage.
                             Venez rejoindre notre communauté, où chaque voix compte, chaque histoire est précieuse, et
@@ -113,11 +113,11 @@
                                     s'exprimer et s'épanouir.</h4>
                             </div>
                         </div>
-                        <p class="font-abeezee text-lg md:ml-36 mt-4">
+                        <p class="font-abeezee leading-relaxed text-lg md:ml-36 mt-4">
                             Ce bel avenir est porté par des valeurs fortes d'accessibilité, d'inclusivité et de
                             collectif.
                         </p>
-                        <p class="font-abeezee text-lg md:ml-36 mt-4">
+                        <p class="font-abeezee leading-relaxed text-lg md:ml-36 mt-4">
                             Elle souhaite créer un monde meilleur, un monde où la culture est accessible à tous.
                             Ce monde meilleur est un lieu où les arts se décloisonnent et où les cultures se
                             rencontrent.
@@ -149,17 +149,17 @@
                                     partage, où l'art et la convivialité se rencontrent.</h4>
                             </div>
                         </div>
-                        <p class="font-abeezee text-lg md:ml-36 mt-4">
+                        <p class="font-abeezee leading-relaxed text-lg md:ml-36 mt-4">
                             Nous encourageons la diversité des savoirs, des talents et des expériences, favorisant une
                             recherche constante et une approche inclusive.
                         </p>
-                        <p class="font-abeezee text-lg md:ml-36 mt-4">
+                        <p class="font-abeezee leading-relaxed text-lg md:ml-36 mt-4">
                             Nous mettons en lumière une variété de créations artistiques, de la scène au son, de la
                             photographie à la poésie.
                             Notre action est ouverte à tous, favorisant les rencontres intergénérationnelles et les
                             partenariats locaux.
                         </p>
-                        <p class="font-abeezee text-lg md:ml-36 mt-4">
+                        <p class="font-abeezee leading-relaxed text-lg md:ml-36 mt-4">
                             Nous sommes engagés dans des actions sociales et artistiques, offrant des moments de partage
                             au public.
                             Notre espace collectif, "le Café du Sud," est le lieu de rencontres, d'émotions et de
@@ -182,11 +182,11 @@
                             </div>
                         </div>
 
-                        <p class="font-abeezee text-lg md:ml-36 mt-4">
+                        <p class="font-abeezee leading-relaxed text-lg md:ml-36 mt-4">
                             Elle est née de la volonté d'un groupe de passionnés qui souhaitent créer un espace de vie
                             commun où chacun peut s'exprimer et partager ses talents.
                         </p>
-                        <p class="font-abeezee text-lg md:ml-36 mt-4">
+                        <p class="font-abeezee leading-relaxed text-lg md:ml-36 mt-4">
                             Cet espace de vie commun est un lieu de partage et de création où chacun peut s'exprimer et
                             partager ses talents.
                             Il propose une programmation riche et variée, allant des ateliers de création aux spectacles
@@ -235,7 +235,7 @@
                 <div class="max-w-xl lg:col-span-7">
                     <h2 class="w-full font-alumni text-6xl capitalize-first">Restez informé</h2>
                     <span class="font-Dela text-xl">abonnez-vous à notre newsletter</span>
-                    <p class="font-abeezee text-slate-700 text-sm mt-4">
+                    <p class="font-abeezee leading-relaxed text-slate-700 text-sm mt-4">
                         Ne manquez plus aucune actualité ! En vous inscrivant à notre newsletter, vous recevrez
                         directement dans votre boîte mail toutes les informations sur nos prochains événements,
                         expositions, ateliers et bien plus encore. Soyez les premiers à découvrir nos nouveautés et à

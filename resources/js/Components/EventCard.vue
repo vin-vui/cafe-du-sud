@@ -32,7 +32,7 @@
         </h3>
 
         <!-- contenu -->
-        <div class="font-abeezee px-4 bottom-8 pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 bg-white text-slate-900">
+        <div class="font-abeezee leading-relaxed px-4 bottom-8 pt-4 pb-6 -mt-8 rounded-b-lg relative z-50 bg-white text-slate-900">
             <div v-if="article.content.length > 270">
                 <P>{{ article.content.slice(0, 270) + '...' }}</P>
                 <div class="flex items-center gap-1 justify-end text-violet-4 mt-3">
