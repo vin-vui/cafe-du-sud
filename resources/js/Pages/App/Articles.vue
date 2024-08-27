@@ -110,6 +110,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- BODY -->
                                     <div class="px-6">
                                         <!-- TITLE -->
                                         <div class="mt-3">
@@ -144,8 +145,9 @@
                                                 <div v-if="errors.end_date" class="w-full text-red-700 text-sm">{{ errors.end_date }}</div>
                                             </div>
                                         </div>
-                                        <!-- STATUS -->
+                                        <!-- STATUS & TYPE -->
                                         <div class="flex justify-between mt-3 gap-4">
+                                            <!-- STATUS -->
                                             <div class="w-full">
                                                 <label class="block font-medium text-gray-700 capitalize-first">Statut</label>
                                                 <select v-model="form_create.status" class="w-full block mt-1 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm">
@@ -160,7 +162,7 @@
                                                 <label class="block font-medium text-gray-700 capitalize">type</label>
                                                 <select v-model="form_create.type" class="w-full block mt-1 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm">
                                                     <option value="event">Événement</option>
-                                                    <option value="post">Blog</option>
+                                                    <option value="post">Billet</option>
                                                 </select>
                                                 <div v-if="errors.type" class="text-red-700 text-sm mb-2">{{ errors.type }}</div>
                                             </div>
@@ -216,6 +218,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- BODY -->
                                     <div class="px-6">
                                         <!-- TITLE -->
                                         <div class="mt-3">
@@ -250,8 +253,9 @@
                                                 <div v-if="errors.end_date" class="w-full text-red-700 text-sm">{{ errors.end_date }}</div>
                                             </div>
                                         </div>
-                                        <!-- STATUS -->
+                                        <!-- STATUS & TYPE -->
                                         <div class="flex justify-between mt-3 gap-4">
+                                            <!-- STATUS -->
                                             <div class="w-full">
                                                 <label class="block font-medium text-gray-700 capitalize-first">Statut</label>
                                                 <select v-model="form_update.status" class="w-full block mt-1 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm">
@@ -266,7 +270,7 @@
                                                 <label class="block font-medium text-gray-700 capitalize">type</label>
                                                 <select v-model="form_update.type" class="w-full block mt-1 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm">
                                                     <option value="event">Événement</option>
-                                                    <option value="post">Blog</option>
+                                                    <option value="post">Billet</option>
                                                 </select>
                                                 <div v-if="errors.type" class="text-red-700 text-sm mb-2">{{ errors.type }}</div>
                                             </div>
@@ -320,7 +324,7 @@
         data() {
             return {
                 status: 'published',
-                type: this.$route.query.type,
+                type: 'post',
                 moment: moment,
                 isOpenCreate: false,
                 isOpenEdit: false,
@@ -347,7 +351,6 @@
                     status: null,
                     tags: [],
                 },
-
             }
         },
 
@@ -432,6 +435,7 @@
                 const confirmed = window.confirm('Êtes-vous sûr de vouloir supprimer cet article ?');
                 if (confirmed) {
                     this.$inertia.delete(route('articles.destroy', article));
+                    this.closeEditModale();
                 }
             },
             filterArticles(status) {
