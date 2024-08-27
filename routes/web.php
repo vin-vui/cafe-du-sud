@@ -3,12 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-use App\Http\controllers\GuestController;
-use App\Http\controllers\ArticleController;
-use App\Http\controllers\TagController;
-use App\Http\controllers\CommentController;
-use App\Http\controllers\NewsletterController;
-use App\Http\controllers\MessageController;
+use App\Http\Controllers\GuestController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
