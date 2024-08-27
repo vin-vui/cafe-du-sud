@@ -52,7 +52,7 @@ const logout = () => {
                                     Dashboard
                                 </NavLink>
 
-                                <NavLink :href="route('articles.index')" :active="route().current('articles.index')">
+                                <NavLink :href="route('articles.index', { type: 'post', status: 'published' })" :active="route().current('articles.index')">
                                     Billets & Événements
                                 </NavLink>
 

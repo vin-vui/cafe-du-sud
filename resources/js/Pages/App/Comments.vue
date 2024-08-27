@@ -1,6 +1,5 @@
 <template>
     <AppLayout>
-        <Navbar/>
 
         <!-- INDEX COMMENTAIRES -->
         <div v-for="comment in comments" class="w-1/4 justify-evenly">
@@ -105,12 +104,11 @@
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue'
-import Navbar from '@/Components/CafeDuSud/Navbar.vue'
 
 
 export default {
     components: {
-        AppLayout, Navbar
+        AppLayout
     },
 
     props: ['comments', 'errors',],

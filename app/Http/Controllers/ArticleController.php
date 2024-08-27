@@ -11,10 +11,18 @@ use Illuminate\Support\Facades\Validator;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $filters = $request->only(['type', 'status']);
+        $articles = Article::with('tags')
+            ->when(isset($filters['type']), function ($query) use ($filters) {
+                return $query->where('type', $filters['type']);
+            })
+            ->when(isset($filters['status']), function ($query) use ($filters) {
+                return $query->where('status', $filters['status']);
+            })
+            ->get();
         $tags = Tag::all();
-        $articles = Article::with('tags')->get();
 
         return Inertia::render('App/Articles', compact('articles', 'tags'));
     }
