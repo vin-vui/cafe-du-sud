@@ -1,5 +1,5 @@
 <template>
-    <AppLayout>
+    <AppLayout title="Billets & Événements">
         <!-- INDEX ARTICLES -->
         <div class="bg-white shadow sticky top-0 z-40">
             <div class="py-2 px-4 sm:px-6 lg:px-8 flex justify-between">
@@ -39,10 +39,9 @@
             </div>
         </div>
         <!-- ARTICLES LIST -->
-        <div class="">
-            <ul v-for="article in articles" role="list" class="divide-y divide-gray-100">
-                <li @click="edit(article)"
-                    class="relative cursor-pointer flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6 lg:px-8">
+        <div class="px-8 py-12">
+            <ul v-for="article in articles" role="list" class="divide-y divide-gray-900 py-2 px-8">
+                <li @click="edit(article)" class="relative rounded-xl border cursor-pointer flex justify-between gap-x-6 px-4 py-5 bg-white shadow hover:shadow-xl hover:scale-105 transition-all duration-200 ease-in-out sm:px-6 lg:px-8">
                     <div class="flex min-w-0 gap-x-4">
                         <img class="h-12 w-12 flex-none rounded-full bg-gray-50" :src=article.url alt="">
                         <div class="min-w-0 flex-auto">
