@@ -211,7 +211,7 @@
                 <span class="font-Dela text-xl justify-center flex text-center">nos prochains moments forts</span>
 
                 <!-- CARTES EVENEMENTS -->
-                <div class="grid grid-cols-3 gap-4 mt-28">
+                <div class="grid sm:grid-cols-3 grid-cols-1 gap-4 mt-28">
                     <EventCard v-for="(article, index) in articles" :key="article.id" :article="article" :index="index"
                         :length="articles.length" />
                 </div>
