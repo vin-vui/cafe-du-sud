@@ -9,16 +9,13 @@ use Illuminate\Support\Facades\Validator;
 
 class TagController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $tags = Tag::all();
-        return Inertia::render('cafedusud/Tags', compact('tags'));
+        return Inertia::render('App/Tags', compact('tags'));
     }
-
-    public function show(){
-        return Inertia::render('cafedusud/Article');
-    }
-
-    public function destroy(Tag $tag){
+    public function destroy(Tag $tag)
+    {
         if ($tag->delete()) {
             session()->flash('flash.banner', 'Tag supprimé avec succès');
             session()->flash('flash.bannerStyle', 'success');
@@ -27,11 +24,10 @@ class TagController extends Controller
             session()->flash('flash.bannerStyle', 'danger');
         }
     }
-
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $valid_data = Validator::make($request->all(), [
             'name' => ['required',],
-            'status' => ['required',],
             'description' => ['required'],
         ])->validate();
 
@@ -39,11 +35,10 @@ class TagController extends Controller
         session()->flash('flash.banner', 'Tag créé avec succès');
         session()->flash('flash.bannerStyle', 'success');
     }
-
-    public function update(Request $request, Tag $tag){
+    public function update(Request $request, Tag $tag)
+    {
         $valid_data = Validator::make($request->all(), [
             'name' => ['required',],
-            'status' => ['required',],
             'description' => ['required'],
         ])->validate();
 
