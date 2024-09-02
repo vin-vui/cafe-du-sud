@@ -11,7 +11,6 @@
         <link href="https://fonts.bunny.net/css?family=abeezee:400,400i|alkatra:400,500,600,700|alumni-sans-inline-one:400,400i" rel="stylesheet" />
         <link href="https://fonts.bunny.net/css?family=dela-gothic-one:400" rel="stylesheet" />
 
-
         <!-- Scripts -->
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])

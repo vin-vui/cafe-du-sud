@@ -1,5 +1,5 @@
 <template>
-    <GuestLayout :title="title">
+    <GuestLayout title="Contacter-nous !">
         <section
             class="bg-[url('https://images.unsplash.com/photo-1526764279915-c9f6a84f10d1?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] h-screen bg-no-repeat bg-cover bg-center">
             <div class="absolute bottom-0 h-48 w-full bg-gradient-to-t from-white from-20%"></div>
@@ -16,19 +16,15 @@
         <div class="bg-gradient-to-tl from-indigo-200 via-red-200 to-yellow-100">
             <div class="max-w-7xl sm:mx-auto py-48 mx-4">
                 <div class="lg:w-10/12 mx-auto lg:flex relative z-40  lg:after:bg-orange-2 after:rounded-lg after:absolute after:w-full after:h-full after:top-8 after:left-8 after:-z-50">
-                    <!-- Informations de contact -->
                     <div class="lg:w-1/2 bg-orange-3 md:rounded-l-xl md:rounded-tr-none rounded-t-xl md:px-12 px-4 flex flex-col justify-center">
-                        <h4 class="mt-8 text-xl font-Dela">Informations de contact</h4>
+                        <h4 class="mt-8 text-xl font-Dela">Une question, une remarque, une suggestion, une demande ?</h4>
                         <p class="mt-4 font-abeezee leading-relaxed">
-                            Remplissez ce formulaire pour nous envoyer un message.
+                            Contactez-nous directement par email ou téléphone.
                             Nous vous répondrons dès que possible.
-                            Ou contactez-nous directement par email ou téléphone.
                             Vous pouvez aussi nous suivre sur les réseaux sociaux.
                             Et bien sûr, vous pouvez venir nous voir !
                         </p>
-                        <!-- Renseignements -->
                         <div class="my-12 font-abeezee">
-                            <!-- email -->
                             <div class="flex flex-col sm:flex-row justify-between">
                                 <div class="flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="" width="24" height="24" viewBox="0 0 24 24"
@@ -44,7 +40,6 @@
                                 </div>
                                 <a class="ml-8 md:ml-0 text-violet-4 hover:text-violet-1/50 font-abeezee" href="mailto:contact@atelierdusud.fr">contact@atelierdusud.fr</a>
                             </div>
-                            <!-- téléphone -->
                             <div class="flex flex-col sm:flex-row justify-between my-2">
                                 <div class="flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="" width="24" height="24" viewBox="0 0 24 24"
@@ -59,7 +54,6 @@
                                 </div>
                                 <a class="ml-8 md:ml-0 text-violet-4 hover:text-violet-1/50 font-abeezee" href="tel:+33460854201">04 60 85 42 01</a>
                             </div>
-                            <!-- adresse -->
                             <div class="flex flex-col sm:flex-row justify-between">
                                 <div class="flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="" width="24" height="24" viewBox="0 0 24 24"
@@ -73,10 +67,9 @@
                                     </svg>
                                     <p class="ml-2">adresse</p>
                                 </div>
-                                <a class="ml-8 md:ml-0 text-violet-4 hover:text-violet-1/50 font-abeezee" href="https://maps.app.goo.gl/cPR9Md9rR4xuo5QG9">6 rue Bersot - 25000 Besançon</a>
+                                <a class="ml-8 md:ml-0 text-violet-4 hover:text-violet-1/50 font-abeezee" target="_blank" href="https://maps.app.goo.gl/RC1dE59THuRB7ehv5">54 rue Bersot - 25000 Besançon</a>
                             </div>
                         </div>
-                        <!-- Réseaux sociaux -->
                         <div class="flex justify-between gap-4 w-4/12 mx-auto mb-8 md:md-0">
                             <a href="https://www.facebook.com/atelierdusudbesancon/" aria-label="Page Facebook de l'Atelier du Sud Besançon" class="group">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="rounded-full text-blanc-1 shadow-sm hover:ring ring-violet-1/20 hover:scale-105 ease-in-out duration-200 hover:bg-violet-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white bg-violet-4 size-12 p-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -94,18 +87,17 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Formulaire de contact  -->
-                    <div class="lg:w-1/2 w-full bg-blanc-1 font-abeezee md:rounded-r-xl md:rounded-bl-none rounded-b-xl md:p-12 px-4 py-8 flex flex-col gap-8 justify-center">
-                        <!-- Prénom + Nom -->
+                     <div class="lg:w-1/2 w-full">
+                        <MapView />
+                     </div>
+                    <!-- <div class="lg:w-1/2 w-full bg-blanc-1 font-abeezee md:rounded-r-xl md:rounded-bl-none rounded-b-xl md:p-12 px-4 py-8 flex flex-col gap-8 justify-center">
                         <div class="lg:flex justify-between gap-4">
-                            <!-- Prénom -->
                             <div class="group">
                                 <div v-if="errors.surname" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.surname }}</div>
                                 <label for="first_name" class="block capitalize-first group-focus-within:text-violet-1">prénom</label>
                                 <input v-model="form.surname" autocomplete="family-name" type="text" id="first_name" name="first_name"
                                     class="w-full bg-gray-100 border-0 border-b-2 border-gris-1 py-2 focus:ring-0 group-focus:border-violet-1 focus:border-violet-1 placeholder:italic placeholder:text-gris-2">
                             </div>
-                            <!-- Nom -->
                             <div class="group my-6 lg:my-0">
                                 <div v-if="errors.name" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.name }}</div>
                                 <label for="last_name" class="block capitalize-first group-focus-within:text-violet-1">nom</label>
@@ -113,17 +105,13 @@
                                     class="w-full bg-gray-100 border-0 border-b-2 border-gris-1 py-2 focus:ring-0 group-focus:border-violet-1 focus:border-violet-1 placeholder:italic placeholder:text-gris-2">
                             </div>
                         </div>
-                        <!-- Email + Téléphone -->
                         <div class="lg:flex justify-between gap-4">
-                            <!-- Email -->
                             <div class="group">
                                 <label for="email" class="block capitalize-first group-focus-within:text-violet-1">email</label>
                                 <div v-if="errors.email" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.email }}</div>
                                 <input type="email" v-model="form.email"
                                     class="w-full bg-gray-100 border-0 border-b-2 border-gris-1 py-2 focus:ring-0 group-focus:border-violet-1 focus:border-violet-1 placeholder:italic placeholder:text-gris-2">
                             </div>
-
-                            <!-- Téléphone -->
                             <div class="group my-6 lg:my-0">
                                 <label for="telephone" class="block capitalize-first group-focus-within:text-violet-1">téléphone</label>
                                 <div v-if="errors.phone" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.phone }}</div>
@@ -131,13 +119,11 @@
                                     class="w-full bg-gray-100 border-0 border-b-2 border-gris-1 py-2 focus:ring-0 group-focus:border-violet-1 focus:border-violet-1 placeholder:italic placeholder:text-gris-2">
                             </div>
                         </div>
-                        <!-- Message -->
                         <div class="group">
                             <label for="message" class="block capitalize-first group-focus-within:text-violet-1">message</label>
                             <textarea v-model="form.content" rows="5" id="message" name="message"
                                 class="w-full bg-gray-100 border-0 border-b-2 border-gris-1 py-2 focus:ring-0 group-focus:border-violet-1 focus:border-violet-1 placeholder:italic placeholder:text-gris-2"></textarea>
                         </div>
-
                         <div class="mt-4 relative flex items-start">
                             <div class="flex h-6 items-center">
                                 <input required id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -148,15 +134,24 @@
                                 </label>
                             </div>
                         </div>
-
                         <button @click="create()"
                             class="rounded-md bg-violet-4 px-3.5 py-2.5 text-sm font-semibold text-blanc-1 shadow-sm hover:ring ring-violet-1/20 hover:scale-105 ease-in-out duration-200 hover:bg-violet-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                             Envoyer mon message
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
+
+        <ShapeBottom />
+
+        <!-- Section 5 - Newsletter -->
+        <NewsLetter />
+
+        <ShapeTop />
+
+        <!-- Section 6 - Partenaires -->
+        <Partners />
 
         <ShapeBottom />
 
@@ -170,39 +165,16 @@ import GuestLayout from '@/Layouts/GuestLayout.vue'
 import Footer from '@/Components/Footer.vue'
 import ShapeTop from '@/Components/ShapeTop.vue'
 import ShapeBottom from '@/Components/ShapeBottom.vue'
+import MapView from '@/Components/MapView.vue'
+import NewsLetter from '@/Components/NewsLetter.vue'
+import Partners from '@/Components/Partners.vue'
 
 export default {
     components: {
         GuestLayout,
-        Footer,
+        Footer, NewsLetter, Partners,
+        MapView,
         ShapeTop, ShapeBottom
     },
-
-    props: {
-        errors: {
-            type: Array,
-        },
-    },
-
-    data() {
-        return {
-            title: "Contacter-nous !",
-            form: {
-                surname: null,
-                name: null,
-                email: null,
-                phone: null,
-                content: null,
-            },
-        }
-    },
-
-    methods: {
-        create() {
-            this.$inertia.post(route('messages.store'), this.form, {
-                preserveState: (page) => Object.keys(page.props.errors).length,
-            })
-        },
-    }
 }
 </script>

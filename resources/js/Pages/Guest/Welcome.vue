@@ -1,5 +1,5 @@
 <template>
-    <GuestLayout :title="title">
+    <GuestLayout title="Accueil">
         <!-- Section 1  -->
         <section class="bg-[url('/images/bgImgLanding.webp')] h-screen bg-no-repeat bg-cover bg-center">
             <div class="absolute bottom-0 h-48 w-full bg-gradient-to-t from-white from-20%"></div>
@@ -230,133 +230,12 @@
         <ShapeBottom />
 
         <!-- Section 5 - Newsletter -->
-        <section class="py-16 sm:py-24 lg:py-32">
-            <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-12 lg:gap-8 lg:px-8">
-                <div class="max-w-xl lg:col-span-7">
-                    <h2 class="w-full font-alumni text-6xl capitalize-first">Restez informé</h2>
-                    <span class="font-Dela text-xl">abonnez-vous à notre newsletter</span>
-                    <p class="font-abeezee leading-relaxed text-slate-700 text-sm mt-4">
-                        Ne manquez plus aucune actualité ! En vous inscrivant à notre newsletter, vous recevrez
-                        directement dans votre boîte mail toutes les informations sur nos prochains événements,
-                        expositions, ateliers et bien plus encore. Soyez les premiers à découvrir nos nouveautés et à
-                        participer à la vie artistique de notre communauté. Rejoignez-nous dès maintenant et restez
-                        connecté à notre univers créatif !
-                    </p>
-                </div>
-                <div class="w-full max-w-md lg:col-span-5 lg:pt-2">
-                    <div class="w-full max-w-xl lg:pt-2">
-                        <div class="flex gap-x-4 w-full">
-                            <div class="group w-full">
-                                <label for="email" class="block capitalize-first group-focus-within:text-violet-1">email</label>
-                                <div v-if="errors.email" class="text-red-700 text-lg mx-auto flex justify-center">{{ errors.email }}</div>
-                                <input v-model="form_create.email" id="email-address" name="email" type="email"
-                                    autocomplete="email" required
-                                    class="w-full bg-gray-100 border-0 border-b-2  border-gris-1 py-2 focus:ring-0 group-focus:border-violet-1 focus:border-violet-1 placeholder:italic placeholder:text-gris-2">
-                            </div>
-                            <button @click="create()"
-                            class="mt-6 flex-none rounded-md bg-violet-4 px-3.5 py-2.5 text-sm font-semibold text-blanc-1 shadow-sm hover:ring ring-violet-1/20 hover:scale-105 ease-in-out duration-200 hover:bg-violet-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">S'abonner</button>
-                        </div>
-                        <div class="mt-4 relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input required id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6 mr-28">
-                                <label for="comments" class="text-sm leading-6 text-gray-600">
-                                    En soumettant ce formulaire, j'accepte de recevoir des communications par e-mail de la part des Casas du Sud concernant les événements et les actualités, conformément à la <a href="#" class="font-semibold text-violet-4 hover:text-violet-1">politique de confidentialité</a>.
-                                </label>
-                            </div>
-                        </div>
-                        <span v-if="errors.email" class="text-red-700 text-sm mx-auto flex justify-start">{{ errors.email }}</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <NewsLetter />
 
         <ShapeTop />
 
         <!-- Section 6 - Partenaires -->
-        <section class="bg-blue-200 py-32">
-            <div class="">
-                <div class="flex flex-col justify-center w-ful items-center mb-20">
-                    <h3 class="font-alumni text-6xl capitalize-first">nos partenaires</h3>
-                    <span class="font-Dela text-xl">des soutiens précieux</span>
-                </div>
-
-                <div class="lg:flex lg:flex-row flex-col lg:justify-between px-4">
-                    <!-- Partenaires institutionnels -->
-                    <div class="">
-                        <h4 class="capitalize-first font-Dela text-lg text-center mb-4">partenaires institutionnels</h4>
-                        <div class="flex justify-between gap-2">
-                            <a href="https://www.besancon.fr/" target="_blank" class="group">
-                                <img class="h-24 hover:bg-white hover:scale-105 ease-in-out duration-200 p-4 rounded-xl"
-                                    src="/images/logo_besançon.webp" alt="Logo de la ville de Besançon">
-                                <span
-                                    class="group-hover:block hidden absolute bg-white py-1 px-2 rounded-lg mt-2 text-xs">La
-                                    ville de Besançon</span>
-                            </a>
-                            <a href="https://www.doubs.fr/" target="_blank" class="group">
-                                <img class="h-24 hover:bg-white hover:scale-105 ease-in-out duration-200 p-4 rounded-xl"
-                                    src="/images/logo_doubs.webp" alt="Logo du département du Doubs">
-                                <span
-                                    class="group-hover:block hidden absolute bg-white py-1 px-2 rounded-lg mt-2 text-xs">Le
-                                    département du Doubs</span>
-                            </a>
-                            <a href="https://www.doubs.gouv.fr/" target="_blank" class="group">
-                                <img class="h-24 hover:bg-white hover:scale-105 ease-in-out duration-200 p-4 rounded-xl"
-                                    src="/images/logo-prefecture-removebg-preview.png"
-                                    alt="Logo de la prefecture du Doubs">
-                                <span
-                                    class="group-hover:block hidden absolute bg-white py-1 px-2 rounded-lg mt-2 text-xs">La
-                                    prefecture du Doubs</span>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Grands Partenaires -->
-                    <div class="">
-                        <h4 class="capitalize-first font-Dela text-lg text-center mb-4">grands partenaires</h4>
-                        <div class="flex justify-between gap-2">
-                            <a href="https://lvsl.fr/" target="_blank" class="group">
-                                <img class="h-24 hover:bg-white hover:scale-105 ease-in-out duration-200 p-4 rounded-xl"
-                                    src="/images/logo-lvsl.webp" alt="Logo de le vent se lève">
-                                <span
-                                    class="group-hover:block hidden absolute bg-white py-1 px-2 rounded-lg mt-2 text-xs">Le
-                                    vent se lève</span>
-                            </a>
-                            <a href="https://www.danse-neuchatel.ch/2023/" target="_blank" class="group">
-                                <img class="h-24 hover:bg-white hover:scale-105 ease-in-out duration-200 p-4 rounded-xl"
-                                    src="/images/logo-adn-removebg-preview.png" alt="Logo de adn">
-                                <span
-                                    class="group-hover:block hidden absolute bg-white py-1 px-2 rounded-lg mt-2 text-xs">adn</span>
-                            </a>
-                            <a href="https://www.justice.gouv.fr/" target="_blank" class="group">
-                                <img class="h-24 hover:bg-white hover:scale-105 ease-in-out duration-200 p-4 rounded-xl"
-                                    src="/images/logo-spip-removebg-preview.png" alt="Logo du SPIP">
-                                <span
-                                    class="group-hover:block hidden absolute bg-white py-1 px-2 rounded-lg mt-2 text-xs">SPIP</span>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Partenaires Medias -->
-                    <div class="">
-                        <h4 class="capitalize-first font-Dela text-lg text-center mb-4">partenaires medias</h4>
-                        <div class="flex justify-between">
-                            <a href="https://www.linsatiable.org/" target="_blank" class="group">
-                                <img class="h-24 hover:bg-white hover:scale-105 ease-in-out duration-200 p-4 rounded-xl"
-                                    src="/images/logo-linsatiable.webp" alt="Logo de l'insatiable">
-                                <span
-                                    class="group-hover:block hidden absolute bg-white py-1 px-2 rounded-lg mt-2 text-xs">L'insatiable</span>
-                            </a>
-                            <a href="https://radiosud.net/" target="_blank" class="group">
-                                <img class="h-24 hover:bg-white hover:scale-105 ease-in-out duration-200 p-4 rounded-xl"
-                                    src="/images/logo-radiosud.webp" alt="Logo de radiosud">
-                                <span
-                                    class="group-hover:block hidden absolute bg-white py-1 px-2 rounded-lg mt-2 text-xs">Radiosud</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <Partners />
 
         <ShapeBottom />
 
@@ -369,44 +248,23 @@
 import GuestLayout from '@/Layouts/GuestLayout.vue'
 import EventCard from '@/Components/EventCard.vue'
 import Footer from '@/Components/Footer.vue'
+import NewsLetter from '@/Components/NewsLetter.vue'
 import ShapeTop from '@/Components/ShapeTop.vue'
 import ShapeBottom from '@/Components/ShapeBottom.vue'
+import Partners from '@/Components/Partners.vue'
 
 export default {
 
     components: {
         GuestLayout,
         EventCard,
-        Footer,
+        Footer, NewsLetter, Partners,
         ShapeTop, ShapeBottom
     },
 
     props: {
         articles: {
             type: Array,
-        },
-        newsletters: {
-            type: String,
-        },
-        errors: {
-            type: String,
-        }
-    },
-
-    data() {
-        return {
-            title: "Accueil",
-            form_create: {
-                email: null
-            },
-        }
-    },
-
-    methods: {
-        create() {
-            this.$inertia.post(route('newsletters.store'), this.form_create, {
-                preserveState: (page) => Object.keys(page.props.errors).length,
-            })
         },
     },
 };

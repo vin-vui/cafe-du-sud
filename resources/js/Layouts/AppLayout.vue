@@ -40,9 +40,9 @@ const logout = () => {
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex z-50">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                <!-- <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
-                                </NavLink>
+                                </NavLink> -->
 
                                 <NavLink :href="route('articles.index', { type: 'post', status: 'published' })" :active="route().current('articles.index')">
                                     Billets & Événements
@@ -52,17 +52,17 @@ const logout = () => {
                                     Tags
                                 </NavLink>
 
-                                <NavLink :href="route('comments.index')" :active="route().current('comments.index')">
+                                <!-- <NavLink :href="route('comments.index')" :active="route().current('comments.index')">
                                     Commentaires
-                                </NavLink>
+                                </NavLink> -->
 
                                 <NavLink :href="route('newsletters.index')" :active="route().current('newsletters.index')">
-                                    Newsletters
+                                    Abonnés
                                 </NavLink>
 
-                                <NavLink :href="route('messages.index')" :active="route().current('messages.index')">
+                                <!-- <NavLink :href="route('messages.index')" :active="route().current('messages.index')">
                                     Messages
-                                </NavLink>
+                                </NavLink> -->
                             </div>
                         </div>
 

@@ -11,7 +11,7 @@ class TagController extends Controller
 {
     public function index()
     {
-        $tags = Tag::all();
+        $tags = Tag::orderBy('name')->get();
         return Inertia::render('App/Tags', compact('tags'));
     }
     public function destroy(Tag $tag)

@@ -15,7 +15,7 @@
         </div>
     </div>
     <!-- TAGS LIST -->
-    <div class="px-8 py-12">
+    <div class="px-16 py-12">
         <ul role="list" class="gap-y-2 gap-x-8 grid grid-cols-4">
             <li v-for="tag in tags" @click="edit(tag)"
                 class="relative rounded-xl border cursor-pointer flex justify-between gap-x-6 px-4 py-5 bg-white shadow hover:shadow-xl hover:scale-105 transition-all duration-200 ease-in-out sm:px-6 lg:px-8">
