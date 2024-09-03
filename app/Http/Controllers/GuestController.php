@@ -35,6 +35,7 @@ class GuestController extends Controller
 
     public function show(Article $article)
     {
+        $article->load('tags');
         return Inertia::render('Guest/Article', compact('article'));
     }
 }

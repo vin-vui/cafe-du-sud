@@ -171,8 +171,8 @@
                                             <label class="block font-medium text-gray-700 capitalize-first">Tags</label>
                                             <div class="flex flex-row flex-wrap items-center gap-2">
                                                 <div class="flex items-center" v-for="tag in tags">
-                                                    <input class="rounded mr-1 focus:ring-0 focus:ring-offset-0" type="checkbox" v-model="form_create.tags" :value="tag.id">
-                                                    <label class="capitalize-first">{{ tag.name }}</label>
+                                                    <input :id=tag.id class="rounded mr-1 focus:ring-0 focus:ring-offset-0" type="checkbox" v-model="form_create.tags" :value="tag.id">
+                                                    <label :for=tag.id class="capitalize-first select-none">{{ tag.name }}</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -279,8 +279,8 @@
                                             <label class="block font-medium text-gray-700 capitalize-first">Tags</label>
                                             <div class="flex flex-row flex-wrap items-center gap-2">
                                                 <div class="flex items-center" v-for="tag in tags">
-                                                    <input class="rounded mr-1 focus:ring-0 focus:ring-offset-0" type="checkbox" v-model="form_update.tags" :value="tag.id">
-                                                    <label class="capitalize-first">{{ tag.name }}</label>
+                                                    <input :id=tag.id class="rounded mr-1 focus:ring-0 focus:ring-offset-0" type="checkbox" v-model="form_update.tags" :value="tag.id">
+                                                    <label :for=tag.id class="capitalize-first select-none">{{ tag.name }}</label>
                                                 </div>
                                             </div>
                                         </div>

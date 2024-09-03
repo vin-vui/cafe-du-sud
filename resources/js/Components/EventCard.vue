@@ -26,6 +26,15 @@
         <!-- image -->
         <img class="w-full sm:h-96 h-64 object-cover object-center rounded-t-lg " :src="article.url" alt="Image d'illustration de l'article">
 
+        <!-- tags -->
+        <div class="absolute sm:bottom-80 bottom-56 px-2 mb-6">
+            <ul class="flex flex-wrap gap-2">
+                <li v-for="tag in article.tags" class="bg-bleu-1 px-2 py-1 rounded-md text-gray-800 text-sm">
+                    {{ tag.name }}
+                </li>
+            </ul>
+        </div>
+
         <!-- titre -->
         <h3 class="bg-black/70 backdrop-blur-sm whitespace-nowrap truncate w-full px-4 font-Dela sm:text-2xl py-4 relative bottom-16 text-center text-blanc-orange-1 group-hover:bg-violet-4">
             {{ article.title }}
