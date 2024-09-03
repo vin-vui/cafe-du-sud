@@ -60,7 +60,7 @@
                                 <div class="flex-none rounded-full bg-emerald-500/20 p-1">
                                     <div class="h-1.5 w-1.5 rounded-full bg-emerald-500"></div>
                                 </div>
-                                <p class="text-xs leading-5 text-gray-500">en ligne</p>
+                                <p class="text-xs leading-5 text-gray-500">publié</p>
                             </div>
                             <div v-if="article.status === 'draft'" class="mt-1 flex items-center gap-x-1.5">
                                 <div class="flex-none rounded-full bg-yellow-500/20 p-1">
@@ -150,9 +150,9 @@
                                             <div class="w-full">
                                                 <label class="block font-medium text-gray-700 capitalize-first">Statut</label>
                                                 <select v-model="form_create.status" class="w-full block mt-1 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm">
-                                                    <option value="published">en ligne</option>
                                                     <option value="draft">brouillon</option>
-                                                    <option value="unpublished">corbeille</option>
+                                                    <option value="published">publié</option>
+                                                    <option value="unpublished">archivé</option>
                                                 </select>
                                                 <div v-if="errors.status" class="text-red-700 text-sm mb-2">{{ errors.status }}</div>
                                             </div>
@@ -258,9 +258,9 @@
                                             <div class="w-full">
                                                 <label class="block font-medium text-gray-700 capitalize-first">Statut</label>
                                                 <select v-model="form_update.status" class="w-full block mt-1 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm">
-                                                    <option value="published">en ligne</option>
                                                     <option value="draft">brouillon</option>
-                                                    <option value="unpublished">corbeille</option>
+                                                    <option value="published">publié</option>
+                                                    <option value="unpublished">archivé</option>
                                                 </select>
                                                 <div v-if="errors.status" class="text-red-700 text-sm mb-2">{{ errors.status }}</div>
                                             </div>
